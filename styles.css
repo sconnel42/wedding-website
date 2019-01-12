@@ -1,0 +1,37 @@
+body {
+    background: #33b8b6;
+}
+
+h1, h2, h3, p, li {
+    color: white;
+}
+
+.teal {
+    background: #33b8b6;
+}
+
+.burnt-orange {
+    background: #bc6610;
+}
+
+.raspberry {
+    background: #e6005c;
+}
+
+.copper {
+    background: #b87333;
+}
+
+.padded {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.bottom-line {
+    border-bottom: 2px solid rgba(73, 73, 73, 0.2);
+}
+
+#app {
+    margin-left: 5%;
+    width: 90%;
+}
