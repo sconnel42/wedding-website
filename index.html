@@ -14,31 +14,109 @@
     <title>Wedding Page Vue</title>
 </head>
 <body>
-<div id="app" class="fluid-container">
-    <div class="row">
-      <div class="col-sm text-center bottom-line">
-        <h1 class="padded">Sean and Becca</h1>
-        <img src="wedding.jpg" alt="Engagement!" width="270">
-        <h2 class="padded">October 10th, 2020</h2>
-      </div>
+<div class="dark-gray">
+  <nav id="wedding-nav" class="navbar navbar-default" role="navigation">
+    <div class="navbar-collapse">
+      <ul class="nav nav-justified">
+        <li class="nav-item">
+          <a class="nav-link" href="#about">About Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#gallery">Picture Gallery</a>
+        </li>
+        <li>
+            <a href="#" class="navbar-brand">Becca and Sean</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#rsvp">RSVP</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#contact">Contact</a>
+        </li>
+      </ul>
     </div>
-    <div class="row">
-      <div class="col-sm text-center bottom-line">
+  </nav>
+</div>
+<div id="app" class="fluid-container" data-spy="scroll" data-target="#wedding-nav" data-offset="0">
+  <div class="row justify-content-center bottom-line">
+    <div class="col-sm-4 text-center">
+      <img class="padded" src="wedding.jpg" alt="Engagement!" width="270">
+    </div>
+    <div class="col-sm-4 text-center my-auto">
+      <h1 class="padded">October 10th, 2020</h1>
+    </div>
+  </div>
+  <div id="about" class="row">
+    <div class="col-sm bottom-line">
+      <div class="text-center">
         <h3 class="padded">About Us</h3>
-        <p>
-            A long time ago in a galaxy far far away...
-        </p>
       </div>
+      <p>
+        A long time ago in a galaxy far far away...
+
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ipsum neque, vulputate sit amet scelerisque in, tincidunt at purus. Fusce neque dui, viverra in erat et, commodo vulputate nisi. Fusce tempus, lacus et elementum varius, nisl mauris pretium urna, ut cursus dolor eros et urna. Suspendisse mollis fringilla dapibus. Sed volutpat turpis hendrerit libero tincidunt, aliquet porttitor metus malesuada. Mauris dapibus maximus ultrices. Quisque eu velit at ante mollis suscipit at ac ligula.
+        Nulla vel leo laoreet, consequat arcu et, vehicula turpis. Pellentesque porttitor feugiat erat a pulvinar. Fusce hendrerit odio non laoreet accumsan. Morbi euismod turpis id euismod rutrum. Proin in sapien justo. Sed congue tellus ut imperdiet euismod. Sed suscipit dui nec dui imperdiet varius. Pellentesque quis ipsum ac tortor tincidunt luctus vel sit amet lacus. Vivamus laoreet elit auctor, elementum purus ut, consectetur lacus. Sed arcu massa, congue non dictum ac, ullamcorper ut lorem. Phasellus faucibus nisi neque, in tristique est accumsan sit amet. Nunc et finibus enim. Suspendisse vehicula, diam vitae pretium ultricies, enim massa tristique sem, ut aliquet metus mauris et ipsum.
+        Phasellus vulputate pharetra sagittis. In et malesuada nulla. Nunc tincidunt justo lectus, sed pulvinar leo fermentum sed. Nulla malesuada erat enim, et accumsan enim tristique id. Sed ac lorem lacinia dui ultricies porta. In at turpis urna. Fusce at nunc sit amet nisl sodales vestibulum eu at metus. Vivamus maximus egestas lacus, at varius tellus luctus et. Integer maximus hendrerit ultricies. Phasellus ut felis pretium, cursus turpis ut, tempor magna. Etiam at massa velit. Fusce finibus eros at erat tincidunt varius. Aliquam erat volutpat. Mauris in auctor tortor. Sed massa quam, elementum commodo congue nec, interdum ac massa. Phasellus nisi purus, iaculis a maximus non, condimentum rutrum lacus.
+        Nulla consectetur tincidunt urna vitae rhoncus. In ac velit ante. Vestibulum lobortis non mi ut pulvinar. In hac habitasse platea dictumst. Quisque pellentesque hendrerit ullamcorper. Donec mauris nisl, semper sed massa vel, blandit dapibus nisl. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+        Fusce aliquam tincidunt felis a mollis. Donec nec pretium nulla. Praesent id commodo odio. Curabitur non iaculis leo. Interdum et malesuada fames ac ante ipsum primis in faucibus. Etiam ligula velit, volutpat sit amet dapibus a, posuere quis nisl. Cras sit amet malesuada ligula, ut congue nunc. Pellentesque dolor urna, vestibulum id tellus et, fermentum vulputate felis. Praesent rutrum, ligula a scelerisque rutrum, nulla diam molestie leo, non convallis neque felis ut turpis. Integer tristique sem in est interdum finibus. Curabitur volutpat ornare ultricies. Phasellus pharetra est at elit tempor aliquet.
+      </p>
     </div>
-    <div class="row">
-      <div class="col-sm text-center">
-        <ul class="padded">
-            <li v-for="message in messages">
-                {{ message }}
-            </li>
-        </ul>
+  </div>
+  <div id="gallery" class="row">
+    <div class="col-sm bottom-line">
+      <div class="text-center">
+        <h3 class="padded">Picture Gallery</h3>
       </div>
+      <p>
+        Here's some pictures showing our adventures.
+
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ipsum neque, vulputate sit amet scelerisque in, tincidunt at purus. Fusce neque dui, viverra in erat et, commodo vulputate nisi. Fusce tempus, lacus et elementum varius, nisl mauris pretium urna, ut cursus dolor eros et urna. Suspendisse mollis fringilla dapibus. Sed volutpat turpis hendrerit libero tincidunt, aliquet porttitor metus malesuada. Mauris dapibus maximus ultrices. Quisque eu velit at ante mollis suscipit at ac ligula.
+        Nulla vel leo laoreet, consequat arcu et, vehicula turpis. Pellentesque porttitor feugiat erat a pulvinar. Fusce hendrerit odio non laoreet accumsan. Morbi euismod turpis id euismod rutrum. Proin in sapien justo. Sed congue tellus ut imperdiet euismod. Sed suscipit dui nec dui imperdiet varius. Pellentesque quis ipsum ac tortor tincidunt luctus vel sit amet lacus. Vivamus laoreet elit auctor, elementum purus ut, consectetur lacus. Sed arcu massa, congue non dictum ac, ullamcorper ut lorem. Phasellus faucibus nisi neque, in tristique est accumsan sit amet. Nunc et finibus enim. Suspendisse vehicula, diam vitae pretium ultricies, enim massa tristique sem, ut aliquet metus mauris et ipsum.
+        Phasellus vulputate pharetra sagittis. In et malesuada nulla. Nunc tincidunt justo lectus, sed pulvinar leo fermentum sed. Nulla malesuada erat enim, et accumsan enim tristique id. Sed ac lorem lacinia dui ultricies porta. In at turpis urna. Fusce at nunc sit amet nisl sodales vestibulum eu at metus. Vivamus maximus egestas lacus, at varius tellus luctus et. Integer maximus hendrerit ultricies. Phasellus ut felis pretium, cursus turpis ut, tempor magna. Etiam at massa velit. Fusce finibus eros at erat tincidunt varius. Aliquam erat volutpat. Mauris in auctor tortor. Sed massa quam, elementum commodo congue nec, interdum ac massa. Phasellus nisi purus, iaculis a maximus non, condimentum rutrum lacus.
+        Nulla consectetur tincidunt urna vitae rhoncus. In ac velit ante. Vestibulum lobortis non mi ut pulvinar. In hac habitasse platea dictumst. Quisque pellentesque hendrerit ullamcorper. Donec mauris nisl, semper sed massa vel, blandit dapibus nisl. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+        Fusce aliquam tincidunt felis a mollis. Donec nec pretium nulla. Praesent id commodo odio. Curabitur non iaculis leo. Interdum et malesuada fames ac ante ipsum primis in faucibus. Etiam ligula velit, volutpat sit amet dapibus a, posuere quis nisl. Cras sit amet malesuada ligula, ut congue nunc. Pellentesque dolor urna, vestibulum id tellus et, fermentum vulputate felis. Praesent rutrum, ligula a scelerisque rutrum, nulla diam molestie leo, non convallis neque felis ut turpis. Integer tristique sem in est interdum finibus. Curabitur volutpat ornare ultricies. Phasellus pharetra est at elit tempor aliquet.
+      </p>
     </div>
+  </div>
+  <div id="rsvp" class="row">
+    <div class="col-sm bottom-line">
+      <div class="text-center">
+        <h3 class="padded">RSVP</h3>
+      </div>
+      <p>
+        Let us know if you will be coming to our wedding!
+
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ipsum neque, vulputate sit amet scelerisque in, tincidunt at purus. Fusce neque dui, viverra in erat et, commodo vulputate nisi. Fusce tempus, lacus et elementum varius, nisl mauris pretium urna, ut cursus dolor eros et urna. Suspendisse mollis fringilla dapibus. Sed volutpat turpis hendrerit libero tincidunt, aliquet porttitor metus malesuada. Mauris dapibus maximus ultrices. Quisque eu velit at ante mollis suscipit at ac ligula.
+        Nulla vel leo laoreet, consequat arcu et, vehicula turpis. Pellentesque porttitor feugiat erat a pulvinar. Fusce hendrerit odio non laoreet accumsan. Morbi euismod turpis id euismod rutrum. Proin in sapien justo. Sed congue tellus ut imperdiet euismod. Sed suscipit dui nec dui imperdiet varius. Pellentesque quis ipsum ac tortor tincidunt luctus vel sit amet lacus. Vivamus laoreet elit auctor, elementum purus ut, consectetur lacus. Sed arcu massa, congue non dictum ac, ullamcorper ut lorem. Phasellus faucibus nisi neque, in tristique est accumsan sit amet. Nunc et finibus enim. Suspendisse vehicula, diam vitae pretium ultricies, enim massa tristique sem, ut aliquet metus mauris et ipsum.
+        Phasellus vulputate pharetra sagittis. In et malesuada nulla. Nunc tincidunt justo lectus, sed pulvinar leo fermentum sed. Nulla malesuada erat enim, et accumsan enim tristique id. Sed ac lorem lacinia dui ultricies porta. In at turpis urna. Fusce at nunc sit amet nisl sodales vestibulum eu at metus. Vivamus maximus egestas lacus, at varius tellus luctus et. Integer maximus hendrerit ultricies. Phasellus ut felis pretium, cursus turpis ut, tempor magna. Etiam at massa velit. Fusce finibus eros at erat tincidunt varius. Aliquam erat volutpat. Mauris in auctor tortor. Sed massa quam, elementum commodo congue nec, interdum ac massa. Phasellus nisi purus, iaculis a maximus non, condimentum rutrum lacus.
+        Nulla consectetur tincidunt urna vitae rhoncus. In ac velit ante. Vestibulum lobortis non mi ut pulvinar. In hac habitasse platea dictumst. Quisque pellentesque hendrerit ullamcorper. Donec mauris nisl, semper sed massa vel, blandit dapibus nisl. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+        Fusce aliquam tincidunt felis a mollis. Donec nec pretium nulla. Praesent id commodo odio. Curabitur non iaculis leo. Interdum et malesuada fames ac ante ipsum primis in faucibus. Etiam ligula velit, volutpat sit amet dapibus a, posuere quis nisl. Cras sit amet malesuada ligula, ut congue nunc. Pellentesque dolor urna, vestibulum id tellus et, fermentum vulputate felis. Praesent rutrum, ligula a scelerisque rutrum, nulla diam molestie leo, non convallis neque felis ut turpis. Integer tristique sem in est interdum finibus. Curabitur volutpat ornare ultricies. Phasellus pharetra est at elit tempor aliquet.
+      </p>
+    </div>
+  </div>
+  <div id="contact" class="row">
+    <div class="col-sm">
+      <div class="text-center">
+        <h3 class="padded">Contact</h3>
+      </div>
+      <p>
+        Got some questions? Send us a message!
+
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ipsum neque, vulputate sit amet scelerisque in, tincidunt at purus. Fusce neque dui, viverra in erat et, commodo vulputate nisi. Fusce tempus, lacus et elementum varius, nisl mauris pretium urna, ut cursus dolor eros et urna. Suspendisse mollis fringilla dapibus. Sed volutpat turpis hendrerit libero tincidunt, aliquet porttitor metus malesuada. Mauris dapibus maximus ultrices. Quisque eu velit at ante mollis suscipit at ac ligula.
+        Nulla vel leo laoreet, consequat arcu et, vehicula turpis. Pellentesque porttitor feugiat erat a pulvinar. Fusce hendrerit odio non laoreet accumsan. Morbi euismod turpis id euismod rutrum. Proin in sapien justo. Sed congue tellus ut imperdiet euismod. Sed suscipit dui nec dui imperdiet varius. Pellentesque quis ipsum ac tortor tincidunt luctus vel sit amet lacus. Vivamus laoreet elit auctor, elementum purus ut, consectetur lacus. Sed arcu massa, congue non dictum ac, ullamcorper ut lorem. Phasellus faucibus nisi neque, in tristique est accumsan sit amet. Nunc et finibus enim. Suspendisse vehicula, diam vitae pretium ultricies, enim massa tristique sem, ut aliquet metus mauris et ipsum.
+        Phasellus vulputate pharetra sagittis. In et malesuada nulla. Nunc tincidunt justo lectus, sed pulvinar leo fermentum sed. Nulla malesuada erat enim, et accumsan enim tristique id. Sed ac lorem lacinia dui ultricies porta. In at turpis urna. Fusce at nunc sit amet nisl sodales vestibulum eu at metus. Vivamus maximus egestas lacus, at varius tellus luctus et. Integer maximus hendrerit ultricies. Phasellus ut felis pretium, cursus turpis ut, tempor magna. Etiam at massa velit. Fusce finibus eros at erat tincidunt varius. Aliquam erat volutpat. Mauris in auctor tortor. Sed massa quam, elementum commodo congue nec, interdum ac massa. Phasellus nisi purus, iaculis a maximus non, condimentum rutrum lacus.
+        Nulla consectetur tincidunt urna vitae rhoncus. In ac velit ante. Vestibulum lobortis non mi ut pulvinar. In hac habitasse platea dictumst. Quisque pellentesque hendrerit ullamcorper. Donec mauris nisl, semper sed massa vel, blandit dapibus nisl. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+        Fusce aliquam tincidunt felis a mollis. Donec nec pretium nulla. Praesent id commodo odio. Curabitur non iaculis leo. Interdum et malesuada fames ac ante ipsum primis in faucibus. Etiam ligula velit, volutpat sit amet dapibus a, posuere quis nisl. Cras sit amet malesuada ligula, ut congue nunc. Pellentesque dolor urna, vestibulum id tellus et, fermentum vulputate felis. Praesent rutrum, ligula a scelerisque rutrum, nulla diam molestie leo, non convallis neque felis ut turpis. Integer tristique sem in est interdum finibus. Curabitur volutpat ornare ultricies. Phasellus pharetra est at elit tempor aliquet.
+      </p>
+      <!--
+      <ul class="padded">
+        <li v-for="message in messages">
+          {{ message }}
+        </li>
+      </ul>
+      -->
+    </div>
+  </div>
 </div>
 
 
