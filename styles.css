@@ -2,7 +2,7 @@ body {
     background: #33b8b6;
 }
 
-h1, h2, h3, h4, h5, h6, p, li, a {
+h1, h2, h3, h4, h5, h6, p, li, a, label {
     color: white;
 }
 
@@ -29,6 +29,11 @@ h1, h2, h3, h4, h5, h6, p, li, a {
 .padded {
     padding-top: 20px;
     padding-bottom: 20px;
+}
+
+.padded-sm {
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 .bottom-line {
