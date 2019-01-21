@@ -123,15 +123,32 @@
       <div class="text-center">
         <h3 class="padded">Contact</h3>
       </div>
-      <p>
-        Got some questions? Send us a message!
-
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ipsum neque, vulputate sit amet scelerisque in, tincidunt at purus. Fusce neque dui, viverra in erat et, commodo vulputate nisi. Fusce tempus, lacus et elementum varius, nisl mauris pretium urna, ut cursus dolor eros et urna. Suspendisse mollis fringilla dapibus. Sed volutpat turpis hendrerit libero tincidunt, aliquet porttitor metus malesuada. Mauris dapibus maximus ultrices. Quisque eu velit at ante mollis suscipit at ac ligula.
-        Nulla vel leo laoreet, consequat arcu et, vehicula turpis. Pellentesque porttitor feugiat erat a pulvinar. Fusce hendrerit odio non laoreet accumsan. Morbi euismod turpis id euismod rutrum. Proin in sapien justo. Sed congue tellus ut imperdiet euismod. Sed suscipit dui nec dui imperdiet varius. Pellentesque quis ipsum ac tortor tincidunt luctus vel sit amet lacus. Vivamus laoreet elit auctor, elementum purus ut, consectetur lacus. Sed arcu massa, congue non dictum ac, ullamcorper ut lorem. Phasellus faucibus nisi neque, in tristique est accumsan sit amet. Nunc et finibus enim. Suspendisse vehicula, diam vitae pretium ultricies, enim massa tristique sem, ut aliquet metus mauris et ipsum.
-        Phasellus vulputate pharetra sagittis. In et malesuada nulla. Nunc tincidunt justo lectus, sed pulvinar leo fermentum sed. Nulla malesuada erat enim, et accumsan enim tristique id. Sed ac lorem lacinia dui ultricies porta. In at turpis urna. Fusce at nunc sit amet nisl sodales vestibulum eu at metus. Vivamus maximus egestas lacus, at varius tellus luctus et. Integer maximus hendrerit ultricies. Phasellus ut felis pretium, cursus turpis ut, tempor magna. Etiam at massa velit. Fusce finibus eros at erat tincidunt varius. Aliquam erat volutpat. Mauris in auctor tortor. Sed massa quam, elementum commodo congue nec, interdum ac massa. Phasellus nisi purus, iaculis a maximus non, condimentum rutrum lacus.
-        Nulla consectetur tincidunt urna vitae rhoncus. In ac velit ante. Vestibulum lobortis non mi ut pulvinar. In hac habitasse platea dictumst. Quisque pellentesque hendrerit ullamcorper. Donec mauris nisl, semper sed massa vel, blandit dapibus nisl. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-        Fusce aliquam tincidunt felis a mollis. Donec nec pretium nulla. Praesent id commodo odio. Curabitur non iaculis leo. Interdum et malesuada fames ac ante ipsum primis in faucibus. Etiam ligula velit, volutpat sit amet dapibus a, posuere quis nisl. Cras sit amet malesuada ligula, ut congue nunc. Pellentesque dolor urna, vestibulum id tellus et, fermentum vulputate felis. Praesent rutrum, ligula a scelerisque rutrum, nulla diam molestie leo, non convallis neque felis ut turpis. Integer tristique sem in est interdum finibus. Curabitur volutpat ornare ultricies. Phasellus pharetra est at elit tempor aliquet.
-      </p>
+      <div class="text-center">
+        <h5>
+          Got some questions? Send us a message!
+        </h5>
+        <form @submit.prevent="handleContactSubmit">
+          <div class="padded-sm">
+            <label for="contactName">Name</label>
+            <input v-model="contactData.name" id="contactName" placeholder="Name">
+          </div>
+          <div class="padded-sm">
+            <label for="contactEmail">Email</label>
+            <input v-model="contactData.email" id="contactEmail" placeholder="Email">
+          </div>
+          <div class="padded-sm">
+            <label for="contactMessage">Message</label>
+            <textarea
+              id="contactMessage"
+              v-model="contactData.message"
+              placeholder="Put your message here!"
+            ></textarea>
+          </div>
+          <div class="padded-sm">
+            <input type="submit" value="Submit">
+          </div>
+        </form>
+      </div>
     </div>
   </div>
 </div>

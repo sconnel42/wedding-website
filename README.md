@@ -4,10 +4,10 @@ A website for our wedding, written with Vue and Bootstrap
 ### TODO:
 
 #### Frontend
-- Contact Form
 - Links to Registries
 - Write actual content in About Us
 - Get images for Gallery
+- Clear forms on submit
 - Send RSVP form info to mock BE endpoint
 - Figure out what colors we want to use
 - Make sections collapable?
@@ -21,6 +21,7 @@ A website for our wedding, written with Vue and Bootstrap
     - Change Date font
     - Date on image?
 - Fix styling for RSVP form
+- Fix styling for Contact form
 
 
 #### Backend

@@ -33,11 +33,17 @@ var app = new Vue({
     ],
     imageCols: 3,
     rsvpFormUrl: 'http://localhost:9000/submit-rsvp',
+    contactFormUrl: 'http://localhost:9000/send-message',
     rsvpData: {
       name: '',
       email: '',
       meal: 'Chicken',
       isComing: true
+    },
+    contactData: {
+      name: '',
+      email: '',
+      message: ''
     }
   },
   computed: {
@@ -56,6 +62,11 @@ var app = new Vue({
       }
       console.log(this.rsvpData.name, "is using this email:", this.rsvpData.email);
       console.log("Sending RSVP for", this.rsvpData.name, "to", this.rsvpFormUrl);
+    },
+    handleContactSubmit() {
+      console.log(this.contactData.name, "is using this email:", this.contactData.email);
+      console.log(this.contactData.name, "is sending this message:", this.contactData.message);
+      console.log("Sending Question for", this.contactData.name, "to", this.contactFormUrl);
     }
   }
 });
