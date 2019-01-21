@@ -44,7 +44,19 @@ var app = new Vue({
       name: '',
       email: '',
       message: ''
-    }
+    },
+    registries: [
+      {
+        src: 'icons/amazon.jpg',
+        alt: 'Amazon',
+        link: 'https://www.amazon.com'
+      },
+      {
+        src: 'icons/ikea.png',
+        alt: 'IKEA',
+        link: 'https://www.ikea.com/us/en/'
+      }
+    ]
   },
   computed: {
     imageRows: function () {

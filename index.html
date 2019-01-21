@@ -31,7 +31,7 @@
           <a class="nav-link" href="#rsvp">RSVP</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#contact">Contact</a>
+          <a class="nav-link" href="#registry">Registry</a>
         </li>
       </ul>
     </div>
@@ -116,6 +116,22 @@
           </div>
         </form>
       </div>
+    </div>
+  </div>
+  <div id="registry" class="row bottom-line">
+    <div class="col-sm-12 text-center">
+      <h3 class="padded">Registries</h3>
+      <h5>
+        Want to get us a gift but aren't sure what to buy? Check out our registries here for ideas:
+      </h5>
+    </div>
+    <div class="col-sm-12 text-center" v-for="registry in registries">
+      <a v-bind:href="registry.link"><img
+        v-bind:src="registry.src"
+        v-bind:alt="registry.alt"
+        v-bind:title="registry.alt"
+        class="img-fluid padded rounded"
+        ></a>
     </div>
   </div>
   <div id="contact" class="row">
