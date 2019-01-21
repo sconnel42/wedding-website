@@ -7,7 +7,6 @@ A website for our wedding, written with Vue and Bootstrap
 - Write actual content in About Us
 - Section about wedding and venue
 - Get images for Gallery
-- Make images section mobile-friendly
 - Clear forms on submit
 - Show message on submit
 - Send RSVP form info to mock BE endpoint
@@ -21,8 +20,8 @@ A website for our wedding, written with Vue and Bootstrap
     - Push links closer to brand
     - Scroll nicely down to each section
     - Back-to-top button
+    - Make it mobile-friendly
 - Pic/Date Styles
-    - Make Date bigger
     - Change Date font
     - Date on image?
 - Fix styling for RSVP form

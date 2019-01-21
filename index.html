@@ -40,7 +40,7 @@
 <div id="app" class="fluid-container" data-spy="scroll" data-target="#wedding-nav" data-offset="0">
   <div class="row justify-content-center bottom-line">
     <div class="col-sm-12 text-center">
-        <img class="padded" src="imgs/IMG_20180810.jpg" alt="Engagement!" width="1080">
+        <img class="img-fluid padded" src="imgs/IMG_20180810.jpg" alt="Engagement!">
     </div>
     <div class="col-sm-12 text-center my-auto">
         <h1 class="padded">October 10th, 2020</h1>
@@ -73,7 +73,7 @@
     </div>
   </div>
   <div id="gallery-pictures" class="row bottom-line">
-    <div class="col-sm-4" v-for="i in imageCols">
+    <div class="col-sm-4 text-center" v-for="i in imageCols">
       <div v-for="j in imageRows">
         <img
           v-if="(3*(j-1) + (i-1)) < images.length"

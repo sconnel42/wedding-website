@@ -27,20 +27,40 @@ h1, h2, h3, h4, h5, h6, p, li, a, label {
 }
 
 .padded {
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding-top: 2vmin;
+    padding-bottom: 2vmin;
 }
 
 .padded-sm {
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding-top: 1vmin;
+    padding-bottom: 1vim;
 }
 
 .bottom-line {
     border-bottom: 2px solid rgb(105,130,129, 0.2);
 }
 
+.img-fluid {
+    max-width: 80%;
+}
+
 #app {
     margin-left: 5%;
     width: 90%;
+}
+
+h1 {
+  font-size: calc(16px + 3.2vmin);
+}
+
+h3 {
+  font-size: calc(12px + 2.3vmin);
+}
+
+h5 {
+  font-size: calc(10px + 1.5vmin);
+}
+
+p {
+  font-size: calc(8px + 1.2vmin);
 }
