@@ -32,6 +32,14 @@ var app = new Vue({
       "Pork"
     ],
     imageCols: 3,
+    churchImg: {
+      src: 'imgs/church.jpg',
+      alt: 'St Elizabeth Seton'
+    },
+    venueImg: {
+      src: 'imgs/venue.jpg',
+      alt: 'Monte Bello Estate'
+    },
     rsvpFormUrl: 'http://localhost:9000/submit-rsvp',
     contactFormUrl: 'http://localhost:9000/send-message',
     rsvpData: {

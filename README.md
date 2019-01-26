@@ -5,10 +5,10 @@ A website for our wedding, written with Vue and Bootstrap
 
 #### Frontend
 - Write actual content in About Us
-- Section about wedding and venue
+- Fill in information about church/venue
 - Get images for Gallery
 - Clear forms on submit
-- Show message on submit
+- Show success/failure message on submit
 - Send RSVP form info to mock BE endpoint
 - Component-ize the different sections
 - Figure out what colors we want to use
@@ -27,6 +27,8 @@ A website for our wedding, written with Vue and Bootstrap
 - Fix styling for RSVP form
 - Fix styling for Contact form
 - Style Registry section
+- Pop pictures out
+- Add maps for church/venue
 - Fill in Registry section with actual registries
 
 
