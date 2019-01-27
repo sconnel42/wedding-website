@@ -11,12 +11,10 @@ A website for our wedding, written with Vue and Bootstrap
 - Show success/failure message on submit
 - Send RSVP form info to mock BE endpoint
 - Component-ize the different sections
-- Make sections collapable?
-    - If so, then the nav bar is probably not needed
 - Navbar Styles
     - Fix hover color
     - Change font
-    - Push links closer to brand
+    - Make it sticky
     - Scroll nicely down to each section
     - Back-to-top button
     - Make it mobile-friendly
@@ -29,6 +27,7 @@ A website for our wedding, written with Vue and Bootstrap
 - Style Registry section
 - Pop pictures out
 - Add maps for church/venue
+- Make Picture section collapsable?
 - Fill in Registry section with actual registries
 
 
