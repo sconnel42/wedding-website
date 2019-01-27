@@ -1,5 +1,5 @@
 body {
-    background: #33b8b6;
+    background: #035d65;
 }
 
 h1, h2, h3, h4, h5, h6, p, li, a, label {
@@ -7,23 +7,39 @@ h1, h2, h3, h4, h5, h6, p, li, a, label {
 }
 
 .teal {
-    background: #33b8b6;
+    background: #035d65;
 }
 
-.burnt-orange {
-    background: #bc6610;
+.bold-orange {
+    background: #FF6C08;
 }
 
 .raspberry {
-    background: #e6005c;
+    background: #D01E5C;
 }
 
-.copper {
-    background: #b87333;
+.dark-red {
+    background: #8E151E;
+}
+
+.emerald {
+    background: #115E58;
+}
+
+.dark-blue {
+    background: #0B0365;
+}
+
+.purple {
+    background: #65035D;
 }
 
 .dark-gray {
-    background: #698281
+    background: #629a9f;
+}
+
+.dark-gold {
+    background: #D4B47B;
 }
 
 .padded {

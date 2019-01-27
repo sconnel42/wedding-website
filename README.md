@@ -11,7 +11,6 @@ A website for our wedding, written with Vue and Bootstrap
 - Show success/failure message on submit
 - Send RSVP form info to mock BE endpoint
 - Component-ize the different sections
-- Figure out what colors we want to use
 - Make sections collapable?
     - If so, then the nav bar is probably not needed
 - Navbar Styles
@@ -24,6 +23,7 @@ A website for our wedding, written with Vue and Bootstrap
 - Pic/Date Styles
     - Change Date font
     - Date on image?
+    - Flowers on sides of picture
 - Fix styling for RSVP form
 - Fix styling for Contact form
 - Style Registry section
