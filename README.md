@@ -4,7 +4,8 @@ A website for our wedding, written with Vue and Bootstrap
 ### TODO:
 
 #### Frontend
-- Alt text for images in imgs2/
+- Remove alt text/title fields from images
+- Dynamically get all images from folder
 - Remove imgs/
 - Write actual content in About Us
 - Fill in information about church/venue
@@ -34,6 +35,7 @@ A website for our wedding, written with Vue and Bootstrap
 - Pop pictures out
 - Thin floral bar just below nav bar
 - Floral design on sides of picture
+- Alt text for images with info
 
 
 #### Backend
