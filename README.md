@@ -4,20 +4,22 @@ A website for our wedding, written with Vue and Bootstrap
 ### TODO:
 
 #### Frontend
+- Alt text for images in imgs2/
+- Remove imgs/
 - Write actual content in About Us
 - Fill in information about church/venue
-- Get images for Gallery
 - Clear forms on submit
+- Component-ize the different sections
 - Show success/failure message on submit
 - Send RSVP form info to mock BE endpoint
-- Component-ize the different sections
+- Make Picture section collapsable
 - Navbar Styles
     - Fix hover color
     - Change font
     - Make it sticky
     - Scroll nicely down to each section
     - Back-to-top button
-    - Make it mobile-friendly
+    - Make it mobile-friendly (hamburger open/close)
 - Pic/Date Styles
     - Change Date font
     - Date on image?
@@ -25,10 +27,13 @@ A website for our wedding, written with Vue and Bootstrap
 - Fix styling for RSVP form
 - Fix styling for Contact form
 - Style Registry section
-- Pop pictures out
-- Add maps for church/venue
-- Make Picture section collapsable?
 - Fill in Registry section with actual registries
+
+### Nice to Have
+- Add maps for church/venue
+- Pop pictures out
+- Thin floral bar just below nav bar
+- Floral design on sides of picture
 
 
 #### Backend
