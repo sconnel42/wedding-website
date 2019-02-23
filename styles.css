@@ -47,6 +47,10 @@ h1, h2, h3, h4, h5, h6, p, li, a, label {
     padding-bottom: 2vmin;
 }
 
+.top-padded {
+    padding-top: 50px;
+}
+
 .padded-sm {
     padding-top: 1vmin;
     padding-bottom: 1vim;
