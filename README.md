@@ -4,11 +4,6 @@ A website for our wedding, written with Vue and Bootstrap
 ### TODO:
 
 #### Frontend
-- Remove alt text/title fields from images
-- Dynamically get all images from folder
-- Remove imgs/
-- Write actual content in About Us
-- Fill in information about church/venue
 - Clear forms on submit
 - Component-ize the different sections
 - Show success/failure message on submit
@@ -30,19 +25,20 @@ A website for our wedding, written with Vue and Bootstrap
 - Style Registry section
 - Fill in Registry section with actual registries
 
+#### Backend
+- Create BE server (Express?)
+- Dynamically get all images from folder for frontend
+- Remove imgs/
+- Serve wedding website
+- Write RSVPs to Database
+- Host site on netlify
+
 ### Nice to Have
 - Add maps for church/venue
 - Pop pictures out
 - Thin floral bar just below nav bar
 - Floral design on sides of picture
 - Alt text for images with info
-
-
-#### Backend
-- Create BE server (Express?)
-- Serve wedding website
-- Write RSVPs to Database
-- Host site on netlify
 
 - Stats page on wedding stuff?
     - xx/xxx People have RSVPed
