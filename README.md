@@ -4,7 +4,6 @@ A website for our wedding, written with Vue and Bootstrap
 ### TODO:
 
 #### Frontend
-- Clear forms on submit
 - Component-ize the different sections
 - Show success/failure message on submit
 - Send RSVP form info to mock BE endpoint
@@ -16,13 +15,13 @@ A website for our wedding, written with Vue and Bootstrap
     - Scroll nicely down to each section
     - Back-to-top button
     - Make it mobile-friendly (hamburger open/close)
+- Fix styling for RSVP form
+- Fix styling for Contact form
+- Style Registry section
 - Pic/Date Styles
     - Change Date font
     - Date on image?
     - Flowers on sides of picture
-- Fix styling for RSVP form
-- Fix styling for Contact form
-- Style Registry section
 - Fill in Registry section with actual registries
 
 #### Backend

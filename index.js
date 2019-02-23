@@ -67,6 +67,7 @@ var app = new Vue({
   },
   methods: {
     handleRSVPSubmit() {
+      // Handle submit
       if(this.rsvpData.isComing === true) {
         console.log(this.rsvpData.name, "is coming to the wedding");
         console.log(this.rsvpData.name, "will have", this.rsvpData.meal, "for dinner");
@@ -76,11 +77,22 @@ var app = new Vue({
       }
       console.log(this.rsvpData.name, "is using this email:", this.rsvpData.email);
       console.log("Sending RSVP for", this.rsvpData.name, "to", this.rsvpFormUrl);
+
+      // Clear form
+      this.rsvpData.name = "";
+      this.rsvpData.email = "";
+      this.rsvpData.meal = this.mealOptions[0];
     },
     handleContactSubmit() {
+      // Handle submit
       console.log(this.contactData.name, "is using this email:", this.contactData.email);
       console.log(this.contactData.name, "is sending this message:", this.contactData.message);
       console.log("Sending Question for", this.contactData.name, "to", this.contactFormUrl);
+
+      // Clear form
+      this.contactData.name = "";
+      this.contactData.email = "";
+      this.contactData.message = "";
     }
   }
 });
