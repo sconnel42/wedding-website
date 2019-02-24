@@ -14,7 +14,7 @@ npm run lint
 
 #### Frontend
 - Show success/failure message on submit
-- Send RSVP form info to mock BE endpoint
+- Scope styles in components
 - Make Picture section collapsable
 - Navbar Styles
     - Fix hover color
@@ -30,13 +30,16 @@ npm run lint
     - Change Date font
     - Date on image?
     - Flowers on sides of picture
+    - Make pic extend the width of the screen on mobile
 - Fill in Registry section with actual registries
 
 #### Backend
 - Create BE server (Express?)
+- Send RSVP/Contact form submits BE endpoint
 - Dynamically get all images from folder for frontend
 - Remove public/imgs/
-- Create Docker container to serve wedding website
+- Create Docker container to serve FE
+- Create Docker container to serve BE
 - Create Docker DB and save RSVPs to it
 - Host site on netlify
 
@@ -45,6 +48,7 @@ npm run lint
 - Pop pictures out
 - Thin floral bar just below nav bar
 - Floral design on sides of picture
+- Convert CSS to SASS
 - Alt text for images with info
 
 - Stats page on wedding stuff?
