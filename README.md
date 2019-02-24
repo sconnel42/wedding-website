@@ -1,10 +1,18 @@
 # Wedding Website
 A website for our wedding, written with Vue and Bootstrap
 
+### Supported vue-cli commands
+```
+npm install
+npm run serve
+npm run build
+npm run test
+npm run lint
+```
+
 ### TODO:
 
 #### Frontend
-- Component-ize the different sections
 - Show success/failure message on submit
 - Send RSVP form info to mock BE endpoint
 - Make Picture section collapsable
@@ -27,9 +35,9 @@ A website for our wedding, written with Vue and Bootstrap
 #### Backend
 - Create BE server (Express?)
 - Dynamically get all images from folder for frontend
-- Remove imgs/
-- Serve wedding website
-- Write RSVPs to Database
+- Remove public/imgs/
+- Create Docker container to serve wedding website
+- Create Docker DB and save RSVPs to it
 - Host site on netlify
 
 ### Nice to Have
@@ -44,3 +52,4 @@ A website for our wedding, written with Vue and Bootstrap
     - Pie chart of people who RSVPed
     - Recent RSVPs
     - Days until wedding
+

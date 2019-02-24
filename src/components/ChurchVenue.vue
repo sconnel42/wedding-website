@@ -1,0 +1,56 @@
+<template>
+  <div id="venue" class="row bottom-line">
+    <div class="col-sm-12">
+      <div class="text-center">
+        <h3 class="padded">Church/Venue</h3>
+      </div>
+      <div class="text-center">
+        <h5 class="padded">Here's the location of the church and venue:</h5>
+      </div>
+    </div>
+    <div class="col-sm-6 text-center">
+      <img
+        v-bind:src="churchImg.src"
+        v-bind:alt="churchImg.alt"
+        v-bind:title="churchImg.alt"
+        class="img-fluid padded rounded"
+      >
+    </div>
+    <div class="col-sm-6 flex-center">
+      <h3>St. Elizabeth Ann Seton <br class="rwd-break">Catholic Church</h3>
+      <p>9300 West 167th Street</p>
+      <p>Orland Hills, IL 60487</p>
+    </div>
+    <div class="col-sm-6 text-center">
+      <img
+        v-bind:src="venueImg.src"
+        v-bind:alt="venueImg.alt"
+        v-bind:title="venueImg.alt"
+        class="img-fluid padded rounded"
+      >
+    </div>
+    <div class="col-sm-6 flex-center">
+        <h3>The Monte Bello Estate</h3>
+        <p>16501 West 135th Street</p>
+        <p>Lemont, IL 60439</p>
+    </div>
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'ChurchVenue',
+  data: function () {
+    return {
+        churchImg: {
+          src: `${process.env.BASE_URL}imgs/church.jpg`,
+          alt: 'St Elizabeth Seton'
+        },
+        venueImg: {
+          src: `${process.env.BASE_URL}imgs/venue.jpg`,
+          alt: 'Monte Bello Estate'
+        },
+    }
+  }
+}
+</script>
