@@ -31,7 +31,7 @@ h1, h2, h3, h4, h5, h6, p, li, a, label {
 }
 
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: 'Arima Madurai', Helvetica, Arial, cursive;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -44,6 +44,10 @@ h1, h2, h3, h4, h5, h6, p, li, a, label {
 #content-body {
   margin: 0 auto;
   width: 90%;
+}
+
+.fancy-font {
+  font-family: 'Cedarville Cursive', cursive;
 }
 
 .teal {

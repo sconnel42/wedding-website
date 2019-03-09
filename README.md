@@ -13,21 +13,20 @@ npm run lint
 ### TODO:
 
 #### Frontend
-- Show success/failure message on submit
+- Finish making Alert component
+    - Then put it on the two forms
+- Change font sizes
 - Scope styles in components
 - Make Picture section collapsable
 - Navbar Styles
     - Fix hover color
-    - Change font
     - Make it sticky
     - Scroll nicely down to each section
-    - Back-to-top button
     - Make it mobile-friendly (hamburger open/close)
 - Fix styling for RSVP form
 - Fix styling for Contact form
 - Style Registry section
 - Pic/Date Styles
-    - Change Date font
     - Date on image?
     - Flowers on sides of picture
     - Make pic extend the width of the screen on mobile
@@ -49,6 +48,7 @@ npm run lint
 - Thin floral bar just below nav bar
 - Floral design on sides of picture
 - Convert CSS to SASS
+- Convert to Vue-Bootstrap
 - Alt text for images with info
 
 - Stats page on wedding stuff?

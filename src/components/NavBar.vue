@@ -16,7 +16,7 @@
             <a class="nav-link"></a>
           </li>
           <li>
-              <a class="navbar-brand">Becca and Sean</a>
+              <a class="navbar-brand fancy-font">Becca & Sean</a>
           </li>
           <li class="nav-item disabled">
             <a class="nav-link"></a>

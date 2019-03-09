@@ -4,7 +4,7 @@
         <img class="img-fluid padded top-padded" :src="`${publicPath}imgs/IMG_20180810.jpg`">
     </div>
     <div class="col-sm-12 text-center my-auto">
-        <h1 class="padded">October 10th, 2020</h1>
+        <h1 class="padded fancy-font">October 10th, 2020</h1>
     </div>
   </div>
 </template>
