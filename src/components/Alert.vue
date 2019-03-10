@@ -1,5 +1,5 @@
 <template>
-  <div v-if="active" v-bind:class="alertClasses[this.alertType]" role=alert>
+  <div v-if="visible" v-bind:class="alertClasses[this.alertType]" role=alert>
     {{ alertText }}
     <button type="button" class="close" v-if="dismissable" v-on:click="hideAlert">
       <span aria-hidden="true">&times;</span>
@@ -31,7 +31,7 @@ export default {
   },
   data() {
     return {
-      active: this.isActive,
+      visible: this.isActive,
       alertClasses: {
         "success": "alert alert-success",
         "error": "alert alert-danger",
@@ -40,18 +40,22 @@ export default {
   },
   methods: {
     showAlert() {
-      // Show the alert. If the activeLength is greater
-      // than 0, set a timeout so it disappears after
-      // that many seconds
-      this.active = true;
+      this.visible = true;
       if (this.activeLength > 0) {
         setTimeout(() => {
-          this.active = false;
+          this.visible = false;
         }, this.activeLength*1000);
       }
     },
     hideAlert() {
-      this.active = false;
+      this.visible = false;
+    }
+  },
+  watch: {
+    isActive: function(newVal, oldVal) {
+      if (newVal !== oldVal && newVal === true) {
+        this.showAlert();
+      }
     }
   },
   computed: {

@@ -13,8 +13,6 @@ npm run lint
 ### TODO:
 
 #### Frontend
-- Fix bugs in Alert component
-- Put Alert component into Contact form
 - Change font sizes
 - Scope styles in components
 - Make Picture section collapsable
@@ -27,9 +25,9 @@ npm run lint
 - Fix styling for Contact form
 - Style Registry section
 - Pic/Date Styles
-    - Date on image?
     - Flowers on sides of picture
     - Make pic extend the width of the screen on mobile
+- Make alerts appear/disappear nicely
 - Fill in Registry section with actual registries
 
 #### Backend
@@ -37,8 +35,8 @@ npm run lint
 - Send RSVP/Contact form submits BE endpoint
 - Dynamically get all images from folder for frontend
 - Remove public/imgs/
-- Create Docker container to serve FE
-- Create Docker container to serve BE
+- Create Docker container to serve Vue
+- Create Docker container to serve Express
 - Create Docker DB and save RSVPs to it
 - Host site on netlify
 
@@ -50,10 +48,11 @@ npm run lint
 - Convert CSS to SASS
 - Convert to Vue-Bootstrap
 - Alt text for images with info
+- Prometheus metrics to Grafana for site up, page views, etc
+- Send email/message if site is down for too long
 
 - Stats page on wedding stuff?
     - xx/xxx People have RSVPed
     - Pie chart of people who RSVPed
     - Recent RSVPs
     - Days until wedding
-

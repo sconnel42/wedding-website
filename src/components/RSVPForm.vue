@@ -28,7 +28,7 @@
           <div class="padded-sm">
             <input type="submit" value="Submit">
           </div>
-          <Alert v-bind:isActive="showSuccessAlert" alertType="success"/>
+          <Alert v-bind:isActive="showSuccessAlert" v-bind:activeLength=5 alertType="success"/>
           <Alert v-bind:isActive="showFailureAlert" alertType="error" dismissable/>
         </form>
       </div>
@@ -65,7 +65,7 @@ export default {
       var success = true;
 
       if (success) {
-        // Show success message for 2s
+        // Activate success alert
         this.showSuccessAlert = true;
 
         // Clear form
@@ -73,15 +73,10 @@ export default {
         this.rsvpData.email = "";
         this.rsvpData.meal = this.mealOptions[0];
       } else {
+        // Activate failure alert
         this.showFailureAlert = true;
       }
     },
-    hideSuccessAlert() {
-        this.showSuccessAlert = false;
-    },
-    hideFailureAlert() {
-        this.showFailureAlert = false;
-    }
   }
 }
 </script>

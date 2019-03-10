@@ -28,6 +28,8 @@
           <div class="padded-sm">
             <input type="submit" value="Submit">
           </div>
+          <Alert v-bind:isActive="showSuccessAlert" v-bind:activeLength=5 alertType="success"/>
+          <Alert v-bind:isActive="showFailureAlert" alertType="error" dismissable/>
         </form>
       </div>
     </div>
@@ -35,8 +37,13 @@
 </template>
 
 <script>
+import Alert from './Alert.vue'
+
 export default {
   name: 'ContactForm',
+  components: {
+    Alert
+  },
   data() {
     return {
       contactData: {
@@ -45,17 +52,28 @@ export default {
         message: ''
       },
       contactFormUrl: 'http://localhost:9000/send-message',
+      showSuccessAlert: false,
+      showFailureAlert: false,
     }
   },
   methods: {
     handleContactSubmit() {
       // Handle submit
       // TODO: Send AJAX call to server
+      var success = false;
 
-      // Clear form
-      this.contactData.name = "";
-      this.contactData.email = "";
-      this.contactData.message = "";
+      if (success) {
+        // Activate success alert
+        this.showSuccessAlert = true;
+
+        // Clear form
+        this.contactData.name = "";
+        this.contactData.email = "";
+        this.contactData.message = "";
+      } else {
+        // Activate failure alert
+        this.showFailureAlert = true;
+      }
     }
   }
 }
