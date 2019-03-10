@@ -50,6 +50,12 @@ h1, h2, h3, h4, h5, h6, p, li, a, label {
   font-family: 'Cedarville Cursive', cursive;
 }
 
+.credits {
+  color: white;
+  text-align: right;
+  font-size: calc(4px + 0.9vmin);
+}
+
 .teal {
     background: #035d65;
 }

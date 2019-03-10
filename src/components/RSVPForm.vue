@@ -28,18 +28,8 @@
           <div class="padded-sm">
             <input type="submit" value="Submit">
           </div>
-          <div v-if="showSuccessAlert" class="alert alert-success" role=alert>
-            RSVP submitted successfully!
-            <button type="button" class="close" v-on:click="hideSuccessAlert">
-              <span aria-hidden="true">&times;</span>
-            </button>
-           </div>
-          <div v-if="showFailureAlert" class="alert alert-danger alert-dismissible fade show" role=alert>
-            An error occurred while submitting the RSVP. Please try again.
-            <button type="button" class="close" v-on:click="hideFailureAlert">
-              <span aria-hidden="true">&times;</span>
-            </button>
-           </div>
+          <Alert v-bind:isActive="showSuccessAlert" alertType="success"/>
+          <Alert v-bind:isActive="showFailureAlert" alertType="error" dismissable/>
         </form>
       </div>
     </div>
@@ -47,8 +37,13 @@
 </template>
 
 <script>
+import Alert from './Alert.vue'
+
 export default {
   name: 'RSVPForm',
+  components: {
+    Alert
+  },
   data() {
     return {
       mealOptions: ['Chicken', 'Pork'],
@@ -67,14 +62,11 @@ export default {
     handleRSVPSubmit() {
       // Handle submit
       // TODO: AJAX call to BE endpoint
-      var success = false;
+      var success = true;
 
       if (success) {
         // Show success message for 2s
         this.showSuccessAlert = true;
-        setTimeout(() => {
-          this.showSuccessAlert = false;
-        }, 3000);
 
         // Clear form
         this.rsvpData.name = "";

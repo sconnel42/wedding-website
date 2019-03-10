@@ -13,8 +13,8 @@ npm run lint
 ### TODO:
 
 #### Frontend
-- Finish making Alert component
-    - Then put it on the two forms
+- Fix bugs in Alert component
+- Put Alert component into Contact form
 - Change font sizes
 - Scope styles in components
 - Make Picture section collapsable
