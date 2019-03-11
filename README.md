@@ -13,7 +13,6 @@ npm run lint
 ### TODO:
 
 #### Frontend
-- Change font sizes
 - Scope styles in components
 - Make Picture section collapsable
 - Navbar Styles
@@ -25,7 +24,6 @@ npm run lint
 - Fix styling for Contact form
 - Style Registry section
 - Pic/Date Styles
-    - Flowers on sides of picture
     - Make pic extend the width of the screen on mobile
 - Make alerts appear/disappear nicely
 - Fill in Registry section with actual registries
@@ -44,7 +42,7 @@ npm run lint
 - Add maps for church/venue
 - Pop pictures out
 - Thin floral bar just below nav bar
-- Floral design on sides of picture
+- Floral design on sides of main picture
 - Convert CSS to SASS
 - Convert to Vue-Bootstrap
 - Alt text for images with info

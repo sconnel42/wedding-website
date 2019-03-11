@@ -134,12 +134,20 @@ h1, h2, h3, h4, h5, h6, p, li, a, label {
     .rwd-break { display: none; }
 }
 
+#wedding-nav {
+  font-size: calc(8px + 1.0vmin);
+}
+
+.navbar-brand {
+  font-size: calc(10px + 2.1vmin);
+}
+
 h1 {
   font-size: calc(16px + 3.2vmin);
 }
 
 h3 {
-  font-size: calc(12px + 2.3vmin);
+  font-size: calc(12px + 2.5vmin);
 }
 
 h5 {
