@@ -4,31 +4,31 @@
       <div class="navbar-collapse">
         <ul class="nav nav-justified">
           <li class="nav-item flex-center">
-            <a class="nav-link" href="#about">About Us</a>
+            <p class="nav-link" v-on:click="goTo('about')">About Us</p>
           </li>
           <li class="nav-item flex-center">
-            <a class="nav-link" href="#gallery">Picture Gallery</a>
+            <p class="nav-link" v-on:click="goTo('gallery')">Picture Gallery</p>
           </li>
           <li class="nav-item flex-center">
-            <a class="nav-link" href="#venue">Church/Venue</a>
+            <p class="nav-link" v-on:click="goTo('venue')">Church/Venue</p>
           </li>
           <li class="nav-item disabled">
-            <a class="nav-link"></a>
+            <p class="nav-link"></p>
           </li>
           <li class="flex-center">
-              <a class="navbar-brand fancy-font">Becca & Sean</a>
+            <p class="navbar-brand fancy-font">Becca & Sean</p>
           </li>
           <li class="nav-item disabled">
-            <a class="nav-link"></a>
+            <p class="nav-link"></p>
           </li>
           <li class="nav-item flex-center">
-            <a class="nav-link" href="#rsvp">RSVP</a>
+            <p class="nav-link" v-on:click="goTo('rsvp')">RSVP</p>
           </li>
           <li class="nav-item flex-center">
-            <a class="nav-link" href="#registry">Registry</a>
+            <p class="nav-link" v-on:click="goTo('registry')">Registry</p>
           </li>
           <li class="nav-item flex-center">
-            <a class="nav-link" href="#contact">Contact</a>
+            <p class="nav-link" v-on:click="goTo('contact')">Contact</p>
           </li>
         </ul>
       </div>
@@ -38,13 +38,24 @@
 
 <script>
 export default {
-  name: 'NavBar'
+  name: 'NavBar',
+  methods: {
+    goTo: function(elementID) {
+      // Because we have a sticky header, manually scroll to element 
+      let element = document.getElementById(elementID);
+      let rect = element.getBoundingClientRect();
+      let factor = 40 + (element.clientWidth/25);
+      let scrollPos = rect.top + window.scrollY - factor;
+      window.scrollTo(0, scrollPos);
+    }
+  }
 }
 </script>
 
 <style scoped>
-a:hover {
+p.nav-link:hover {
   color: #BBBBBB;
+  cursor: pointer;
 }
 
 .nav-link {

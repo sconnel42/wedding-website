@@ -14,13 +14,12 @@ npm run lint
 
 #### Frontend
 - Navbar Styles
-    - Don't let Navbar cover section title
     - Make it mobile-friendly (hamburger open/close)
+- Pic/Date Styles
+    - Make pic extend the width of the screen on mobile
 - Fix styling for RSVP form
 - Fix styling for Contact form
 - Style Registry section
-- Pic/Date Styles
-    - Make pic extend the width of the screen on mobile
 - Make alerts appear/disappear nicely
 - Reconcile odd styles on mobile
 - Fill in Registry section with actual registries
@@ -44,6 +43,7 @@ npm run lint
 - Convert to Vue-Bootstrap
 - Page Curtain
 - Alt text for images with info
+- Back to Top button
 - Prometheus metrics to Grafana for site up, page views, etc
 - Send email/message if site is down for too long
 
