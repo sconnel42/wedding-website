@@ -54,3 +54,9 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+@media screen and (min-width: 1450px) {
+    .rwd-break { display: none; }
+}
+</style>

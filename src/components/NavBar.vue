@@ -41,3 +41,9 @@ export default {
   name: 'NavBar'
 }
 </script>
+
+<style scoped>
+.navbar-brand {
+  font-size: calc(10px + 2.1vmin);
+}
+</style>

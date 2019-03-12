@@ -13,7 +13,6 @@ npm run lint
 ### TODO:
 
 #### Frontend
-- Scope styles in components
 - Make Picture section collapsable
 - Navbar Styles
     - Fix hover color

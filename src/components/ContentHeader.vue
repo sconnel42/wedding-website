@@ -19,3 +19,9 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.top-padded {
+    padding-top: 50px;
+}
+</style>
