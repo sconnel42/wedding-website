@@ -1,5 +1,5 @@
 <template>
-  <div class="dark-gray">
+  <div class="dark-gray sticky-top">
     <nav id="wedding-nav" class="navbar navbar-default" role="navigation">
       <div class="navbar-collapse">
         <ul class="nav nav-justified">
@@ -43,6 +43,14 @@ export default {
 </script>
 
 <style scoped>
+a:hover {
+  color: #BBBBBB;
+}
+
+.nav-link {
+  transition: color 1s ease-out;
+}
+
 .navbar-brand {
   font-size: calc(10px + 2.1vmin);
 }

@@ -14,9 +14,7 @@ npm run lint
 
 #### Frontend
 - Navbar Styles
-    - Fix hover color
-    - Make it sticky
-    - Scroll nicely down to each section
+    - Don't let Navbar cover section title
     - Make it mobile-friendly (hamburger open/close)
 - Fix styling for RSVP form
 - Fix styling for Contact form

@@ -30,12 +30,16 @@ export default {
 
 <style>
 /* Styles on page elements */
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-    background: #035d65;
+  background: #035d65;
 }
 
 h1, h2, h3, h4, h5, h6, p, li, a, label {
-    color: white;
+  color: white;
 }
 
 h1 {
