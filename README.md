@@ -13,7 +13,6 @@ npm run lint
 ### TODO:
 
 #### Frontend
-- Make Picture section collapsable
 - Navbar Styles
     - Fix hover color
     - Make it sticky
@@ -25,6 +24,7 @@ npm run lint
 - Pic/Date Styles
     - Make pic extend the width of the screen on mobile
 - Make alerts appear/disappear nicely
+- Reconcile odd styles on mobile
 - Fill in Registry section with actual registries
 
 #### Backend
@@ -44,6 +44,7 @@ npm run lint
 - Floral design on sides of main picture
 - Convert CSS to SASS
 - Convert to Vue-Bootstrap
+- Page Curtain
 - Alt text for images with info
 - Prometheus metrics to Grafana for site up, page views, etc
 - Send email/message if site is down for too long

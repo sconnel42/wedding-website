@@ -1,5 +1,5 @@
 <template>
-  <div id="gallery-pictures" class="row bottom-line">
+  <div id="gallery-pictures" class="row bottom-line collapse">
     <div class="col-sm-4 text-center" v-for="i in imageCols" v-bind:key="i">
       <div v-for="j in imageRows" v-bind:key="j">
         <img
@@ -47,3 +47,9 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.collapse.show {
+    display: inline-flex;
+}
+</style>
