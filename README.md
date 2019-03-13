@@ -13,15 +13,13 @@ npm run lint
 ### TODO:
 
 #### Frontend
-- Navbar Styles
-    - Make it mobile-friendly (hamburger open/close)
 - Pic/Date Styles
     - Make pic extend the width of the screen on mobile
 - Fix styling for RSVP form
 - Fix styling for Contact form
 - Style Registry section
 - Make alerts appear/disappear nicely
-- Reconcile odd styles on mobile
+- Reconcile odd styles on mobile (button by Pictures section)
 - Fill in Registry section with actual registries
 
 #### Backend
@@ -43,6 +41,7 @@ npm run lint
 - Convert CSS to SASS
 - Convert to Vue-Bootstrap
 - Make Big Dipper look right on mobile (make a rotated square)
+- Replace favicon with image of page curtain
 - Alt text for images with info
 - Back to Top button
 - Prometheus metrics to Grafana for site up, page views, etc

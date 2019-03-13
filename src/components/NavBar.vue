@@ -1,38 +1,21 @@
 <template>
   <div class="dark-gray sticky-top">
-    <nav id="wedding-nav" class="navbar navbar-default" role="navigation">
-      <div class="navbar-collapse">
-        <ul class="nav nav-justified">
-          <li class="nav-item flex-center">
-            <p class="nav-link" v-on:click="goTo('about')">About Us</p>
-          </li>
-          <li class="nav-item flex-center">
-            <p class="nav-link" v-on:click="goTo('gallery')">Picture Gallery</p>
-          </li>
-          <li class="nav-item flex-center">
-            <p class="nav-link" v-on:click="goTo('venue')">Church/Venue</p>
-          </li>
-          <li class="nav-item disabled">
-            <p class="nav-link"></p>
-          </li>
-          <li class="flex-center">
-            <p class="navbar-brand fancy-font">Becca & Sean</p>
-          </li>
-          <li class="nav-item disabled">
-            <p class="nav-link"></p>
-          </li>
-          <li class="nav-item flex-center">
-            <p class="nav-link" v-on:click="goTo('rsvp')">RSVP</p>
-          </li>
-          <li class="nav-item flex-center">
-            <p class="nav-link" v-on:click="goTo('registry')">Registry</p>
-          </li>
-          <li class="nav-item flex-center">
-            <p class="nav-link" v-on:click="goTo('contact')">Contact</p>
-          </li>
-        </ul>
+    <nav class="navbar navbar-expand-lg">
+      <p class="navbar-brand fancy-font">Sean & Becca</p>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navLinkList" aria-controls="navLinkList" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navLinkList">
+        <div class="navbar-nav">
+          <p class="nav-link" data-toggle="collapse" data-target="#navLinkList" v-on:click="goTo('about')">About Us</p>
+          <p class="nav-link" data-toggle="collapse" data-target="#navLinkList" v-on:click="goTo('gallery')">Picture Gallery</p>
+          <p class="nav-link" data-toggle="collapse" data-target="#navLinkList" v-on:click="goTo('venue')">Church/Venue</p>
+          <p class="nav-link" data-toggle="collapse" data-target="#navLinkList" v-on:click="goTo('rsvp')">RSVP</p>
+          <p class="nav-link" data-toggle="collapse" data-target="#navLinkList" v-on:click="goTo('registry')">Registry</p>
+          <p class="nav-link" data-toggle="collapse" data-target="#navLinkList" v-on:click="goTo('contact')">Contact</p>
+        </div>
       </div>
-    </nav>
+		</nav>
   </div>
 </template>
 
@@ -44,10 +27,13 @@ export default {
       // Because we have a sticky header, manually scroll to element 
       let element = document.getElementById(elementID);
       let rect = element.getBoundingClientRect();
-      let factor = 40 + (element.clientWidth/25);
+      let factor = 80;
+      if (element.clientWidth < 1000) {
+        factor = 160;
+      }
       let scrollPos = rect.top + window.scrollY - factor;
       window.scrollTo(0, scrollPos);
-    }
+    },
   }
 }
 </script>
@@ -60,9 +46,25 @@ p.nav-link:hover {
 
 .nav-link {
   transition: color 1s ease-out;
+  padding: 0;
+  margin: 0 2%;
 }
 
 .navbar-brand {
   font-size: calc(10px + 2.1vmin);
+  padding: 0;
+  margin: 0 2%;
+}
+
+.navbar-nav {
+  display: -webkit-box;
+}
+
+.navbar-toggler {
+  outline: none;
+}
+
+.fa-bars {
+  color: white;
 }
 </style>
