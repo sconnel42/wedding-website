@@ -32,6 +32,7 @@ npm run lint
 - Create Docker container to serve Vue
 - Create Docker container to serve Express
 - Create Docker DB and save RSVPs to it
+- Tests!
 - Host site on netlify
 
 ### Nice to Have
@@ -41,7 +42,7 @@ npm run lint
 - Floral design on sides of main picture
 - Convert CSS to SASS
 - Convert to Vue-Bootstrap
-- Page Curtain
+- Make Big Dipper look right on mobile (make a rotated square)
 - Alt text for images with info
 - Back to Top button
 - Prometheus metrics to Grafana for site up, page views, etc
@@ -52,3 +53,4 @@ npm run lint
     - Pie chart of people who RSVPed
     - Recent RSVPs
     - Days until wedding
+- Optimize for slow connections

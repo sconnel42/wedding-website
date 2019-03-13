@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="app" class="fadeIn">
     <NavBar/>
     <ContentHeader/>
     <ContentBody/>
@@ -24,6 +24,12 @@ export default {
     NavBar,
     ContentHeader,
     ContentBody
+  },
+  mounted: function() {
+    this.$nextTick(function () {
+      let element = document.getElementById("initial-container");
+      element.classList.add("hide-container");
+    })
   }
 }
 </script>
