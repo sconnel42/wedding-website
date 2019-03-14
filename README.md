@@ -13,23 +13,23 @@ npm run lint
 ### TODO:
 
 #### Frontend
-- Fix styling for RSVP form
-- Fix styling for Contact form
 - Style Registry section
 - Make alerts appear/disappear nicely
 - Reconcile odd styles on mobile (button by Pictures section)
-- Fill in Registry section with actual registries
 
 #### Backend
 - Create BE server (Express?)
 - Send RSVP/Contact form submits BE endpoint
-- Dynamically get all images from folder for frontend
-- Remove public/imgs/
 - Create Docker container to serve Vue
 - Create Docker container to serve Express
 - Create Docker DB and save RSVPs to it
+- Dynamically get all images from folder for frontend
+- Remove public/imgs/
 - Tests!
 - Host site on netlify
+
+### Do Later
+- Fill in Registry section with actual registries
 
 ### Nice to Have
 - Add maps for church/venue

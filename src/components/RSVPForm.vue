@@ -1,33 +1,52 @@
 <template>
   <div id="rsvp" class="row">
-    <div class="col-sm bottom-line">
+    <div class="col-sm padded-bottom bottom-line">
       <div class="text-center">
         <h3 class="padded">RSVP</h3>
       </div>
       <div class="text-center">
-        <h5>
+        <h5 class="padded-bottom-xs">
           Let us know if you will be coming to our wedding!
         </h5>
-        <form @submit.prevent="handleRSVPSubmit">
-          <div class="padded-sm">
-            <label for="rsvpName">Name</label>
-            <input v-model="rsvpData.name" id="rsvpName" placeholder="Name">
+        <p class="padded-bottom-sm">
+          (Please fill out once for each guest)
+        </p>
+        <form action="javascript:void(0);">
+          <div class="form-group row">
+            <div class="col-sm-3"></div>
+            <label for="rsvpName" class="col-sm-1 col-form-label text-align-sm">Name</label>
+            <div class="col-sm-4">
+              <input type="name" class="form-control" id="rsvpName" v-model="rsvpData.name" placeholder="Name">
+            </div>
+            <div class="col-sm-4"></div>
           </div>
-          <div class="padded-sm">
-            <label for="rsvpEmail">Email</label>
-            <input v-model="rsvpData.email" id="rsvpEmail" placeholder="Email">
+          <div class="form-group row">
+            <div class="col-sm-3"></div>
+            <label for="rsvpEmail" class="col-sm-1 col-form-label text-align-sm">Email</label>
+            <div class="col-sm-4">
+              <input type="email" class="form-control" id="rsvpEmail" v-model="rsvpData.email" placeholder="Email">
+            </div>
+            <div class="col-sm-4"></div>
           </div>
-          <div class="padded-sm">
-            <label for="rsvpMeal">Meal Choice</label>
-            <select id="rsvpMeal" v-model="rsvpData.meal">
-              <option v-for="meal in mealOptions" v-bind:key="meal" v-bind:value="meal">
-                {{ meal }}
-              </option>
-            </select>
+          <div class="form-group row">
+            <div class="col-sm-3"></div>
+            <label for="rsvpMeal" class="col-sm-1 col-form-label text-align-sm">Meal</label>
+            <div class="col-sm-4">
+              <select id="rsvpMeal" class="form-control">
+                <option selected hidden>Choose...</option>
+                <option v-for="meal in mealOptions" v-bind:key="meal" v-bind:value="meal">
+                  {{ meal }}
+                </option>
+              </select>
+            <div class="col-sm-4"></div>
+            </div>
           </div>
-          <div class="padded-sm">
-            <input type="submit" value="Submit">
-          </div>
+          <span class="padded" style="margin: 20px;">
+            <button @click="handleRSVPSubmit('accept')" class="btn btn-primary">Accept</button>
+          </span>
+          <span class="padded" style="margin: 20px;">
+            <button @click="handleRSVPSubmit('decline')" class="btn btn-danger">Decline</button>
+          </span>
           <Alert v-bind:isActive="showSuccessAlert" v-bind:activeLength=5 alertType="success"/>
           <Alert v-bind:isActive="showFailureAlert" alertType="error" dismissable/>
         </form>
@@ -59,7 +78,8 @@ export default {
     }
   },
   methods: {
-    handleRSVPSubmit() {
+    handleRSVPSubmit(submitType) {
+      this.rsvpData.isComing = (submitType === 'accept');
       // Handle submit
       // TODO: AJAX call to BE endpoint
       var success = true;
@@ -72,6 +92,7 @@ export default {
         this.rsvpData.name = "";
         this.rsvpData.email = "";
         this.rsvpData.meal = this.mealOptions[0];
+        this.rsvpData.isComing = false;
       } else {
         // Activate failure alert
         this.showFailureAlert = true;
@@ -80,3 +101,27 @@ export default {
   }
 }
 </script>
+<style scoped>
+.padded-bottom {
+	padding-bottom: 20px;
+}
+
+.padded-bottom-sm {
+	padding-bottom: 10px;
+}
+
+.padded-bottom-xs {
+	padding-bottom: 10px;
+}
+
+.text-align-sm {
+  text-align: center;
+}
+
+/* Small devices (tablets, 768px and up) */
+@media (max-width: 768px) {
+  .text-align-sm {
+    text-align: left;
+  }
+}
+</style>

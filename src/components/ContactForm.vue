@@ -5,29 +5,42 @@
         <h3 class="padded">Contact</h3>
       </div>
       <div class="text-center">
-        <h5>
+        <h5 class="padded-bottom">
           Got some questions? Send us a message!
         </h5>
         <form @submit.prevent="handleContactSubmit">
-          <div class="padded-sm">
-            <label for="contactName">Name</label>
-            <input v-model="contactData.name" id="contactName" placeholder="Name">
+          <div class="form-group row">
+            <div class="col-sm-3"></div>
+            <label for="contactName" class="col-sm-1 col-form-label text-align-sm">Name</label>
+            <div class="col-sm-4">
+              <input type="name" class="form-control" id="contactName" v-model="contactData.name" placeholder="Name">
+            </div>
+            <div class="col-sm-4"></div>
           </div>
-          <div class="padded-sm">
-            <label for="contactEmail">Email</label>
-            <input v-model="contactData.email" id="contactEmail" placeholder="Email">
+          <div class="form-group row">
+            <div class="col-sm-3"></div>
+            <label for="contactEmail" class="col-sm-1 col-form-label text-align-sm">Email</label>
+            <div class="col-sm-4">
+              <input type="email" class="form-control" id="contactEmail" v-model="contactData.email" placeholder="Email">
+            </div>
+            <div class="col-sm-4"></div>
           </div>
-          <div class="padded-sm">
-            <label for="contactMessage">Message</label>
-            <textarea
-              id="contactMessage"
-              v-model="contactData.message"
-              placeholder="Put your message here!"
-            ></textarea>
+          <div class="form-group row">
+            <div class="col-sm-3"></div>
+            <label for="contactMessage" class="col-sm-1 col-form-label text-align-sm">Message</label>
+            <div class="col-sm-4">
+              <textarea
+                id="contactMessage"
+                v-model="contactData.message"
+                placeholder="Put your message here!"
+                class="form-control"
+              ></textarea>
+              <div class="col-sm-4"></div>
+            </div>
           </div>
-          <div class="padded-sm">
-            <input type="submit" value="Submit">
-          </div>
+          <span class="padded">
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </span>
           <Alert v-bind:isActive="showSuccessAlert" v-bind:activeLength=5 alertType="success"/>
           <Alert v-bind:isActive="showFailureAlert" alertType="error" dismissable/>
         </form>
@@ -78,3 +91,19 @@ export default {
   }
 }
 </script>
+<style scoped>
+.padded-bottom {
+  padding-bottom: 20px;
+}
+
+.text-align-sm {
+  text-align: center;
+}
+
+/* Small devices (tablets, 768px and up) */
+@media (max-width: 768px) {
+  .text-align-sm {
+    text-align: left;
+  }
+}
+</style>
