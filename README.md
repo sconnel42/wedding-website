@@ -13,8 +13,6 @@ npm run lint
 ### TODO:
 
 #### Frontend
-- Pic/Date Styles
-    - Make pic extend the width of the screen on mobile
 - Fix styling for RSVP form
 - Fix styling for Contact form
 - Style Registry section

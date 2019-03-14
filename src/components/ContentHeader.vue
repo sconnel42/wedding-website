@@ -1,6 +1,6 @@
 <template>
   <div id="content-header" class="row justify-content-center bottom-line">
-    <div class="col-sm-12 text-center">
+    <div class="text-center">
         <img class="img-fluid padded top-padded" :src="`${publicPath}imgs/IMG_20180810.jpg`">
     </div>
     <div class="col-sm-12 text-center my-auto">
