@@ -30,6 +30,7 @@ npm run lint
 ### Do Later
 - Fill in Registry section with actual registries
 - Fix Registry styling
+- Hotels & Wedding Party?
 
 ### Nice to Have
 - Add maps for church/venue
@@ -38,7 +39,7 @@ npm run lint
 - Floral design on sides of main picture
 - Convert CSS to SASS
 - Convert to Vue-Bootstrap
-- Make Big Dipper look right on mobile (make a rotated square)
+- Make Big Dipper look right on mobile (make a rotated rectangle)
 - Replace favicon with image of page curtain
 - Alt text for images with info
 - Prometheus metrics to Grafana for site up, page views, etc
