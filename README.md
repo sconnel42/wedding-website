@@ -41,7 +41,6 @@ npm run lint
 - Make Big Dipper look right on mobile (make a rotated square)
 - Replace favicon with image of page curtain
 - Alt text for images with info
-- Back to Top button
 - Prometheus metrics to Grafana for site up, page views, etc
 - Send email/message if site is down for too long
 

@@ -1,7 +1,7 @@
 <template>
   <div class="dark-gray sticky-top">
     <nav class="navbar navbar-expand-lg">
-      <p class="navbar-brand fancy-font">Sean & Becca</p>
+      <p class="navbar-brand fancy-font" v-on:click="goTo('content-header')">Sean & Becca</p>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navLinkList" aria-controls="navLinkList" aria-expanded="false" aria-label="Toggle navigation">
         <i class="fas fa-bars"></i>
       </button>
@@ -44,6 +44,11 @@ p.nav-link:hover {
   cursor: pointer;
 }
 
+p.navbar-brand:hover {
+  color: #BBBBBB;
+  cursor: pointer;
+}
+
 .nav-link {
   transition: color 1s ease-out;
   padding: 0;
@@ -52,6 +57,7 @@ p.nav-link:hover {
 
 .navbar-brand {
   font-size: calc(10px + 2.1vmin);
+  transition: color 1s ease-out;
   padding: 0;
   margin: 0 2%;
 }
