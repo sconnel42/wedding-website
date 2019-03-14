@@ -9,7 +9,7 @@
     <div class="col-sm-12 text-center" v-for="registry in registries" v-bind:key="registry.src">
       <a v-bind:href="registry.link"><img
         v-bind:src="registry.src"
-        class="img-fluid padded rounded"
+        class="img-fluid padded"
         ></a>
     </div>
   </div>
@@ -34,3 +34,8 @@ export default {
   }
 }
 </script>
+<style scoped>
+img {
+  border-radius: 15%;
+}
+</style>

@@ -13,7 +13,6 @@ npm run lint
 ### TODO:
 
 #### Frontend
-- Style Registry section
 - Make alerts appear/disappear nicely
 - Reconcile odd styles on mobile (button by Pictures section)
 
@@ -30,6 +29,7 @@ npm run lint
 
 ### Do Later
 - Fill in Registry section with actual registries
+- Fix Registry styling
 
 ### Nice to Have
 - Add maps for church/venue
