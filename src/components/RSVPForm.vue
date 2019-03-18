@@ -42,13 +42,15 @@
             </div>
           </div>
           <span class="padded" style="margin: 20px;">
-            <button @click="handleRSVPSubmit('accept')" class="btn btn-primary">Accept</button>
+            <button @click="handleRSVPSubmit('accept')" class="btn btn-primary" v-bind:disabled="showSuccessAlert || showFailureAlert">Accept</button>
           </span>
           <span class="padded" style="margin: 20px;">
-            <button @click="handleRSVPSubmit('decline')" class="btn btn-danger">Decline</button>
+            <button @click="handleRSVPSubmit('decline')" class="btn btn-danger" v-bind:disabled="showSuccessAlert || showFailureAlert">Decline</button>
           </span>
-          <Alert v-bind:isActive="showSuccessAlert" v-bind:activeLength=5 alertType="success"/>
-          <Alert v-bind:isActive="showFailureAlert" alertType="error" dismissable/>
+          <div class="padded-top">
+            <Alert v-bind:isActive="showSuccessAlert" alertType="success"/>
+            <Alert v-bind:isActive="showFailureAlert" alertType="error"/>
+          </div>
         </form>
       </div>
     </div>
@@ -82,11 +84,14 @@ export default {
       this.rsvpData.isComing = (submitType === 'accept');
       // Handle submit
       // TODO: AJAX call to BE endpoint
-      var success = true;
+      var success = this.rsvpData.isComing;
 
       if (success) {
         // Activate success alert
         this.showSuccessAlert = true;
+        setTimeout(() => {
+          this.showSuccessAlert = false;
+        }, 5000);
 
         // Clear form
         this.rsvpData.name = "";
@@ -96,12 +101,19 @@ export default {
       } else {
         // Activate failure alert
         this.showFailureAlert = true;
+        setTimeout(() => {
+          this.showFailureAlert = false;
+        }, 5000);
       }
     },
   }
 }
 </script>
 <style scoped>
+.padded-top {
+  padding-top: 10px;
+}
+
 .padded-bottom {
 	padding-bottom: 20px;
 }

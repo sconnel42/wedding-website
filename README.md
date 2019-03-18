@@ -13,7 +13,6 @@ npm run lint
 ### TODO:
 
 #### Frontend
-- Make alerts appear/disappear nicely
 - Reconcile odd styles on mobile (button by Pictures section)
 
 #### Backend

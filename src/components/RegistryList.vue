@@ -36,6 +36,6 @@ export default {
 </script>
 <style scoped>
 img {
-  border-radius: 15%;
+  border-radius: 1.25rem;
 }
 </style>

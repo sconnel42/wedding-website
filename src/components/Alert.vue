@@ -1,9 +1,6 @@
 <template>
-  <div v-if="visible" v-bind:class="alertClasses[this.alertType]" role=alert>
+  <div v-bind:class="alertClass">
     {{ alertText }}
-    <button type="button" class="close" v-if="dismissable" v-on:click="hideAlert">
-      <span aria-hidden="true">&times;</span>
-    </button>
   </div>
 </template>
 
@@ -15,14 +12,6 @@ export default {
       type: Boolean,
       default: false,
     },
-    dismissable: {
-      type: Boolean,
-      default: false,
-    },
-    activeLength: {
-      type: Number,
-      default: 5
-    },
     alertType: {
       type: String,
       default: "success"
@@ -31,30 +20,32 @@ export default {
   },
   data() {
     return {
-      visible: this.isActive,
-      alertClasses: {
-        "success": "alert alert-success",
-        "error": "alert alert-danger",
-      },
+      alertClass: "myalert alert-success not-visible"
     }
   },
   methods: {
-    showAlert() {
-      this.visible = true;
-      if (this.activeLength > 0) {
-        setTimeout(() => {
-          this.visible = false;
-        }, this.activeLength*1000);
+    getAlertClasses(wasVisible) {
+      if (this.alertType == "success") {
+        if (this.isActive) {
+          return "myalert alert-success appear";
+        } else if (!this.isActive && wasVisible) {
+          return "myalert alert-success disappear";
+        }
+        return "myalert alert-success not-visible";
+      } else {
+        if (this.isActive) {
+          return "myalert alert-danger appear";
+        } else if (!this.isActive && wasVisible) {
+          return "myalert alert-danger disappear";
+        }
+        return "myalert alert-danger not-visible";
       }
-    },
-    hideAlert() {
-      this.visible = false;
     }
   },
   watch: {
     isActive: function(newVal, oldVal) {
-      if (newVal !== oldVal && newVal === true) {
-        this.showAlert();
+      if (newVal !== oldVal) {
+        this.alertClass = this.getAlertClasses(oldVal);
       }
     }
   },
@@ -63,10 +54,68 @@ export default {
       if (this.alertType == "success") {
         return "RSVP submitted successfully!";
       }
-      else {
-        return "An error occurred while submitting the RSVP. Please try again";
-      }
+      return "An error occurred while submitting the RSVP. Please try again.";
     }
   }
 }
 </script>
+<style scoped>
+.myalert {
+  height: 0;
+  max-height: 100px;
+	border-radius: 0.25rem;
+}
+
+.not-visible {
+  padding: 0;
+  margin: 0;
+  opacity: 0;
+}
+
+.appear {
+  overflow: hidden;
+  height: auto;
+	padding: 0.75rem 1.25rem;
+	margin-bottom: 1rem;
+  animation-duration: 1s;
+  animation-name: appearAnimation;
+}
+
+.disappear {
+  overflow: hidden;
+  height: auto;
+  max-height: 0; 
+  animation-duration: 1s;
+  animation-name: disappearAnimation;
+}
+
+@keyframes appearAnimation {
+  from {
+    opacity: 0;
+		max-height: 0;
+    padding: 0;
+    margin-bottom: 0;
+  }
+
+  to {
+    opacity: 1;
+		max-height: 100px;
+  }
+}
+
+@keyframes disappearAnimation {
+  from {
+    opacity: 1;
+		max-height: 100px;
+		padding: 0.75rem 1.25rem;
+		margin-bottom: 1rem;
+  }
+
+  to {
+    opacity: 0;
+		max-height: 0;
+    padding: 0;
+    margin-bottom: 0;
+  }
+}
+</style>

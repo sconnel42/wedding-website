@@ -39,10 +39,12 @@
             </div>
           </div>
           <span class="padded">
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-primary" v-bind:disabled="showSuccessAlert || showFailureAlert">Submit</button>
           </span>
-          <Alert v-bind:isActive="showSuccessAlert" v-bind:activeLength=5 alertType="success"/>
-          <Alert v-bind:isActive="showFailureAlert" alertType="error" dismissable/>
+          <div class="padded-top">
+            <Alert v-bind:isActive="showSuccessAlert" alertType="success"/>
+            <Alert v-bind:isActive="showFailureAlert" alertType="error"/>
+          </div>
         </form>
       </div>
     </div>
@@ -78,6 +80,9 @@ export default {
       if (success) {
         // Activate success alert
         this.showSuccessAlert = true;
+        setTimeout(() => {
+          this.showSuccessAlert = false;
+        }, 5000);
 
         // Clear form
         this.contactData.name = "";
@@ -86,12 +91,19 @@ export default {
       } else {
         // Activate failure alert
         this.showFailureAlert = true;
+        setTimeout(() => {
+          this.showFailureAlert = false;
+        }, 5000);
       }
     }
   }
 }
 </script>
 <style scoped>
+.padded-top {
+  padding-top: 10px;
+}
+
 .padded-bottom {
   padding-bottom: 20px;
 }
