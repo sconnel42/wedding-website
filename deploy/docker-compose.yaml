@@ -1,0 +1,21 @@
+# Use postgres/example user/password credentials
+version: '3.1'
+
+services:
+  db:
+    image: postgres
+    restart: always
+    ports:
+      - "25432:5432"
+    environment:
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+    volumes:
+        - wedding-data:/var/lib/postgresql/data
+
+volumes:
+  wedding-data:
+
+networks:
+  default:
+    external:
+      name: wedding-net
