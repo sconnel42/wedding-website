@@ -1,4 +1,5 @@
 const express = require('express');
+const RSVP = require('./models/rsvp');
 const app = express();
 
 app.use(express.json());
@@ -27,6 +28,11 @@ app.post('/rsvp', (req, res, next) => {
 		err.statusCode = 400;
 		return next(err);
   }
+
+  // Create a new rsvp
+  RSVP.create({ name, email, meal, isComing }).then(rsvp => {
+    console.log("RSVP's auto-generated ID:", rsvp.id);
+  });
 
 	// TODO: Write RSVP to DB
   return res.json({"message": "RSVP accepted!\n"});

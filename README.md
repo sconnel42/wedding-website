@@ -13,14 +13,17 @@ npm run lint
 ### TODO:
 
 #### Backend
-- Create RSVP from endpoint
+- Generate migrations from models file (sequelize-auto-generate)
+- Make tables be underscored
+- Error handling around creating a new RSVP
 - Have contact endpoint send me an email
 - Send RSVP/Contact form submits to BE endpoint
-- Create Docker container to serve Vue
 - Create Docker container to serve Express
+- Create Docker container to serve Vue
 - Dynamically get all images from folder for frontend
 - Remove public/imgs/
 - Tests!
+- CI pipeline
 - Host site on netlify
 
 ### Do Later
