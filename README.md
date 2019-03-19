@@ -12,15 +12,12 @@ npm run lint
 
 ### TODO:
 
-#### Frontend
-- Reconcile odd styles on mobile (button by Pictures section)
-
 #### Backend
 - Create BE server (Express?)
+- Create Docker DB and save RSVPs to it
 - Send RSVP/Contact form submits BE endpoint
 - Create Docker container to serve Vue
 - Create Docker container to serve Express
-- Create Docker DB and save RSVPs to it
 - Dynamically get all images from folder for frontend
 - Remove public/imgs/
 - Tests!

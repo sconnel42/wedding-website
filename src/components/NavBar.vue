@@ -50,7 +50,7 @@ p.navbar-brand:hover {
 }
 
 .nav-link {
-  transition: color 1s ease-out;
+  transition: color 0.3s ease-out;
   padding: 0;
   margin: 0 2%;
 }
@@ -72,5 +72,11 @@ p.navbar-brand:hover {
 
 .fa-bars {
   color: white;
+}
+
+@media only screen and (max-width: 761px) {
+  .nav-link {
+    font-size: calc(10px + 1.5vmin);
+  }
 }
 </style>
