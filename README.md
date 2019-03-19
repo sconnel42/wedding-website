@@ -13,7 +13,6 @@ npm run lint
 ### TODO:
 
 #### Backend
-- Create BE server (Express?)
 - Create Docker DB and save RSVPs to it
 - Send RSVP/Contact form submits BE endpoint
 - Create Docker container to serve Vue
