@@ -13,8 +13,6 @@ npm run lint
 ### TODO:
 
 #### Backend
-- Generate migrations from models file (sequelize-auto-generate)
-- Make tables be underscored
 - Error handling around creating a new RSVP
 - Have contact endpoint send me an email
 - Send RSVP/Contact form submits to BE endpoint
@@ -50,3 +48,5 @@ npm run lint
     - Recent RSVPs
     - Days until wedding
 - Optimize for slow connections
+- Generate migrations from models file (sequelize-auto-generate)
+- Make tables be underscored
