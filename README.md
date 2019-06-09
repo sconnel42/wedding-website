@@ -13,7 +13,6 @@ npm run lint
 ### TODO:
 
 #### Backend
-- Have Contact endpoint send me an email
 - Create Docker container to serve Express
 - Create Docker container to serve Vue
 - Dynamically get all images from folder for frontend
@@ -23,6 +22,7 @@ npm run lint
 - Host site on netlify
 
 ### Do Later
+- Modify RSVP Form with better info
 - Fill in Registry section with actual registries
 - Fix Registry styling
 - Hotels & Wedding Party?
