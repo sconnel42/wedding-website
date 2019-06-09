@@ -6,9 +6,11 @@ app.use(express.json());
 
 
 // Error handling
+// eslint-disable-next-line
 app.use(function(err, req, res, next) {
-	// Log error message in the console
+  // eslint-disable-next-line
   console.error(err.message);
+
   if (!err.statusCode) {
 		err.statusCode = 500;
 	}
@@ -31,6 +33,7 @@ app.post('/rsvp', (req, res, next) => {
 
   // Create a new rsvp
   RSVP.create({ name, email, meal, isComing }).then(rsvp => {
+    // eslint-disable-next-line
     console.log("RSVP's auto-generated ID:", rsvp.id);
   });
 
@@ -57,5 +60,6 @@ app.post('/contact', (req, res, next) => {
 
 // Start server
 app.listen(process.env.SERVER_PORT, () => {
+  // eslint-disable-next-line
   console.log(`Listening on port ${process.env.SERVER_PORT}`)
 });

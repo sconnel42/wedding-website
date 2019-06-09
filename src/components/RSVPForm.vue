@@ -80,31 +80,58 @@ export default {
     }
   },
   methods: {
+    showSuccess() {
+      // Activate success alert
+      this.showSuccessAlert = true;
+      setTimeout(() => {
+        this.showSuccessAlert = false;
+      }, 5000);
+
+      // Clear form
+      this.rsvpData.name = "";
+      this.rsvpData.email = "";
+      this.rsvpData.meal = this.mealOptions[0];
+      this.rsvpData.isComing = false;
+    },
+    showFailure() {
+      // Activate failure alert
+      this.showFailureAlert = true;
+      setTimeout(() => {
+        this.showFailureAlert = false;
+      }, 5000);
+    },
     handleRSVPSubmit(submitType) {
       this.rsvpData.isComing = (submitType === 'accept');
-      // Handle submit
-      // TODO: AJAX call to BE endpoint
-      var success = this.rsvpData.isComing;
 
-      if (success) {
-        // Activate success alert
-        this.showSuccessAlert = true;
-        setTimeout(() => {
-          this.showSuccessAlert = false;
-        }, 5000);
-
-        // Clear form
-        this.rsvpData.name = "";
-        this.rsvpData.email = "";
-        this.rsvpData.meal = this.mealOptions[0];
-        this.rsvpData.isComing = false;
-      } else {
-        // Activate failure alert
-        this.showFailureAlert = true;
-        setTimeout(() => {
-          this.showFailureAlert = false;
-        }, 5000);
-      }
+      // Submit request to create RSVP to backend
+      fetch('http://localhost:8080/rsvp', {
+        method: 'post',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          name: this.rsvpData.name,
+          email: this.rsvpData.email,
+          meal: this.rsvpData.meal,
+          isComing: this.rsvpData.isComing
+        })
+      }).then(
+        // eslint-disable-next-line
+        (response) => {
+          // Show the correct help text
+          if (response.status < 300) {
+            this.showSuccess();
+          } else {
+            this.showFailure();
+          }
+        }
+      ).catch(
+        (err) => {
+          // eslint-disable-next-line
+          console.log(err);
+          this.showFailure();
+        }
+      );
     },
   }
 }

@@ -13,9 +13,8 @@ npm run lint
 ### TODO:
 
 #### Backend
-- Error handling around creating a new RSVP
-- Have contact endpoint send me an email
-- Send RSVP/Contact form submits to BE endpoint
+- Send Contact form submits to BE endpoint
+- Have Contact endpoint send me an email
 - Create Docker container to serve Express
 - Create Docker container to serve Vue
 - Dynamically get all images from folder for frontend
