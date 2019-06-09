@@ -32,29 +32,35 @@ app.post('/rsvp', (req, res, next) => {
   }
 
   // Create a new rsvp
-  RSVP.create({ name, email, meal, isComing }).then(rsvp => {
+  RSVP.create({ name, email, meal, isComing }).then(
     // eslint-disable-next-line
-    console.log("RSVP's auto-generated ID:", rsvp.id);
-  });
+    rsvp => {
+      return res.json({"message": `RSVP created with id: {rsvp.id}`});
+    }
+  ).catch(
+    err => {
+      // eslint-disable-next-line
+      console.error(err.message);
 
-	// TODO: Write RSVP to DB
-  return res.json({"message": "RSVP accepted!\n"});
+      let error = new Error('RSVP failed to be created!');
+      error.statusCode = 500;
+      return next(error);
+    }
+  );
 });
 
 // Send a contact message
 app.post('/contact', (req, res, next) => {
-  const name = req.body.name;
-  const email = req.body.email;
   const message = req.body.message;
 
-  if (!name || !email || !message) {
+  if (message) {
     let err = new Error('Missing parameter');
 		err.statusCode = 400;
 		return next(err);
   }
 
 	// TODO: Send an email (text?) to us
-  return res.json({"message": "RSVP accepted!\n"});
+  return res.json({"message": "Message sent!"});
 });
 
 

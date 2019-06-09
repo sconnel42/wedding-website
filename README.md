@@ -13,7 +13,6 @@ npm run lint
 ### TODO:
 
 #### Backend
-- Send Contact form submits to BE endpoint
 - Have Contact endpoint send me an email
 - Create Docker container to serve Express
 - Create Docker container to serve Vue

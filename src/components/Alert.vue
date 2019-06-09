@@ -52,9 +52,9 @@ export default {
   computed: {
     alertText: function() {
       if (this.alertType == "success") {
-        return "RSVP submitted successfully!";
+        return "Submit successful!";
       }
-      return "An error occurred while submitting the RSVP. Please try again.";
+      return "An error occurred while submitting. Please try again.";
     }
   }
 }

@@ -72,29 +72,54 @@ export default {
     }
   },
   methods: {
+    showSuccess() {
+      // Activate success alert
+      this.showSuccessAlert = true;
+      setTimeout(() => {
+        this.showSuccessAlert = false;
+      }, 5000);
+
+      // Clear form
+      this.contactData.name = "";
+      this.contactData.email = "";
+      this.contactData.message = "";
+    },
+    showFailure() {
+      // Activate failure alert
+      this.showFailureAlert = true;
+      setTimeout(() => {
+        this.showFailureAlert = false;
+      }, 5000);
+    },
     handleContactSubmit() {
-      // Handle submit
-      // TODO: Send AJAX call to server
-      var success = false;
-
-      if (success) {
-        // Activate success alert
-        this.showSuccessAlert = true;
-        setTimeout(() => {
-          this.showSuccessAlert = false;
-        }, 5000);
-
-        // Clear form
-        this.contactData.name = "";
-        this.contactData.email = "";
-        this.contactData.message = "";
-      } else {
-        // Activate failure alert
-        this.showFailureAlert = true;
-        setTimeout(() => {
-          this.showFailureAlert = false;
-        }, 5000);
-      }
+      // Submit request to send contact message from backend
+      fetch('http://localhost:8080/contact', {
+        method: 'post',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          name: this.contactData.name,
+          email: this.contactData.email,
+          message: this.contactData.message,
+        })
+      }).then(
+        // eslint-disable-next-line
+        (response) => {
+          // Show the correct help text
+          if (response.status < 300) {
+            this.showSuccess();
+          } else {
+            this.showFailure();
+          }
+        }
+      ).catch(
+        (err) => {
+          // eslint-disable-next-line
+          console.log(err);
+          this.showFailure();
+        }
+      );
     }
   }
 }
