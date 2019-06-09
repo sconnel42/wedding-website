@@ -13,13 +13,14 @@ npm run lint
 ### TODO:
 
 #### Backend
-- Create Docker container to serve Express
-- Create Docker container to serve Vue
+- Proxy to both frontend & api using nginx
+- Serve images separately using ngnix
 - Dynamically get all images from folder for frontend
 - Remove public/imgs/
 - Tests!
 - CI pipeline
 - Host site on netlify
+- Ensure DB is persisted on redeploys
 
 ### Do Later
 - Modify RSVP Form with better info
