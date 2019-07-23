@@ -10,10 +10,14 @@ npm run test
 npm run lint
 ```
 
+### Setup for Dev work
+- Add `127.0.0.1    wedding-db` to /etc/hosts
+- Run `cp sample.env .env` and fill in DB password
+
 ### TODO:
 
 #### Backend
-- Connect to DB inside web sever container
+- Do setup steps inside docker container (for proper DB connection setup)
 - Serve express via nginx
 - Dynamically get all images from folder for frontend
 - Remove public/imgs/
