@@ -1,10 +1,19 @@
+const path = require('path');
 const express = require('express');
 const RSVP = require('./models/rsvp');
 const twilio = require('twilio');
 const smsClient = twilio(process.env.TWILIO_API_KEY, process.env.TWILIO_API_SECRET);
+const history = require('connect-history-api-fallback');
 const app = express();
+const staticFileMiddleware = express.static(path.join(__dirname, '../dist'));
 
 app.use(express.json());
+
+app.use(staticFileMiddleware);
+app.use(history({
+    index: '/dist/index.html'
+}));
+app.use(staticFileMiddleware);
 
 
 // Error handling
@@ -20,8 +29,12 @@ app.use(function(err, req, res, next) {
 	res.status(err.statusCode).send(err.message);
 });
 
+app.get('/', (req, res) => {
+  res.sendFile('index.html', { root: path.join(__dirname, '../dist') });
+});
+
 // Put an RSVP into the DB
-app.post('/rsvp', (req, res, next) => {
+app.post('/api/rsvp', (req, res, next) => {
   const name = req.body.name;
   const email = req.body.email;
   const meal = req.body.meal;
@@ -52,7 +65,7 @@ app.post('/rsvp', (req, res, next) => {
 });
 
 // Send a contact message
-app.post('/contact', (req, res, next) => {
+app.post('/api/contact', (req, res, next) => {
   const name = req.body.name;
   const contactMessage = req.body.message;
 

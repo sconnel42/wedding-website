@@ -13,8 +13,8 @@ npm run lint
 ### TODO:
 
 #### Backend
-- Proxy to both frontend & api using nginx
-- Serve images separately using ngnix
+- Connect to DB inside web sever container
+- Serve express via nginx
 - Dynamically get all images from folder for frontend
 - Remove public/imgs/
 - Tests!

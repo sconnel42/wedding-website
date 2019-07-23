@@ -1,5 +1,0 @@
-FROM sconnel42/wedding-base:latest
-
-EXPOSE 3000
-
-CMD [ "npm", "run", "serve-be"]

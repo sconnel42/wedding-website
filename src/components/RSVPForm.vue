@@ -104,7 +104,7 @@ export default {
       this.rsvpData.isComing = (submitType === 'accept');
 
       // Submit request to create RSVP to backend
-      fetch('http://localhost:8080/rsvp', {
+      fetch('/api/rsvp', {
         method: 'post',
         headers: {
           'Content-Type': 'application/json'

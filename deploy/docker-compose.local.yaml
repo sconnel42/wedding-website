@@ -2,15 +2,23 @@
 version: '3.1'
 
 services:
-  db:
-    image: postgres
-    restart: always
-    ports:
-      - "25432:5432"
+  web-server:
+    image: sconnel42/web-server
+    container_name: web-server
     environment:
-      POSTGRES_PASSWORD: ${DB_PASSWORD}
-    volumes:
-        - wedding-data:/var/lib/postgresql/data
+      NODE_ENV: "production"
+      PROJECT_ROOT: ${PROJECT_ROOT}
+      PORT: ${SERVER_PORT}
+      SERVER_PORT: ${SERVER_PORT}
+      DB_DIALECT: ${DB_DIALECT}
+      USE_PROD: ${USE_PROD}
+      DB_CONNECTION_STRING: ${DB_CONNECTION_STRING}
+      TWILIO_API_KEY: ${TWILIO_API_KEY}
+      TWILIO_API_SECRET: ${TWILIO_API_SECRET}
+      TWILIO_PHONE_NUMBER: ${TWILIO_PHONE_NUMBER}
+      ADMIN_PHONE_NUMBER: ${ADMIN_PHONE_NUMBER}
+    ports:
+      - "8080:80"
 
 volumes:
   wedding-data:

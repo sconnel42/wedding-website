@@ -93,7 +93,7 @@ export default {
     },
     handleContactSubmit() {
       // Submit request to send contact message from backend
-      fetch('http://localhost:8080/contact', {
+      fetch('/api/contact', {
         method: 'post',
         headers: {
           'Content-Type': 'application/json'
