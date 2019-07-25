@@ -31,7 +31,8 @@ npm run lint
 ### TODO:
 
 #### Backend
-- Tests!
+- Add tests for sending a contact message
+- Add Vue tests
 - CI pipeline
 - Host site on netlify
 - Ensure DB is persisted on redeploys

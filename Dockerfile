@@ -3,4 +3,4 @@ RUN npm install && npm run build
 
 COPY --chown=node:node . .
 EXPOSE 8080
-CMD [ "node", "/app/server/app.js" ]
+CMD [ "node", "/app/server/server.js" ]

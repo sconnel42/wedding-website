@@ -40,7 +40,7 @@ app.post('/api/rsvp', (req, res, next) => {
   const meal = req.body.meal;
   const isComing = Boolean(req.body.isComing);
 
-  if (!name || !email || !meal || !isComing) {
+  if (!name || !email || !meal || req.body.isComing === undefined) {
     let err = new Error('Missing parameter');
 		err.statusCode = 400;
 		return next(err);
@@ -95,9 +95,4 @@ app.post('/api/contact', (req, res, next) => {
   );
 });
 
-
-// Start server
-app.listen(process.env.SERVER_PORT, () => {
-  // eslint-disable-next-line
-  console.log(`Listening on port ${process.env.SERVER_PORT}`)
-});
+module.exports = app
