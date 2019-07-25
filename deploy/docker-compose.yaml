@@ -40,7 +40,7 @@ services:
       TWILIO_PHONE_NUMBER: ${TWILIO_PHONE_NUMBER}
       ADMIN_PHONE_NUMBER: ${ADMIN_PHONE_NUMBER}
     ports:
-      - "8080:80"
+      - "8080:3000"
 
 volumes:
   wedding-data:

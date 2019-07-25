@@ -10,14 +10,27 @@ npm run test
 npm run lint
 ```
 
-### Setup for Dev work
-- Add `127.0.0.1    wedding-db` to /etc/hosts
+### Developing on host
 - Run `cp sample.env .env` and fill in DB password
+- Make sure `DB_HOST="localhost"` and `DB_PORT="25432"`
+- Run make `docker-build && make host-setup` to bring up the DB
+- Run `npm run serve` to run the FE code
+- Run `npm run serve-be` in a separate terminal to run the BE code
+- Go to localhost:8080 to see the app!
+
+
+### Running via Docker
+- Run `cp sample.env .env` and fill in DB password
+- Make sure `DB_HOST="wedding-db"` and `DB_PORT="5432"`
+- Run `make compose-setup` to build the Docker containers and bring everything up
+- Bring the containers up and down with `make compose-up` and `make compose-down`, respectively
+- Run `make compose-clean` to tear everything down
+- You can still see the app via localhost:8080
+
 
 ### TODO:
 
 #### Backend
-- Make sure localdev still works as before
 - Tests!
 - CI pipeline
 - Host site on netlify
