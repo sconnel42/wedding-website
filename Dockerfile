@@ -1,6 +1,4 @@
-FROM node:10
-COPY ./ /app
-WORKDIR /app
+FROM sconnel42/app-base
 RUN npm install && npm run build
 
 COPY --chown=node:node . .

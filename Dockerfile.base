@@ -1,0 +1,7 @@
+FROM node:10
+COPY ./ /app
+WORKDIR /app
+
+ENV PROJECT_ROOT="/app"
+
+RUN apt-get update && apt-get install -y postgresql-client

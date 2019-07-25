@@ -5,4 +5,5 @@ if [ -z "$DB_CONNECTION_STRING" ]; then
     exit 1
 fi
 
+echo psql $DB_STRING -f ${PROJECT_ROOT}/scripts/createdb.sql
 psql $DB_STRING -f ${PROJECT_ROOT}/scripts/createdb.sql

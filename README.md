@@ -17,14 +17,13 @@ npm run lint
 ### TODO:
 
 #### Backend
-- Do setup steps inside docker container (for proper DB connection setup)
-- Serve express via nginx
-- Dynamically get all images from folder for frontend
-- Remove public/imgs/
+- Make sure localdev still works as before
 - Tests!
 - CI pipeline
 - Host site on netlify
 - Ensure DB is persisted on redeploys
+- Dynamically get all images from folder for frontend
+- Remove public/imgs/
 
 ### Do Later
 - Modify RSVP Form with better info

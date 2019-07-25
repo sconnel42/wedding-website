@@ -11,6 +11,19 @@ services:
       POSTGRES_PASSWORD: ${DB_PASSWORD}
     volumes:
         - wedding-data:/var/lib/postgresql/data
+  wedding-db-setup:
+    image: sconnel42/app-base
+    environment:
+      USE_PROD: ${USE_PROD}
+      DB_DIALECT: ${DB_DIALECT}
+      DB_NAME: ${DB_NAME}
+      DB_USERNAME: ${DB_USERNAME}
+      DB_PASSWORD: ${DB_PASSWORD}
+      DB_HOST: ${DB_HOST}
+      DB_PORT: ${DB_PORT}
+      DB_STRING: ${DB_STRING}
+      DB_CONNECTION_STRING: ${DB_CONNECTION_STRING}
+    command: ["/bin/bash","scripts/setup.sh"]
   web-server:
     image: sconnel42/web-server
     container_name: web-server
@@ -35,4 +48,4 @@ volumes:
 networks:
   default:
     external:
-      name: wedding-net
+      name: ${DOCKER_NET}
