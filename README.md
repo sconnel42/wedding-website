@@ -31,7 +31,6 @@ npm run lint
 ### TODO:
 
 #### Backend
-- Add tests for sending a contact message
 - Add Vue tests
 - CI pipeline
 - Host site on netlify
@@ -41,7 +40,7 @@ npm run lint
 
 ### Do Later
 - Modify RSVP Form with better info
-- Fill in Registry section with actual registries
+- Fill in Registry section with link to Zola Registry
 - Fix Registry styling
 - Hotels & Wedding Party?
 
@@ -50,13 +49,14 @@ npm run lint
 - Pop pictures out
 - Thin floral bar just below nav bar
 - Floral design on sides of main picture
+- JS to ES6
 - Convert CSS to SASS
 - Convert to Vue-Bootstrap
 - Make Big Dipper look right on mobile (make a rotated rectangle)
 - Replace favicon with image of page curtain
 - Alt text for images with info
 - Prometheus metrics to Grafana for site up, page views, etc
-- Send email/message if site is down for too long
+- Send message if site is down for too long
 
 - Stats page on wedding stuff?
     - xx/xxx People have RSVPed
