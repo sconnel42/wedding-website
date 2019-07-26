@@ -1,5 +1,14 @@
 module.exports = {
   presets: [
-    '@vue/app'
+    '@vue/app',
+    [
+      '@babel/preset-env',
+      {
+        'useBuiltIns': 'usage',
+        'corejs': {
+          'version': '2'
+        }
+      }
+    ]
   ]
 }

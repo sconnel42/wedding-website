@@ -1,8 +1,8 @@
 const path = require('path');
 const express = require('express');
 const RSVP = require('./models/rsvp');
-const twilio = require('twilio');
-const smsClient = twilio(process.env.TWILIO_API_KEY, process.env.TWILIO_API_SECRET);
+const Twilio = require('twilio');
+const smsClient = new Twilio(process.env.TWILIO_API_KEY, process.env.TWILIO_API_SECRET);
 const history = require('connect-history-api-fallback');
 const app = express();
 const staticFileMiddleware = express.static(path.join(__dirname, '../dist'));
@@ -88,8 +88,8 @@ app.post('/api/contact', (req, res, next) => {
       let error = new Error('An error occurred while trying to send text!');
 
       // eslint-disable-next-line
-      console.log(err);
-      error.statusCode = 400;
+      console.error(err);
+      error.statusCode = 500;
       return next(error);
     }
   );
