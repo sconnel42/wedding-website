@@ -1,9 +1,8 @@
-const jest = require('jest');
 const request = require('supertest');
 
-jest.mock('../models/rsvp');
+jest.mock('../../models/rsvp');
 jest.mock('twilio');
-const app = require('../app');
+const app = require('../../app');
 
 // Test valid/invalid GET requests
 describe('Test expected paths', () => {
