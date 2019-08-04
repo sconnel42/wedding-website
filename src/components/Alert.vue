@@ -19,8 +19,15 @@ export default {
 
   },
   data () {
+    let classes = ''
+    if (this.alertType === 'success') {
+      classes = 'myalert alert-success not-visible'
+    } else {
+      classes = 'myalert alert-danger not-visible'
+    }
+
     return {
-      alertClass: 'myalert alert-success not-visible'
+      alertClass: classes
     }
   },
   methods: {
