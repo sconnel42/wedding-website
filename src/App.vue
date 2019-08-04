@@ -25,10 +25,10 @@ export default {
     ContentHeader,
     ContentBody
   },
-  mounted: function() {
+  mounted: function () {
     this.$nextTick(function () {
-      let element = document.getElementById("initial-container");
-      element.classList.add("hide-container");
+      let element = document.getElementById('initial-container')
+      element.classList.add('hide-container')
     })
   }
 }

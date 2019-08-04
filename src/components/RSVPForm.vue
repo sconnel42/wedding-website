@@ -65,7 +65,7 @@ export default {
   components: {
     Alert
   },
-  data() {
+  data () {
     return {
       mealOptions: ['Chicken', 'Pork'],
       rsvpData: {
@@ -76,32 +76,32 @@ export default {
       },
       rsvpFormUrl: 'http://localhost:9000/submit-rsvp',
       showSuccessAlert: false,
-      showFailureAlert: false,
+      showFailureAlert: false
     }
   },
   methods: {
-    showSuccess() {
+    showSuccess () {
       // Activate success alert
-      this.showSuccessAlert = true;
+      this.showSuccessAlert = true
       setTimeout(() => {
-        this.showSuccessAlert = false;
-      }, 5000);
+        this.showSuccessAlert = false
+      }, 5000)
 
       // Clear form
-      this.rsvpData.name = "";
-      this.rsvpData.email = "";
-      this.rsvpData.meal = this.mealOptions[0];
-      this.rsvpData.isComing = false;
+      this.rsvpData.name = ''
+      this.rsvpData.email = ''
+      this.rsvpData.meal = this.mealOptions[0]
+      this.rsvpData.isComing = false
     },
-    showFailure() {
+    showFailure () {
       // Activate failure alert
-      this.showFailureAlert = true;
+      this.showFailureAlert = true
       setTimeout(() => {
-        this.showFailureAlert = false;
-      }, 5000);
+        this.showFailureAlert = false
+      }, 5000)
     },
-    handleRSVPSubmit(submitType) {
-      this.rsvpData.isComing = (submitType === 'accept');
+    handleRSVPSubmit (submitType) {
+      this.rsvpData.isComing = (submitType === 'accept')
 
       // Submit request to create RSVP to backend
       fetch('/api/rsvp', {
@@ -120,19 +120,19 @@ export default {
         (response) => {
           // Show the correct help text
           if (response.status < 300) {
-            this.showSuccess();
+            this.showSuccess()
           } else {
-            this.showFailure();
+            this.showFailure()
           }
         }
       ).catch(
         (err) => {
           // eslint-disable-next-line
           console.log(err);
-          this.showFailure();
+          this.showFailure()
         }
-      );
-    },
+      )
+    }
   }
 }
 </script>
@@ -142,15 +142,15 @@ export default {
 }
 
 .padded-bottom {
-	padding-bottom: 20px;
+  padding-bottom: 20px;
 }
 
 .padded-bottom-sm {
-	padding-bottom: 10px;
+  padding-bottom: 10px;
 }
 
 .padded-bottom-xs {
-	padding-bottom: 10px;
+  padding-bottom: 10px;
 }
 
 .text-align-sm {

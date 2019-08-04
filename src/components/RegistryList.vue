@@ -18,7 +18,7 @@
 <script>
 export default {
   name: 'RegistryList',
-  data() {
+  data () {
     return {
       registries: [
         {

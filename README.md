@@ -28,12 +28,16 @@ npm run lint
 - You can still see the app via localhost:8080
 
 
+### Running tests
+- Run `npm run test:unit` to run the unit tests
+
 ### TODO:
 
 #### Backend
 - Add Vue tests
 - CI pipeline
 - Host site on netlify
+- Bug: Meal choice not set in DB correctly
 - Ensure DB is persisted on redeploys
 - Dynamically get all images from folder for frontend
 - Remove public/imgs/

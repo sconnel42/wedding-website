@@ -27,17 +27,17 @@
 <script>
 export default {
   name: 'GalleryHeader',
-  data() {
+  data () {
     return {
       galleryOpen: false
     }
   },
   methods: {
-    toggleText: function() {
+    toggleText: function () {
       if (this.galleryOpen) {
-        return "Hide";
+        return 'Hide'
       }
-      return "Show";
+      return 'Show'
     }
   }
 }

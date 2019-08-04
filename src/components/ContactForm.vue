@@ -59,7 +59,7 @@ export default {
   components: {
     Alert
   },
-  data() {
+  data () {
     return {
       contactData: {
         name: '',
@@ -68,30 +68,30 @@ export default {
       },
       contactFormUrl: 'http://localhost:9000/send-message',
       showSuccessAlert: false,
-      showFailureAlert: false,
+      showFailureAlert: false
     }
   },
   methods: {
-    showSuccess() {
+    showSuccess () {
       // Activate success alert
-      this.showSuccessAlert = true;
+      this.showSuccessAlert = true
       setTimeout(() => {
-        this.showSuccessAlert = false;
-      }, 5000);
+        this.showSuccessAlert = false
+      }, 5000)
 
       // Clear form
-      this.contactData.name = "";
-      this.contactData.email = "";
-      this.contactData.message = "";
+      this.contactData.name = ''
+      this.contactData.email = ''
+      this.contactData.message = ''
     },
-    showFailure() {
+    showFailure () {
       // Activate failure alert
-      this.showFailureAlert = true;
+      this.showFailureAlert = true
       setTimeout(() => {
-        this.showFailureAlert = false;
-      }, 5000);
+        this.showFailureAlert = false
+      }, 5000)
     },
-    handleContactSubmit() {
+    handleContactSubmit () {
       // Submit request to send contact message from backend
       fetch('/api/contact', {
         method: 'post',
@@ -101,25 +101,24 @@ export default {
         body: JSON.stringify({
           name: this.contactData.name,
           email: this.contactData.email,
-          message: this.contactData.message,
+          message: this.contactData.message
         })
       }).then(
-        // eslint-disable-next-line
         (response) => {
           // Show the correct help text
           if (response.status < 300) {
-            this.showSuccess();
+            this.showSuccess()
           } else {
-            this.showFailure();
+            this.showFailure()
           }
         }
       ).catch(
         (err) => {
           // eslint-disable-next-line
           console.log(err);
-          this.showFailure();
+          this.showFailure()
         }
-      );
+      )
     }
   }
 }

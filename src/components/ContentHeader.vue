@@ -14,7 +14,7 @@ export default {
   name: 'ContentHeader',
   data: function () {
     return {
-        publicPath: process.env.BASE_URL
+      publicPath: process.env.BASE_URL
     }
   }
 }

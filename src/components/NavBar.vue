@@ -15,7 +15,7 @@
           <p class="nav-link" data-toggle="collapse" data-target="#navLinkList" v-on:click="goTo('contact')">Contact</p>
         </div>
       </div>
-		</nav>
+    </nav>
   </div>
 </template>
 
@@ -23,17 +23,17 @@
 export default {
   name: 'NavBar',
   methods: {
-    goTo: function(elementID) {
-      // Because we have a sticky header, manually scroll to element 
-      let element = document.getElementById(elementID);
-      let rect = element.getBoundingClientRect();
-      let factor = 80;
+    goTo: function (elementID) {
+      // Because we have a sticky header, manually scroll to element
+      let element = document.getElementById(elementID)
+      let rect = element.getBoundingClientRect()
+      let factor = 80
       if (element.clientWidth < 1000) {
-        factor = 160;
+        factor = 160
       }
-      let scrollPos = rect.top + window.scrollY - factor;
-      window.scrollTo(0, scrollPos);
-    },
+      let scrollPos = rect.top + window.scrollY - factor
+      window.scrollTo(0, scrollPos)
+    }
   }
 }
 </script>

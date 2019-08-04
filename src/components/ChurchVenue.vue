@@ -42,14 +42,14 @@ export default {
   name: 'ChurchVenue',
   data: function () {
     return {
-        churchImg: {
-          src: `${process.env.BASE_URL}imgs/church.jpg`,
-          alt: 'St Elizabeth Seton'
-        },
-        venueImg: {
-          src: `${process.env.BASE_URL}imgs/venue.jpg`,
-          alt: 'Monte Bello Estate'
-        },
+      churchImg: {
+        src: `${process.env.BASE_URL}imgs/church.jpg`,
+        alt: 'St Elizabeth Seton'
+      },
+      venueImg: {
+        src: `${process.env.BASE_URL}imgs/venue.jpg`,
+        alt: 'Monte Bello Estate'
+      }
     }
   }
 }

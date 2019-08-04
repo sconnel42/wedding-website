@@ -11,13 +11,13 @@
 </template>
 
 <script>
-import AboutUs from './AboutUs.vue';
-import GalleryHeader from './GalleryHeader.vue';
-import GalleryContent from './GalleryContent.vue';
-import ChurchVenue from './ChurchVenue.vue';
-import RSVPForm from './RSVPForm.vue';
-import RegistryList from './RegistryList.vue';
-import ContactForm from './ContactForm.vue';
+import AboutUs from './AboutUs.vue'
+import GalleryHeader from './GalleryHeader.vue'
+import GalleryContent from './GalleryContent.vue'
+import ChurchVenue from './ChurchVenue.vue'
+import RSVPForm from './RSVPForm.vue'
+import RegistryList from './RegistryList.vue'
+import ContactForm from './ContactForm.vue'
 
 export default {
   name: 'ContentBody',
@@ -28,7 +28,7 @@ export default {
     ChurchVenue,
     RSVPForm,
     RegistryList,
-    ContactForm,
+    ContactForm
   }
 }
 </script>

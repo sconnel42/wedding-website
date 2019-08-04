@@ -15,34 +15,34 @@
 <script>
 export default {
   name: 'GalleryContent',
-  data() {
+  data () {
     return {
       imageCols: 3,
       images: [
         {
-          src: `${process.env.BASE_URL}imgs/IMG_20181019.jpg`,
+          src: `${process.env.BASE_URL}imgs/IMG_20181019.jpg`
         },
         {
-          src: `${process.env.BASE_URL}imgs/IMG_20181021.jpg`,
+          src: `${process.env.BASE_URL}imgs/IMG_20181021.jpg`
         },
         {
-          src: `${process.env.BASE_URL}imgs/IMG_20181118.jpg`,
+          src: `${process.env.BASE_URL}imgs/IMG_20181118.jpg`
         },
         {
-          src: `${process.env.BASE_URL}imgs/IMG_20181122.jpg`,
+          src: `${process.env.BASE_URL}imgs/IMG_20181122.jpg`
         },
         {
-          src: `${process.env.BASE_URL}imgs/IMG_20181201.jpg`,
+          src: `${process.env.BASE_URL}imgs/IMG_20181201.jpg`
         },
         {
-          src: `${process.env.BASE_URL}imgs/IMG_20190102.jpg`,
-        },
-      ],
+          src: `${process.env.BASE_URL}imgs/IMG_20190102.jpg`
+        }
+      ]
     }
   },
   computed: {
     imageRows: function () {
-      return Math.ceil(this.images.length/this.imageCols);
+      return Math.ceil(this.images.length / this.imageCols)
     }
   }
 }
