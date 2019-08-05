@@ -5,7 +5,7 @@
         <h3 class="padded">Contact</h3>
       </div>
       <div class="text-center">
-        <h5 class="padded-bottom">
+        <h5 id="form-header" class="padded-bottom">
           Got some questions? Send us a message!
         </h5>
         <form @submit.prevent="handleContactSubmit">
@@ -39,7 +39,7 @@
             </div>
           </div>
           <span class="padded">
-            <button type="submit" class="btn btn-primary" v-bind:disabled="showSuccessAlert || showFailureAlert">Submit</button>
+            <button type="submit" id="submit-button" class="btn btn-primary" v-bind:disabled="showSuccessAlert || showFailureAlert">Submit</button>
           </span>
           <div class="padded-top">
             <Alert v-bind:isActive="showSuccessAlert" alertType="success"/>
