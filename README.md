@@ -34,7 +34,7 @@ npm run lint
 ### TODO:
 
 #### Backend
-- Add Vue tests for ContentBody, ContentHeader, GalleryContent, GalleryHeader, NavBar, RegistryList, RSVPForm
+- Add Vue tests for ContentHeader, GalleryContent, GalleryHeader, NavBar, RegistryList, RSVPForm
 - CI pipeline
 - Host site on netlify
 - Bug: Meal choice not set in DB correctly
