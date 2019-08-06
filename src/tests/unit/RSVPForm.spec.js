@@ -4,6 +4,6 @@ import RSVPForm from '../../components/RSVPForm.vue'
 describe('RSVPForm', () => {
   test('should render content correctly', () => {
     const wrapper = shallowMount(RSVPForm, {})
-    expect(wrapper).not.toBeNull()
+    expect(wrapper.exists()).toBe(true)
   })
 })

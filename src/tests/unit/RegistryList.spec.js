@@ -4,6 +4,6 @@ import RegistryList from '../../components/RegistryList.vue'
 describe('RegistryList', () => {
   test('should render content correctly', () => {
     const wrapper = shallowMount(RegistryList, {})
-    expect(wrapper).not.toBeNull()
+    expect(wrapper.exists()).toBe(true)
   })
 })

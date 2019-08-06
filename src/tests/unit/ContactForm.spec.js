@@ -4,7 +4,7 @@ import ContactForm from '../../components/ContactForm.vue'
 describe('ContactForm', () => {
   test('should render content correctly', () => {
     const wrapper = shallowMount(ContactForm, {})
-    expect(wrapper).not.toBeNull()
+    expect(wrapper.exists()).toBe(true)
     expect(wrapper.find('[id="form-header"]').text()).toEqual(expect.stringContaining('questions'))
   })
 
@@ -17,7 +17,7 @@ describe('ContactForm', () => {
     })
 
     const wrapper = shallowMount(ContactForm, {})
-    expect(wrapper).not.toBeNull()
+    expect(wrapper.exists()).toBe(true)
 
     // Expected values
     let expectedName = 'Guest 1'

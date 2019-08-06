@@ -4,7 +4,7 @@ import ChurchVenue from '../../components/ChurchVenue.vue'
 describe('ChurchVenue', () => {
   test('should render content correctly', () => {
     const wrapper = shallowMount(ChurchVenue, {})
-    expect(wrapper).not.toBeNull()
+    expect(wrapper.exists()).toBe(true)
 
     let churchInfo = wrapper.find('[id="church-info"]')
     expect(churchInfo.text()).toEqual(expect.stringContaining('Catholic Church'))

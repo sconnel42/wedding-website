@@ -4,6 +4,6 @@ import GalleryHeader from '../../components/GalleryHeader.vue'
 describe('GalleryHeader', () => {
   test('should render content correctly', () => {
     const wrapper = shallowMount(GalleryHeader, {})
-    expect(wrapper).not.toBeNull()
+    expect(wrapper.exists()).toBe(true)
   })
 })

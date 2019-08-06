@@ -11,7 +11,7 @@ import RSVPForm from '../../components/RSVPForm.vue'
 describe('ContentBody', () => {
   test('should render content correctly', () => {
     const wrapper = shallowMount(ContentBody, {})
-    expect(wrapper).not.toBeNull()
+    expect(wrapper.exists()).toBe(true)
 
     // Check that all the expected children exist
     expect(wrapper.find(AboutUs).exists()).toBe(true)

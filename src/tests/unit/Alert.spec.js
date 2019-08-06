@@ -4,7 +4,7 @@ import Alert from '../../components/Alert.vue'
 describe('Alert', () => {
   test('default content should be invisible', () => {
     const wrapper = mount(Alert, {})
-    expect(wrapper).not.toBeNull()
+    expect(wrapper.exists()).toBe(true)
 
     const alertTextClasses = wrapper.find('div').classes()
     expect(alertTextClasses).toContain('alert-success')
@@ -14,7 +14,7 @@ describe('Alert', () => {
   test('correct content and styling when enabling successful alert', () => {
     // Mount component
     const wrapper = mount(Alert, {})
-    expect(wrapper).not.toBeNull()
+    expect(wrapper.exists()).toBe(true)
 
     // Update props to show alert
     wrapper.setProps({
@@ -38,7 +38,7 @@ describe('Alert', () => {
         alertType: 'error'
       }
     })
-    expect(wrapper).not.toBeNull()
+    expect(wrapper.exists()).toBe(true)
 
     // Update props to show alert
     wrapper.setProps({
@@ -63,7 +63,7 @@ describe('Alert', () => {
         isActive: true
       }
     })
-    expect(wrapper).not.toBeNull()
+    expect(wrapper.exists()).toBe(true)
 
     // Update props to hide alert
     wrapper.setProps({
