@@ -5,7 +5,7 @@
         <h3 class="padded">RSVP</h3>
       </div>
       <div class="text-center">
-        <h5 class="padded-bottom-xs">
+        <h5 id="form-header" class="padded-bottom-xs">
           Let us know if you will be coming to our wedding!
         </h5>
         <p class="padded-bottom-sm">
@@ -32,9 +32,9 @@
             <div class="col-sm-3"></div>
             <label for="rsvpMeal" class="col-sm-1 col-form-label text-align-sm">Meal</label>
             <div class="col-sm-4">
-              <select id="rsvpMeal" class="form-control">
+              <select id="rsvpMeal" v-model="rsvpData.meal" @change="setMeal($event.target.selectedIndex)" class="form-control">
                 <option selected hidden>Choose...</option>
-                <option v-for="meal in mealOptions" v-bind:key="meal" v-bind:value="meal">
+                <option v-for="meal in mealOptions" v-bind:key="meal">
                   {{ meal }}
                 </option>
               </select>
@@ -42,10 +42,10 @@
             </div>
           </div>
           <span class="padded" style="margin: 20px;">
-            <button @click="handleRSVPSubmit('accept')" class="btn btn-primary" v-bind:disabled="showSuccessAlert || showFailureAlert">Accept</button>
+            <button @click="handleRSVPSubmit('accept')" id="accept-button" class="btn btn-primary" v-bind:disabled="showSuccessAlert || showFailureAlert">Accept</button>
           </span>
           <span class="padded" style="margin: 20px;">
-            <button @click="handleRSVPSubmit('decline')" class="btn btn-danger" v-bind:disabled="showSuccessAlert || showFailureAlert">Decline</button>
+            <button @click="handleRSVPSubmit('decline')" id="decline-button" class="btn btn-danger" v-bind:disabled="showSuccessAlert || showFailureAlert">Decline</button>
           </span>
           <div class="padded-top">
             <Alert v-bind:isActive="showSuccessAlert" alertType="success"/>
@@ -74,12 +74,16 @@ export default {
         meal: 'Chicken',
         isComing: false
       },
-      rsvpFormUrl: 'http://localhost:9000/submit-rsvp',
       showSuccessAlert: false,
       showFailureAlert: false
     }
   },
   methods: {
+    setMeal (idx) {
+      // Subtract 1 since the first element is a message, not
+      // an option
+      this.rsvpData.meal = this.mealOptions[idx - 1]
+    },
     showSuccess () {
       // Activate success alert
       this.showSuccessAlert = true

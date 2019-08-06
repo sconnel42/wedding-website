@@ -8,7 +8,7 @@ describe('ContactForm', () => {
     expect(wrapper.find('[id="form-header"]').text()).toEqual(expect.stringContaining('questions'))
   })
 
-  test.only('submit generates expected request', () => {
+  test('submit generates expected request', () => {
     const fetchMock = jest.fn()
     global.fetch = fetchMock.mockImplementation(() => {
       return new Promise((resolve, reject) => {
