@@ -34,8 +34,7 @@ npm run lint
 ### TODO:
 
 #### Backend
-- CI pipeline
-- Host site on netlify
+- Host site on netlify with CI/CD
 - Ensure DB is persisted on redeploys
 - Dynamically get all images from folder for frontend
 - Remove public/imgs/
