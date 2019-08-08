@@ -1,6 +1,8 @@
 # Wedding Website
 A website for our wedding, written with Vue and Bootstrap
 
+[![CircleCI](https://circleci.com/gh/sconnel42/wedding-website/tree/master.svg?style=svg)](https://circleci.com/gh/sconnel42/wedding-website/tree/master)
+
 ### Supported vue-cli commands
 ```
 npm install
