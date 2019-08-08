@@ -34,8 +34,10 @@ npm run lint
 ### TODO:
 
 #### Backend
-- Host site on netlify with CI/CD
+- CI/CD with CircleCI
+- Deploy to DigitalOcean Droplet
 - Ensure DB is persisted on redeploys
+    - Or use DB backups
 - Dynamically get all images from folder for frontend
 - Remove public/imgs/
 
