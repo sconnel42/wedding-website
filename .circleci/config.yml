@@ -2,15 +2,12 @@ version: 2
 jobs:
   build:
     docker:
-      - image: debian:stretch
-
+      - image: circleci/node:8.10.0
     steps:
       - checkout
-
       - run:
           name: Run Tests
-          command: npm install && npm run test:unit
-
+          command: npm install && npm test
       - run:
           name: Deploy to Droplet
           command: date
