@@ -1,21 +1,21 @@
-const request = require('supertest');
+const request = require('supertest')
 
-jest.mock('../../models/rsvp');
-jest.mock('twilio');
-const app = require('../../app');
+jest.mock('../../models/rsvp')
+jest.mock('twilio')
+const app = require('../../app')
 
 // Test valid/invalid GET requests
 describe('Test expected paths', () => {
   test('Root Path returns 200', () => {
     return request(app).get('/').then(response => {
-      expect(response.statusCode).toBe(200);
-    });
+      expect(response.statusCode).toBe(200)
+    })
   })
-  
+
   test('Bad path returns 404', () => {
     return request(app).get('/blerg').then(response => {
-      expect(response.statusCode).toBe(404);
-    });
+      expect(response.statusCode).toBe(404)
+    })
   })
 })
 
@@ -32,13 +32,12 @@ describe('Test create RSVP', () => {
       })
       .set('Accept', 'application/json')
       .then(response => {
-        expect(response.body.message).not.toBeNull();
+        expect(response.body.message).not.toBeNull()
         expect(response.body.message).toEqual(expect.stringContaining('RSVP created'))
-        expect(response.statusCode).toBe(200);
-
-    });
+        expect(response.statusCode).toBe(200)
+      })
   })
-  
+
   test('Failed create returns a 500', () => {
     return request(app)
       .post('/api/rsvp')
@@ -50,19 +49,18 @@ describe('Test create RSVP', () => {
       })
       .set('Accept', 'application/json')
       .then(response => {
-        expect(response.statusCode).toBe(500);
-
-    });
+        expect(response.statusCode).toBe(500)
+      })
   })
 
   test('Missing param returns 400', () => {
     return request(app)
       .post('/api/rsvp')
-      .send({name: 'john'})
+      .send({ name: 'john' })
       .set('Accept', 'application/json')
       .then(response => {
-        expect(response.statusCode).toBe(400);
-    });
+        expect(response.statusCode).toBe(400)
+      })
   })
 })
 
@@ -73,15 +71,14 @@ describe('Test send Contact message', () => {
       .post('/api/contact')
       .send({
         name: 'Guest1',
-        message: 'Hi there everybody!',
+        message: 'Hi there everybody!'
       })
       .set('Accept', 'application/json')
       .then(response => {
-        expect(response.statusCode).toBe(200);
-        expect(response.body.message).not.toBeNull();
+        expect(response.statusCode).toBe(200)
+        expect(response.body.message).not.toBeNull()
         expect(response.body.message).toEqual(expect.stringContaining('Contact message sent'))
-
-    });
+      })
   })
 
   test('Failed send returns a 500', () => {
@@ -89,22 +86,21 @@ describe('Test send Contact message', () => {
       .post('/api/contact')
       .send({
         name: 'BadGuest',
-        message: 'blerg',
+        message: 'blerg'
       })
       .set('Accept', 'application/json')
       .then(response => {
-        expect(response.statusCode).toBe(500);
-
-    });
+        expect(response.statusCode).toBe(500)
+      })
   })
 
   test('Missing param returns 400', () => {
     return request(app)
       .post('/api/contact')
-      .send({name: 'john'})
+      .send({ name: 'john' })
       .set('Accept', 'application/json')
       .then(response => {
-        expect(response.statusCode).toBe(400);
-    });
+        expect(response.statusCode).toBe(400)
+      })
   })
 })
