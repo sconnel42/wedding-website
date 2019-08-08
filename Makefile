@@ -36,3 +36,8 @@ compose-down:
 compose-clean:
 	docker-compose -p wedding -f deploy/docker-compose.yaml down -v --rmi local
 	docker network rm wedding-net
+
+circle-test:
+	node --version
+	npm --version
+	npm install && npm run test:unit

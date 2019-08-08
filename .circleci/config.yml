@@ -7,7 +7,7 @@ jobs:
       - checkout
       - run:
           name: Run Tests
-          command: echo "Node version: $(node --version)" && echo "npm version: $(npm --version)" && npm install && npm run test:unit
+          command: make circle-test
       - run:
           name: Deploy to Droplet
           command: date
