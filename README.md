@@ -35,8 +35,10 @@ npm run lint
 ### TODO:
 
 #### Backend
-- Deploy to DigitalOcean Droplet
-- Load DB state from backup on deploy
+- Start up DigitalOcean Droplet with SSH key for my machine
+- Put SSH key in CircleCI
+- Deploy to Droplet (SSH into Droplet and run docker-compose)
+- Create Droplet startup script (including loading latest DB backup into Droplet)
 - Create cron job for DB backups to Google Drive
 - Dynamically get all images from folder for frontend
 - Remove public/imgs/
@@ -58,6 +60,7 @@ npm run lint
 - Prometheus metrics to Grafana for site up, page views, etc
 - Send message if site is down for too long
 
+
 - Stats page on wedding stuff?
     - xx/xxx People have RSVPed
     - Pie chart of people who RSVPed
@@ -67,5 +70,6 @@ npm run lint
 - Express JS to ES6
 - Convert CSS to SASS
 - Convert to Vue-Bootstrap
+- Actually have FE and BE in separate Docker containers
 - Make tables be underscored
 - Generate migrations from models file (sequelize-auto-generate)
