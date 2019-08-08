@@ -34,10 +34,10 @@ npm run lint
 ### TODO:
 
 #### Backend
-- CI/CD with CircleCI
+- Fix failing test on CircleCI
 - Deploy to DigitalOcean Droplet
-- Ensure DB is persisted on redeploys
-    - Or use DB backups
+- Load DB state from backup on deploy
+- Create cron job for DB backups to Google Drive
 - Dynamically get all images from folder for frontend
 - Remove public/imgs/
 
