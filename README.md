@@ -30,11 +30,11 @@ npm run lint
 
 ### Running tests
 - Run `npm run test:unit` to run the unit tests
+- To run the tests as they do on CircleCI, run `make compose-test`
 
 ### TODO:
 
 #### Backend
-- Fix failing test on CircleCI
 - Deploy to DigitalOcean Droplet
 - Load DB state from backup on deploy
 - Create cron job for DB backups to Google Drive

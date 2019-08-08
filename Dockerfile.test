@@ -1,0 +1,10 @@
+FROM circleci/node:10.16.1
+
+USER circleci
+
+COPY --chown=circleci:circleci ./ /home/circleci/app
+WORKDIR /home/circleci/app
+
+ENV PROJECT_ROOT="/home/circleci/app"
+
+CMD ["make", "circle-test"]

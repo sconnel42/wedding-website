@@ -37,7 +37,11 @@ compose-clean:
 	docker-compose -p wedding -f deploy/docker-compose.yaml down -v --rmi local
 	docker network rm wedding-net
 
+compose-test:
+	docker build -f ${PROJECT_ROOT}/Dockerfile.test -t sconnel42/wedding-test .
+	docker run sconnel42/wedding-test:latest
+
 circle-test:
 	node --version
 	npm --version
-	npm install && npm run test:unit
+	npm install && npm run build && npm run test:unit
