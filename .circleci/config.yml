@@ -7,7 +7,7 @@ jobs:
       - checkout
       - run:
           name: Run Tests
-          command: npm install && npm test
+          command: npm install && npm run test:unit
       - run:
           name: Deploy to Droplet
           command: date
