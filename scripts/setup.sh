@@ -1,4 +1,4 @@
-#/bin/bash
+#!/bin/bash
 
 # Only do setup steps if DB doesn't already exist
 if psql ${DB_STRING} -lqt | cut -d \| -f 1 | grep -wq wedding_db; then

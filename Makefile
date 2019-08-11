@@ -8,8 +8,7 @@ create-tables:
 	${PROJECT_ROOT}/node_modules/.bin/sequelize model:create --name RSVP --attributes id:uuid,name:string,email:string,meal:string,isComing:boolean
 
 docker-build:
-	docker build -f ${PROJECT_ROOT}/Dockerfile.base -t sconnel42/app-base .
-	docker build -f ${PROJECT_ROOT}/Dockerfile -t sconnel42/web-server .
+	./scripts/build.sh
 
 # Running on host
 host-setup:
@@ -45,3 +44,5 @@ circle-test:
 	node --version
 	npm --version
 	npm install && npm run build && npm run test:unit
+
+circle-test-build: circle-test docker-build
