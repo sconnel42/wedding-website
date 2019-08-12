@@ -24,3 +24,6 @@ echo "Pushing image ${SERVER_IMAGE}:${VERSION}"
 docker tag ${SERVER_IMAGE}:latest ${SERVER_IMAGE}:${VERSION}
 docker push ${SERVER_IMAGE}:${VERSION}
 docker push ${SERVER_IMAGE}:latest
+
+# Logout to wipe docker creds
+docker logout
