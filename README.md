@@ -37,9 +37,12 @@ npm run lint
 ### TODO:
 
 #### Backend
+- CircleCI: Base image be the docker one
+- CircleCI: Run tests via Docker
+- CircleCI: Build new images after Tests
 - Start up DigitalOcean Droplet with SSH key for my machine
 - Put SSH key in CircleCI
-- Deploy to Droplet (SSH into Droplet and run docker-compose)
+- Deploy to Droplet (SSH into Droplet, pull latest images, and run docker-compose)
 - Create Droplet startup script (including loading latest DB backup into Droplet)
 - Create cron job for DB backups to Google Drive
 - Dynamically get all images from folder for frontend
