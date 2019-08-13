@@ -23,7 +23,7 @@ echo "Copy up .env"
 scp .env ${DROPLET_USER}@${DROPLET_IP}:/home/${DROPLET_USER}/.env
 
 echo "Create SSH key for CCI"
-ssh ${DROPLET_USER}@${DROPLET_IP} 'ssh-keygen -t rsa -N "" -f /home/deployuser/.ssh/deploy_id_rsa && cat /home/deployuser/.ssh/deploy_id_rsa.pub >> authorized_keys'
+ssh ${DROPLET_USER}@${DROPLET_IP} 'ssh-keygen -t rsa -N "" -f /home/deployuser/.ssh/deploy_id_rsa && cat /home/deployuser/.ssh/deploy_id_rsa.pub >> /home/deployuser/.ssh/authorized_keys'
 
 echo "Copy SSH key back to local machine"
 scp ${DROPLET_USER}@${DROPLET_IP}:/home/${DROPLET_USER}/.ssh/deploy_id_rsa ~/.ssh/
