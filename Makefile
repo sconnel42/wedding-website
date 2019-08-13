@@ -51,4 +51,5 @@ circle-deploy:
 	ssh-keygen -R ${DROPLET_IP}
 	ssh-keyscan ${DROPLET_IP} >> ~/.ssh/known_hosts
 	scp ${CIRCLE_WORKING_DIRECTORY}/deploy/docker-compose.yaml ${DROPLET_USER}@${DROPLET_IP}:/home/${DROPLET_USER}/docker-compose.yaml
-	ssh ${DROPLET_USER}@${DROPLET_IP} 'source .env && docker-compose -f docker-compose.yaml up -d'
+	scp ${CIRCLE_WORKING_DIRECTORY}/scripts/deploy.sh ${DROPLET_USER}@${DROPLET_IP}:/home/${DROPLET_USER}/deploy.sh
+	ssh ${DROPLET_USER}@${DROPLET_IP} './deploy.sh'
