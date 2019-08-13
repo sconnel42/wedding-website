@@ -50,6 +50,7 @@ circle-test-build: circle-test docker-build
 circle-deploy:
 	ssh-keygen -R ${DROPLET_IP}
 	ls /home/circleci/.ssh
+	cat /home/circleci/.ssh/id_rsa_5b8cc5d70e0a9bf6f84a3c33034a8b1b
 	ssh-keyscan ${DROPLET_IP} >> /home/circleci/.ssh/known_hosts
 	cat /home/circleci/.ssh/known_hosts
 	#echo "${DROPLET_IP} ssh-rsa ${DROPLET_FINGERPRINT}" >> ~/.ssh/known_hosts
