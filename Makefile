@@ -49,11 +49,8 @@ circle-test-build: circle-test docker-build
 
 circle-deploy:
 	ssh-keygen -R ${DROPLET_IP}
-	ls /home/circleci
+	ls /home/circleci/project
 	ssh-keyscan ${DROPLET_IP} >> /home/circleci/.ssh/known_hosts
-	cat /home/circleci/.ssh/known_hosts
-	#echo "${DROPLET_IP} ssh-rsa ${DROPLET_FINGERPRINT}" >> ~/.ssh/known_hosts
 	ssh ${DROPLET_USER}@${DROPLET_IP} 'pwd && ls -a'
-	#ssh -i /home/circleci/.ssh/id_rsa_3e50f4ed8ae8c97f6c85c61c76cbe9ae ${DROPLET_USER}@${DROPLET_IP} 'ls'
 	scp docker-compose.yaml ${DROPLET_USER}@${DROPLET_IP}:/home/${DROPLET_USER}/docker-compose.yaml
 	#ssh -v ${DROPLET_USER}@${DROPLET_IP} 'source .env && docker-compose -f docker-compose.yaml up -d'
