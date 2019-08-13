@@ -1,5 +1,5 @@
 # Wedding Website
-A website for our wedding, written with Vue and Bootstrap
+A website for our wedding, written with Vue and Bootstrap and deployed onto DigitalOcean
 
 [![CircleCI](https://circleci.com/gh/sconnel42/wedding-website/tree/master.svg?style=svg)](https://circleci.com/gh/sconnel42/wedding-website/tree/master)
 
@@ -34,10 +34,19 @@ npm run lint
 - Run `npm run test:unit` to run the unit tests
 - To run the tests as they do on CircleCI, run `make compose-test`
 
+
+### Deploying
+- After starting up a Droplet, run `./scripts/do_droplet_init.sh DROPLET_IP` where `DROPLET_IP` is the IP address of the new Droplet
+- Follow the instructions to put the correct SSH key onto CCI
+- Make sure to update the `DROPLET_IP` env var on CCI too
+- Then push code and it'll go all the way to the Droplet if it passes the tests
+
 ### TODO:
 
 #### Backend
-- Create Droplet startup script (including loading latest DB backup into Droplet)
+- Put Droplet behind domain
+- Create initial DB backup from list of names on Google Drive
+- Load backup into DB if creating it fresh
 - Create cron job for DB backups to Google Drive
 - Dynamically get all images from folder for frontend
 - Remove public/imgs/
@@ -50,21 +59,18 @@ npm run lint
 
 ### Nice to Have
 - Add maps for church/venue
-- Pop pictures out
+- Pop pictures out on click
 - Thin floral bar just below nav bar
 - Floral design on sides of main picture
 - Make Big Dipper look right on mobile (make a rotated rectangle)
 - Replace favicon with image of page curtain
-- Alt text for images with info
-- Prometheus metrics to Grafana for site up, page views, etc
-- Send message if site is down for too long
-
-
 - Stats page on wedding stuff?
     - xx/xxx People have RSVPed
     - Pie chart of people who RSVPed
     - Recent RSVPs
     - Days until wedding
+- Metrics for site up, page views, etc
+- Send message if site is down for too long
 - Optimize for slow connections
 - Express JS to ES6
 - Convert CSS to SASS
@@ -72,3 +78,4 @@ npm run lint
 - Actually have FE and BE in separate Docker containers
 - Make tables be underscored
 - Generate migrations from models file (sequelize-auto-generate)
+- Alt text for images with info

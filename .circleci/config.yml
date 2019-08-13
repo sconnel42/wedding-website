@@ -8,5 +8,8 @@ jobs:
       - setup_remote_docker
       - add_ssh_keys
       - run:
+          name: Run Tests & Build Docker Image
+          command: make circle-test-build
+      - run:
           name: Deploy to Droplet
           command: make circle-deploy
