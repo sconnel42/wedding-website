@@ -49,9 +49,6 @@ circle-test-build: circle-test docker-build
 
 circle-deploy:
 	ssh-keygen -R ${DROPLET_IP}
-	echo "Work Dir: ${CIRCLE_WORKING_DIRECTORY}"
-	ls /home/circleci/project
-	ssh-keyscan ${DROPLET_IP} >> /home/circleci/.ssh/known_hosts
-	ssh ${DROPLET_USER}@${DROPLET_IP} 'pwd && ls -a'
-	scp /home/circleci/project/deploy/docker-compose.yaml ${DROPLET_USER}@${DROPLET_IP}:/home/${DROPLET_USER}/docker-compose.yaml
-	#ssh -v ${DROPLET_USER}@${DROPLET_IP} 'source .env && docker-compose -f docker-compose.yaml up -d'
+	ssh-keyscan ${DROPLET_IP} >> ~/.ssh/known_hosts
+	scp ${CIRCLE_WORKING_DIRECTORY}/deploy/docker-compose.yaml ${DROPLET_USER}@${DROPLET_IP}:/home/${DROPLET_USER}/docker-compose.yaml
+	ssh ${DROPLET_USER}@${DROPLET_IP} 'source .env && docker-compose -f docker-compose.yaml up -d'
