@@ -37,8 +37,6 @@ npm run lint
 ### TODO:
 
 #### Backend
-- Put SSH key in CircleCI
-- Deploy to Droplet (SSH into Droplet, run docker-compose)
 - Create Droplet startup script (including loading latest DB backup into Droplet)
 - Create cron job for DB backups to Google Drive
 - Dynamically get all images from folder for frontend
