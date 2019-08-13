@@ -48,5 +48,6 @@ circle-test:
 circle-test-build: circle-test docker-build
 
 circle-deploy:
+	ssh-keyscan ${DROPLET_IP} >> ~/.ssh/known_hosts
 	scp docker-compose.yaml ${DROPLET_USER}@${DROPLET_IP}:/home/${DROPLET_USER}/docker-compose.yaml
 	ssh ${DROPLET_USER}@${DROPLET_IP} 'source .env && docker-compose -f docker-compose.yaml up -d'
