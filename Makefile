@@ -52,4 +52,4 @@ circle-deploy:
 	ssh-keyscan ${DROPLET_IP} >> ~/.ssh/known_hosts
 	scp ${CIRCLE_WORKING_DIRECTORY}/deploy/docker-compose.yaml ${DROPLET_USER}@${DROPLET_IP}:/home/${DROPLET_USER}/docker-compose.yaml
 	scp ${CIRCLE_WORKING_DIRECTORY}/scripts/deploy.sh ${DROPLET_USER}@${DROPLET_IP}:/home/${DROPLET_USER}/deploy.sh
-	ssh ${DROPLET_USER}@${DROPLET_IP} './deploy.sh'
+	ssh ${DROPLET_USER}@${DROPLET_IP} 'sh deploy.sh'
