@@ -46,3 +46,7 @@ circle-test:
 	npm install && npm run build && npm run test:unit
 
 circle-test-build: circle-test docker-build
+
+circle-deploy:
+	scp docker-compose.yaml ${DROPLET_USER}@${DROPLET_IP}:/home/${DROPLET_USER}/docker-compose.yaml
+	ssh ${DROPLET_USER}@${DROPLET_IP} 'source .env && docker-compose -f docker-compose.yaml up -d'

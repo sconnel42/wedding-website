@@ -11,4 +11,4 @@ jobs:
           command: make circle-test-build
       - run:
           name: Deploy to Droplet
-          command: date
+          command: make circle-deploy
