@@ -51,4 +51,4 @@ circle-deploy:
 	ssh-keyscan ${DROPLET_IP} >> ~/.ssh/known_hosts
 	echo "${DROPLET_IP} ssh-rsa ${DROPLET_FINGERPRINT}" >> ~/.ssh/known_hosts
 	scp docker-compose.yaml ${DROPLET_USER}@${DROPLET_IP}:/home/${DROPLET_USER}/docker-compose.yaml
-	ssh ${DROPLET_USER}@${DROPLET_IP} 'source .env && docker-compose -f docker-compose.yaml up -d'
+	ssh -v ${DROPLET_USER}@${DROPLET_IP} 'source .env && docker-compose -f docker-compose.yaml up -d'
