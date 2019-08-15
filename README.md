@@ -44,12 +44,13 @@ npm run lint
 ### TODO:
 
 #### Backend
-- Put Droplet behind domain
-- Create initial DB backup from list of names on Google Drive
-- Load backup into DB if creating it fresh
+- Make token.js available to db-setup container
+- Path to refresh access token
 - Create cron job for DB backups to Google Drive
+- Load backup into DB if creating it fresh
 - Dynamically get all images from folder for frontend
 - Remove public/imgs/
+- Put Droplet behind domain
 
 ### Do Later
 - Modify RSVP Form with better info

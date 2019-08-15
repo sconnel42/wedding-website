@@ -2,9 +2,13 @@
 
 # Only do setup steps if DB doesn't already exist
 if psql ${DB_STRING} -lqt | cut -d \| -f 1 | grep -wq wedding_db; then
-    echo "Database exists, skipping setup."
+    echo "Database exists, skipping DB creation."
 else
     npm install
     sh ${PROJECT_ROOT}/scripts/createdb.sh
     ${PROJECT_ROOT}/node_modules/.bin/sequelize db:migrate
 fi
+
+# After the DB is created, populate it
+npm install
+node ${PROJECT_ROOT}/scripts/populateDB.js

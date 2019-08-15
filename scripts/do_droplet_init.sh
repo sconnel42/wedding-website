@@ -19,8 +19,9 @@ scp scripts/droplet_setup.sh root@${DROPLET_IP}:/droplet_setup.sh
 echo "Execute droplet_setup"
 ssh root@${DROPLET_IP} 'sh /droplet_setup.sh'
 
-echo "Copy up .env"
+echo "Copy up files"
 scp .env ${DROPLET_USER}@${DROPLET_IP}:/home/${DROPLET_USER}/.env
+scp token.json ${DROPLET_USER}@${DROPLET_IP}:/home/${DROPLET_USER}/tokens/token.json
 
 echo "Create SSH key for CCI"
 ssh ${DROPLET_USER}@${DROPLET_IP} 'ssh-keygen -t rsa -N "" -f /home/deployuser/.ssh/deploy_id_rsa && cat /home/deployuser/.ssh/deploy_id_rsa.pub >> /home/deployuser/.ssh/authorized_keys'

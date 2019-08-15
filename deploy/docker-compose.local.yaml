@@ -12,8 +12,9 @@ services:
     volumes:
         - wedding-data:/var/lib/postgresql/data
   wedding-db-setup:
-    image: sconnel42/app-base
+    image: sconnel42/app-base:latest
     environment:
+      NODE_ENV: "production"
       USE_PROD: ${USE_PROD}
       DB_DIALECT: ${DB_DIALECT}
       DB_NAME: ${DB_NAME}
@@ -23,7 +24,13 @@ services:
       DB_PORT: ${DB_PORT}
       DB_STRING: ${DB_STRING}
       DB_CONNECTION_STRING: ${DB_CONNECTION_STRING}
+      GOOGLE_API_KEY: ${GOOGLE_API_KEY}
+      GOOGLE_API_SECRET: ${GOOGLE_API_SECRET}
+      GOOGLE_REDIRECT_URI: ${GOOGLE_REDIRECT_URI}
+      GOOGLE_SHEET_ID: ${GOOGLE_SHEET_ID}
     command: ["/bin/bash","scripts/setup.sh"]
+    volumes:
+      - ~/tokens:/app/tokens
 
 volumes:
   wedding-data:
