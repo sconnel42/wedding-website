@@ -6,13 +6,13 @@ services:
     image: postgres
     restart: always
     ports:
-      - "25432:5432"
+      - "5432:5432"
     environment:
       POSTGRES_PASSWORD: ${DB_PASSWORD}
     volumes:
         - wedding-data:/var/lib/postgresql/data
   wedding-db-setup:
-      image: sconnel42/app-base:latest
+    image: sconnel42/app-base:latest
     environment:
       NODE_ENV: "production"
       USE_PROD: ${USE_PROD}
@@ -30,7 +30,7 @@ services:
       GOOGLE_SHEET_ID: ${GOOGLE_SHEET_ID}
     command: ["/bin/bash","scripts/setup.sh"]
   web-server:
-      image: sconnel42/web-server:latest
+    image: sconnel42/web-server:latest
     container_name: web-server
     environment:
       NODE_ENV: "production"
