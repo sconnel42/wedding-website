@@ -1,3 +1,4 @@
+const fs = require('fs')
 const path = require('path')
 const express = require('express')
 const RSVP = require('./models/rsvp')
@@ -9,11 +10,11 @@ const staticFileMiddleware = express.static(path.join(__dirname, '../dist'))
 
 app.use(express.json())
 
-app.use(staticFileMiddleware)
-app.use(history({
-  index: '/dist/index.html'
-}))
-app.use(staticFileMiddleware)
+//app.use(staticFileMiddleware)
+//app.use(history({
+//  index: '/dist/index.html'
+//}))
+//app.use(staticFileMiddleware)
 
 // Error handling
 // eslint-disable-next-line
@@ -28,12 +29,26 @@ app.use(function(err, req, res, next) {
   res.status(err.statusCode).send(err.message)
 })
 
+app.get('/api/adventure-images', (req, res) => {
+  const folderPath = 'dist/imgs2'
+  var imageList = []
+  fs.readdir(folderPath, (err, files) => {
+    if (!err) {
+      files.forEach(file => {
+        imageList.push({ 'src': `imgs2/${file}` })
+      })
+    }
+    res.json({ 'images': imageList })
+  })
+})
+
 app.get('/', (req, res) => {
   res.sendFile('index.html', { root: path.join(__dirname, '../dist') })
 })
 
 // Put an RSVP into the DB
 app.post('/api/rsvp', (req, res, next) => {
+  console.log('Ya got me!')
   const name = req.body.name
   const email = req.body.email
   const meal = req.body.meal

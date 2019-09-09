@@ -18,27 +18,22 @@ export default {
   data () {
     return {
       imageCols: 3,
-      images: [
-        {
-          src: `${process.env.BASE_URL}imgs/IMG_20181019.jpg`
-        },
-        {
-          src: `${process.env.BASE_URL}imgs/IMG_20181021.jpg`
-        },
-        {
-          src: `${process.env.BASE_URL}imgs/IMG_20181118.jpg`
-        },
-        {
-          src: `${process.env.BASE_URL}imgs/IMG_20181122.jpg`
-        },
-        {
-          src: `${process.env.BASE_URL}imgs/IMG_20181201.jpg`
-        },
-        {
-          src: `${process.env.BASE_URL}imgs/IMG_20190102.jpg`
-        }
-      ]
+      images: []
     }
+  },
+  beforeMount: function () {
+    fetch('/api/adventure-images').then(
+      (response) => {
+        response.json().then((data) => {
+          this.images = data.images
+        })
+      }
+    ).catch(
+      (err) => {
+        console.log(err)
+        this.images = []
+      }
+    )
   },
   computed: {
     imageRows: function () {

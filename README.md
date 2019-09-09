@@ -44,7 +44,7 @@ npm run lint
 ### TODO:
 
 #### Backend
-- Dynamically get all images from folder for frontend
+- Make dynamically getting images from folder work in Docker
 - Remove public/imgs/
 - Put Droplet behind domain
 
