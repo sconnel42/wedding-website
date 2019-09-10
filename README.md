@@ -42,8 +42,12 @@ npm run lint
 - Then push code and it'll go all the way to the Droplet if it passes the tests
 
 ### TODO:
-- Fix odd arrangement of bottom pictures
 - Modify RSVP Form with better info
+    - Input box to search for RSVP
+    - Endpoint to search for RSVP
+    - List of RSVPs to check and select meal
+    - Modify endpoint to handle submitting multiple RSVPs
+    - Submit button connects to updated endpoint
 - Fill in Registry section with link to Zola Registry
 - Fix Registry styling
 - Make sure cron uploads to Google Drive
@@ -74,3 +78,4 @@ npm run lint
 - Alt text for images with info
 - Automate getting refresh token for Google Drive
 - Dynamic loading of people from Google Sheets
+- Organize images into columns by height
