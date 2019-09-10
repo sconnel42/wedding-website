@@ -44,14 +44,15 @@ npm run lint
 ### TODO:
 
 #### Backend
-- Make dynamically getting images from folder work in Docker
 - Remove public/imgs/
-- Put Droplet behind domain
+- No images in frontend build
 
 ### Do Later
 - Modify RSVP Form with better info
 - Fill in Registry section with link to Zola Registry
 - Fix Registry styling
+- Make sure cron uploads to Google Drive
+- Put Droplet behind domain
 - Hotels & Wedding Party?
 
 ### Nice to Have

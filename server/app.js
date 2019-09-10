@@ -7,14 +7,25 @@ const smsClient = new Twilio(process.env.TWILIO_API_KEY, process.env.TWILIO_API_
 const history = require('connect-history-api-fallback')
 const app = express()
 const staticFileMiddleware = express.static(path.join(__dirname, '../dist'))
+const historyMiddleware = history({
+  disableDotRule: true,
+  verbose: true,
+  index: '/dist/index.html'
+})
 
 app.use(express.json())
 
-//app.use(staticFileMiddleware)
-//app.use(history({
-//  index: '/dist/index.html'
-//}))
-//app.use(staticFileMiddleware)
+// Make it so that all frontend assets are served from index.html
+// and everything else goes through express
+app.use(staticFileMiddleware)
+app.use((req, res, next) => {
+  if (req.path.startsWith('/api')) {
+    next();
+  } else {
+    historyMiddleware(req, res, next);
+  }
+})
+app.use(staticFileMiddleware)
 
 // Error handling
 // eslint-disable-next-line
