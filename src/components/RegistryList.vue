@@ -22,11 +22,11 @@ export default {
     return {
       registries: [
         {
-          src: `${process.env.BASE_URL}icons/amazon.jpg`,
+          src: `${process.env.BASE_URL}imgs/amazon.jpg`,
           link: 'https://www.amazon.com'
         },
         {
-          src: `${process.env.BASE_URL}icons/ikea.png`,
+          src: `${process.env.BASE_URL}imgs/ikea.png`,
           link: 'https://www.ikea.com/us/en/'
         }
       ]

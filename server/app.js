@@ -19,10 +19,10 @@ app.use(express.json())
 // and everything else goes through express
 app.use(staticFileMiddleware)
 app.use((req, res, next) => {
-  if (req.path.startsWith('/api')) {
-    next();
+  if (req.path.startsWith('/api') || req.path.startsWith('/public')) {
+    next()
   } else {
-    historyMiddleware(req, res, next);
+    historyMiddleware(req, res, next)
   }
 })
 app.use(staticFileMiddleware)
@@ -41,12 +41,12 @@ app.use(function(err, req, res, next) {
 })
 
 app.get('/api/adventure-images', (req, res) => {
-  const folderPath = 'dist/imgs2'
+  const folderPath = 'public/adventure_images'
   var imageList = []
   fs.readdir(folderPath, (err, files) => {
     if (!err) {
       files.forEach(file => {
-        imageList.push({ 'src': `imgs2/${file}` })
+        imageList.push({ 'src': `adventure_images/${file}` })
       })
     }
     res.json({ 'images': imageList })

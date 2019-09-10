@@ -44,7 +44,6 @@ npm run lint
 ### TODO:
 
 #### Backend
-- Remove public/imgs/
 - No images in frontend build
 
 ### Do Later
