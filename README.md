@@ -42,11 +42,7 @@ npm run lint
 - Then push code and it'll go all the way to the Droplet if it passes the tests
 
 ### TODO:
-
-#### Backend
-- No images in frontend build
-
-### Do Later
+- Fix odd arrangement of bottom pictures
 - Modify RSVP Form with better info
 - Fill in Registry section with link to Zola Registry
 - Fix Registry styling
