@@ -6,6 +6,7 @@ const Twilio = require('twilio')
 const smsClient = new Twilio(process.env.TWILIO_API_KEY, process.env.TWILIO_API_SECRET)
 const history = require('connect-history-api-fallback')
 const app = express()
+const Op = require('sequelize').Op
 const staticFileMiddleware = express.static(path.join(__dirname, '../dist'))
 const historyMiddleware = history({
   disableDotRule: true,
@@ -40,6 +41,10 @@ app.use(function(err, req, res, next) {
   res.status(err.statusCode).send(err.message)
 })
 
+app.get('/', (req, res) => {
+  res.sendFile('index.html', { root: path.join(__dirname, '../dist') })
+})
+
 app.get('/api/adventure-images', (req, res) => {
   const folderPath = 'public/adventure_images'
   var imageList = []
@@ -53,13 +58,51 @@ app.get('/api/adventure-images', (req, res) => {
   })
 })
 
-app.get('/', (req, res) => {
-  res.sendFile('index.html', { root: path.join(__dirname, '../dist') })
+// Put an RSVP into the DB
+app.get('/api/rsvp', (req, res, next) => {
+  const searchKey = req.query.key
+
+  if (!searchKey) {
+    let err = new Error('Missing parameter')
+    err.statusCode = 400
+    return next(err)
+  }
+
+  // Create a new rsvp
+  RSVP.findAll({
+    where: {
+      name: {
+        [Op.like]: `%${searchKey}%`
+      }
+    }
+  }).then(
+    // eslint-disable-next-line
+    rsvps => {
+      let rsvpList = []
+      rsvps.forEach(rsvp => {
+        rsvpList.push({
+          id: rsvp.id,
+          name: rsvp.name,
+          meal: rsvp.meal,
+          isComing: rsvp.isComing
+        })
+      })
+      return res.json({ 'rsvps': rsvpList })
+    }
+  ).catch(
+    err => {
+      // eslint-disable-next-line
+      console.error(err.message);
+
+      let error = new Error('An error occurred when looking for RSVPs!')
+      error.statusCode = 500
+      return next(error)
+    }
+  )
 })
 
 // Put an RSVP into the DB
 app.post('/api/rsvp', (req, res, next) => {
-  console.log('Ya got me!')
   const name = req.body.name
   const email = req.body.email
   const meal = req.body.meal

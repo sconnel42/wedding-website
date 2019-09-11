@@ -43,9 +43,8 @@ npm run lint
 
 ### TODO:
 - Modify RSVP Form with better info
-    - Input box to search for RSVP
-    - Endpoint to search for RSVP
-    - List of RSVPs to check and select meal
+    - Select meal dropdown
+    - List of RSVPs better styling
     - Modify endpoint to handle submitting multiple RSVPs
     - Submit button connects to updated endpoint
 - Fill in Registry section with link to Zola Registry
@@ -79,3 +78,4 @@ npm run lint
 - Automate getting refresh token for Google Drive
 - Dynamic loading of people from Google Sheets
 - Organize images into columns by height
+- Make RSVP search better

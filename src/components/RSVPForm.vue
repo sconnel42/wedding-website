@@ -11,7 +11,32 @@
         <p class="padded-bottom-sm">
           (Please fill out once for each guest)
         </p>
-        <form action="javascript:void(0);">
+
+        <form @submit.prevent="handleRSVPSearch">
+          <div class="form-row align-items-center">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-3">
+              <label class="sr-only" for="searchName">Search</label>
+              <input type="text" class="form-control mb-2" id="searchName" v-model="searchData.name" placeholder="Search" aria-label="Search">
+            </div>
+            <div class="col-sm-1">
+              <button type="submit" class="btn btn-primary mb-2">Submit</button>
+            </div>
+            <div class="col-sm-2"></div>
+          </div>
+        </form>
+        <div v-if="searchData.rsvps.length > 0" class="align-items-center">
+          <div v-for="rsvp in searchData.rsvps" v-bind:key="rsvp.id">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-4">
+              <input type="name" class="form-control" v-model="rsvp.name" disabled>
+              <input type="checkbox" v-model="rsvp.isComing" aria-label="Is coming">
+            </div>
+            <div class="col-sm-4"></div>
+          </div>
+        </div>
+
+        <form class="d-none" action="javascript:void(0);">
           <div class="form-group row">
             <div class="col-sm-3"></div>
             <label for="rsvpName" class="col-sm-1 col-form-label text-align-sm">Name</label>
@@ -68,6 +93,10 @@ export default {
   data () {
     return {
       mealOptions: ['Chicken', 'Pork'],
+      searchData: {
+        name: '',
+        rsvps: []
+      },
       rsvpData: {
         name: '',
         email: '',
@@ -136,6 +165,28 @@ export default {
           this.showFailure()
         }
       )
+    },
+    handleRSVPSearch () {
+      // Submit request to create RSVP to backend
+      fetch(
+        `/api/rsvp?key=${this.searchData.name}`
+      ).then(
+        // eslint-disable-next-line
+        (response) => {
+          response.json().then(data => {
+            console.log(data.rsvps)
+            this.searchData.rsvps = data.rsvps
+          })
+        }
+      ).catch(
+        (err) => {
+          // eslint-disable-next-line
+          console.log(err);
+        }
+      )
+      this.searchData.name = ''
+
+      // TODO: Make search section disappear and select-people section appear
     }
   }
 }
