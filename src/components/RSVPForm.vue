@@ -8,11 +8,14 @@
         <h5 id="form-header" class="padded-bottom-xs">
           Let us know if you will be coming to our wedding!
         </h5>
-        <p class="padded-bottom-sm">
-          (Please fill out once for each guest)
+        <p class="padded-bottom-sm" v-if="searchData.rsvps.length === 0">
+          Please enter your last name to search for your RSVP.
+        </p>
+        <p class="padded-bottom-sm" v-if="searchData.rsvps.length > 0">
+          Please select guests that are coming.
         </p>
 
-        <form @submit.prevent="handleRSVPSearch">
+        <form @submit.prevent="handleRSVPSearch" v-if="searchData.rsvps.length === 0">
           <div class="form-row align-items-center">
             <div class="col-sm-4"></div>
             <div class="col-sm-3">
@@ -25,52 +28,30 @@
             <div class="col-sm-2"></div>
           </div>
         </form>
-        <div v-if="searchData.rsvps.length > 0" class="align-items-center">
-          <div v-for="rsvp in searchData.rsvps" v-bind:key="rsvp.id">
-            <div class="col-sm-4"></div>
-            <div class="col-sm-4">
-              <input type="name" class="form-control" v-model="rsvp.name" disabled>
-              <input type="checkbox" v-model="rsvp.isComing" aria-label="Is coming">
-            </div>
-            <div class="col-sm-4"></div>
-          </div>
-        </div>
 
-        <form class="d-none" action="javascript:void(0);">
-          <div class="form-group row">
-            <div class="col-sm-3"></div>
-            <label for="rsvpName" class="col-sm-1 col-form-label text-align-sm">Name</label>
-            <div class="col-sm-4">
-              <input type="name" class="form-control" id="rsvpName" v-model="rsvpData.name" placeholder="Name">
-            </div>
-            <div class="col-sm-4"></div>
-          </div>
-          <div class="form-group row">
-            <div class="col-sm-3"></div>
-            <label for="rsvpEmail" class="col-sm-1 col-form-label text-align-sm">Email</label>
-            <div class="col-sm-4">
-              <input type="email" class="form-control" id="rsvpEmail" v-model="rsvpData.email" placeholder="Email">
-            </div>
-            <div class="col-sm-4"></div>
-          </div>
-          <div class="form-group row">
-            <div class="col-sm-3"></div>
-            <label for="rsvpMeal" class="col-sm-1 col-form-label text-align-sm">Meal</label>
-            <div class="col-sm-4">
-              <select id="rsvpMeal" v-model="rsvpData.meal" @change="setMeal($event.target.selectedIndex)" class="form-control">
-                <option selected hidden>Choose...</option>
-                <option v-for="meal in mealOptions" v-bind:key="meal">
-                  {{ meal }}
-                </option>
-              </select>
-            <div class="col-sm-4"></div>
+        <form v-if="searchData.rsvps.length > 0">
+          <div class="form-row align-items-center" v-for="rsvp in searchData.rsvps" v-bind:key="rsvp.id">
+            <div class="col-sm-12 form-inline d-flex justify-content-center">
+              <div class="input-group mb-2">
+                <div class="input-group-prepend">
+                  <div class="input-group-text">
+                    <input type="checkbox" v-model="rsvp.isComing" aria-label="Person is coming">
+                  </div>
+                </div>
+                <input type="text" class="form-control" id="rsvpName" v-model="rsvp.name" placeholder="Name" aria-label="Name" disabled>
+                <div class="input-group-append">
+                  <select id="rsvpMeal" v-model="rsvp.meal" @change="setMeal($event.target.selectedIndex)" class="form-control round-right">
+                    <option selected disabled hidden>Choose meal...</option>
+                    <option v-for="meal in mealOptions" v-bind:key="meal">
+                      {{ meal }}
+                    </option>
+                  </select>
+                </div>
+              </div>
             </div>
           </div>
-          <span class="padded" style="margin: 20px;">
-            <button @click="handleRSVPSubmit('accept')" id="accept-button" class="btn btn-primary" v-bind:disabled="showSuccessAlert || showFailureAlert">Accept</button>
-          </span>
-          <span class="padded" style="margin: 20px;">
-            <button @click="handleRSVPSubmit('decline')" id="decline-button" class="btn btn-danger" v-bind:disabled="showSuccessAlert || showFailureAlert">Decline</button>
+          <span class="padded mt-4">
+            <button @click="handleRSVPSubmit('accept')" id="accept-button" class="btn btn-primary" v-bind:disabled="showSuccessAlert || showFailureAlert">Submit</button>
           </span>
           <div class="padded-top">
             <Alert v-bind:isActive="showSuccessAlert" alertType="success"/>
@@ -118,6 +99,7 @@ export default {
       this.showSuccessAlert = true
       setTimeout(() => {
         this.showSuccessAlert = false
+        this.searchData.rsvps = []
       }, 5000)
 
       // Clear form
@@ -134,9 +116,11 @@ export default {
       }, 5000)
     },
     handleRSVPSubmit (submitType) {
-      this.rsvpData.isComing = (submitType === 'accept')
+      // this.rsvpData.isComing = (submitType === 'accept')
+      this.showSuccess()
 
       // Submit request to create RSVP to backend
+      /*
       fetch('/api/rsvp', {
         method: 'post',
         headers: {
@@ -164,7 +148,7 @@ export default {
           console.log(err);
           this.showFailure()
         }
-      )
+      ) */
     },
     handleRSVPSearch () {
       // Submit request to create RSVP to backend
@@ -192,6 +176,13 @@ export default {
 }
 </script>
 <style scoped>
+.round-right {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  border-top-right-radius: 0.25rem;
+  border-bottom-right-radius: 0.25rem;
+
+}
 .padded-top {
   padding-top: 10px;
 }

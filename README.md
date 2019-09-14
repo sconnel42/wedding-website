@@ -43,12 +43,11 @@ npm run lint
 
 ### TODO:
 - Modify RSVP Form with better info
-    - Select meal dropdown
-    - List of RSVPs better styling
     - Modify endpoint to handle submitting multiple RSVPs
     - Submit button connects to updated endpoint
 - Fill in Registry section with link to Zola Registry
 - Fix Registry styling
+- Fix UTs
 - Make sure cron uploads to Google Drive
 - Put Droplet behind domain
 - Hotels & Wedding Party?
@@ -78,4 +77,5 @@ npm run lint
 - Automate getting refresh token for Google Drive
 - Dynamic loading of people from Google Sheets
 - Organize images into columns by height
-- Make RSVP search better
+- Make RSVP search better (fuzzy string search?)
+    - Only show people in that group

@@ -58,7 +58,7 @@ app.get('/api/adventure-images', (req, res) => {
   })
 })
 
-// Put an RSVP into the DB
+// Search for a list of RSVPs based on a given key
 app.get('/api/rsvp', (req, res, next) => {
   const searchKey = req.query.key
 
@@ -83,7 +83,7 @@ app.get('/api/rsvp', (req, res, next) => {
         rsvpList.push({
           id: rsvp.id,
           name: rsvp.name,
-          meal: rsvp.meal,
+          meal: rsvp.meal || 'Choose meal...',
           isComing: rsvp.isComing
         })
       })
