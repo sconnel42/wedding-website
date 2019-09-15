@@ -101,35 +101,31 @@ app.get('/api/rsvp', (req, res, next) => {
   )
 })
 
-// Put an RSVP into the DB
+// Update a list of RSVPs in the DB
 app.post('/api/rsvp', (req, res, next) => {
-  const name = req.body.name
-  const email = req.body.email
-  const meal = req.body.meal
-  const isComing = Boolean(req.body.isComing)
+  const rsvps = req.body.rsvps
+  rsvps.forEach(rsvp => {
+    RSVP.update({
+      name: rsvp.name,
+      email: rsvp.email,
+      meal: rsvp.meal,
+      isComing: rsvp.isComing
+    }, {
+      where: {
+        id: rsvp.id
+      }
+    }).then(updatedRow => {
+      console.log(`Updated row with id ${rsvp.id}`)
+    }).catch(err => {
+      console.log(err.message)
 
-  if (!name || !email || !meal || req.body.isComing === undefined) {
-    let err = new Error('Missing parameter')
-    err.statusCode = 400
-    return next(err)
-  }
-
-  // Create a new rsvp
-  RSVP.create({ name, email, meal, isComing }).then(
-    // eslint-disable-next-line
-    rsvp => {
-      return res.json({ 'message': `RSVP created with id: ${rsvp.id}` })
-    }
-  ).catch(
-    err => {
-      // eslint-disable-next-line
-      console.error(err.message);
-
-      let error = new Error('RSVP failed to be created!')
+      let error = new Error('RSVP failed to be updated!')
       error.statusCode = 500
       return next(error)
-    }
-  )
+    })
+  })
+
+  return res.json({ 'message': 'RSVPs updated' })
 })
 
 // Send a contact message

@@ -29,7 +29,7 @@
           </div>
         </form>
 
-        <form v-if="searchData.rsvps.length > 0">
+        <form v-if="searchData.rsvps.length > 0" @submit.prevent="handleRSVPSubmit">
           <div class="form-row align-items-center" v-for="rsvp in searchData.rsvps" v-bind:key="rsvp.id">
             <div class="col-sm-12 form-inline d-flex justify-content-center">
               <div class="input-group mb-2">
@@ -40,7 +40,7 @@
                 </div>
                 <input type="text" class="form-control" id="rsvpName" v-model="rsvp.name" placeholder="Name" aria-label="Name" disabled>
                 <div class="input-group-append">
-                  <select id="rsvpMeal" v-model="rsvp.meal" @change="setMeal($event.target.selectedIndex)" class="form-control round-right">
+                  <select id="rsvpMeal" v-model="rsvp.meal" class="form-control round-right">
                     <option selected disabled hidden>Choose meal...</option>
                     <option v-for="meal in mealOptions" v-bind:key="meal">
                       {{ meal }}
@@ -78,22 +78,11 @@ export default {
         name: '',
         rsvps: []
       },
-      rsvpData: {
-        name: '',
-        email: '',
-        meal: 'Chicken',
-        isComing: false
-      },
       showSuccessAlert: false,
       showFailureAlert: false
     }
   },
   methods: {
-    setMeal (idx) {
-      // Subtract 1 since the first element is a message, not
-      // an option
-      this.rsvpData.meal = this.mealOptions[idx - 1]
-    },
     showSuccess () {
       // Activate success alert
       this.showSuccessAlert = true
@@ -101,12 +90,6 @@ export default {
         this.showSuccessAlert = false
         this.searchData.rsvps = []
       }, 5000)
-
-      // Clear form
-      this.rsvpData.name = ''
-      this.rsvpData.email = ''
-      this.rsvpData.meal = this.mealOptions[0]
-      this.rsvpData.isComing = false
     },
     showFailure () {
       // Activate failure alert
@@ -116,21 +99,14 @@ export default {
       }, 5000)
     },
     handleRSVPSubmit (submitType) {
-      // this.rsvpData.isComing = (submitType === 'accept')
-      this.showSuccess()
-
       // Submit request to create RSVP to backend
-      /*
       fetch('/api/rsvp', {
         method: 'post',
         headers: {
           'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-          name: this.rsvpData.name,
-          email: this.rsvpData.email,
-          meal: this.rsvpData.meal,
-          isComing: this.rsvpData.isComing
+          rsvps: this.searchData.rsvps
         })
       }).then(
         // eslint-disable-next-line
@@ -148,7 +124,7 @@ export default {
           console.log(err);
           this.showFailure()
         }
-      ) */
+      )
     },
     handleRSVPSearch () {
       // Submit request to create RSVP to backend
