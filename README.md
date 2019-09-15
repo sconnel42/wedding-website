@@ -42,15 +42,11 @@ npm run lint
 - Then push code and it'll go all the way to the Droplet if it passes the tests
 
 ### TODO:
-- Modify RSVP Form with better info
-    - Modify endpoint to handle submitting multiple RSVPs
-    - Submit button connects to updated endpoint
-- Fill in Registry section with link to Zola Registry
-- Fix Registry styling
 - Fix UTs
 - Make sure cron uploads to Google Drive
 - Put Droplet behind domain
-- Hotels & Wedding Party?
+- Hotel & Wedding Party?
+- Fill in Registry section with link to Zola Registry
 
 ### Nice to Have
 - Add maps for church/venue
@@ -77,5 +73,8 @@ npm run lint
 - Automate getting refresh token for Google Drive
 - Dynamic loading of people from Google Sheets
 - Organize images into columns by height
-- Make RSVP search better (fuzzy string search?)
+- RSVP updates
+    - Make search better (fuzzy string search?)
     - Only show people in that group
+    - Differentiate between not-rsvped and said-no
+    - Text updates
