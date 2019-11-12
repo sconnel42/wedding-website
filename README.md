@@ -43,7 +43,6 @@ npm run lint
 - Then push code and it'll go all the way to the Droplet if it passes the tests
 
 ### TODO:
-- Make sure cron uploads to Dropbox
 - Fix UTs
 - Put Droplet behind domain
 - Hotel & Wedding Party?
