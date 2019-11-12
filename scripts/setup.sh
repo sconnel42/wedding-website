@@ -8,6 +8,3 @@ else
     sh ${PROJECT_ROOT}/scripts/createdb.sh
     ${PROJECT_ROOT}/node_modules/.bin/sequelize db:migrate
 fi
-
-# After the DB is created, populate it
-psql ${DB_CONNECTION_STRING} -f ${PROJECT_ROOT}/mybackup.sql
