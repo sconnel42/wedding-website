@@ -10,5 +10,4 @@ else
 fi
 
 # After the DB is created, populate it
-npm install
-node ${PROJECT_ROOT}/scripts/populateDB.js
+psql ${DB_CONNECTION_STRING} -f ${PROJECT_ROOT}/mybackup.sql

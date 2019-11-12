@@ -28,7 +28,7 @@ ufw allow https
 ufw allow 8080/tcp
 
 # Install postgres for backups
-apt-get install wget ca-certificates
+apt-get update && apt-get install wget ca-certificates
 wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | apt-key add -
 sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt/ `lsb_release -cs`-pgdg main" >> /etc/apt/sources.list.d/pgdg.list'
 apt-get update && apt-get install -y postgresql postgresql-contrib
@@ -37,20 +37,7 @@ apt-get update && apt-get install -y postgresql postgresql-contrib
 service postgresql stop
 echo "127.0.0.1  wedding-db" >> /etc/hosts
 
-# Download gdrive tool
-echo "Downloading gdrive"
-wget -O /home/${DEPLOYUSER}/gdrive https://docs.google.com/uc?id=0B3X9GlR6EmbnWksyTEtCM0VfaFE&export=download
-sleep 5
-chmod +x /home/${DEPLOYUSER}/gdrive
-install /home/${DEPLOYUSER}/gdrive /usr/local/bin/gdrive
-
-# Authenticate
-gdrive list
-
-# Pull latest backup from Google Drive and put into scripts/backup.sql
-echo "Pulling latest backup from Google Drive"
-latest_backup=$(gdrive list --query "name contains 'backup' and name contains 'sql'" --no-header | tail -1)
-latest_backup_id=$(echo ${latest_backup} | awk '{print $1}')
-latest_backup_name=$(echo ${latest_backup} | awk '{print $2}')
-gdrive download ${latest_backup_id}
-mv ${latest_backup_name} /home/deployuser/backup.sql
+# Install Dropbox
+cd /home/${DEPLOYUSER} && wget -O - "https://www.dropbox.com/download?plat=lnx.x86_64" | tar xzf -
+wget -O /usr/local/bin/dropbox "https://www.dropbox.com/download?dl=packages/dropbox.py"
+chmod +x /usr/local/bin/dropbox

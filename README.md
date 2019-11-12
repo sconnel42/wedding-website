@@ -38,12 +38,13 @@ npm run lint
 ### Deploying
 - After starting up a Droplet, run `./scripts/do_droplet_init_setup.sh DROPLET_IP` where `DROPLET_IP` is the IP address of the new Droplet
 - Follow the instructions to put the correct SSH key onto CCI
+- ssh into the Droplet as the and run `~/.dropbox-dist/dropboxd` to start the DropBox daemon for DB backups
 - Make sure to update the `DROPLET_IP` env var on CCI too
 - Then push code and it'll go all the way to the Droplet if it passes the tests
 
 ### TODO:
+- Make sure cron uploads to Dropbox
 - Fix UTs
-- Make sure cron uploads to Google Drive
 - Put Droplet behind domain
 - Hotel & Wedding Party?
 - Fill in Registry section with link to Zola Registry
@@ -68,7 +69,6 @@ npm run lint
 - Convert to Vue-Bootstrap
 - Actually have FE and BE in separate Docker containers
 - Make tables be underscored
-- Generate migrations from models file (sequelize-auto-generate)
 - Alt text for images with info
 - Automate getting refresh token for Google Drive
 - Dynamic loading of people from Google Sheets
