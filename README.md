@@ -36,7 +36,7 @@ npm run lint
 
 
 ### Deploying
-- After starting up a Droplet, run `./scripts/do_droplet_init_setup.sh DROPLET_IP` where `DROPLET_IP` is the IP address of the new Droplet
+- After starting up a Droplet, run `./scripts/do_droplet_init.sh DROPLET_IP` where `DROPLET_IP` is the IP address of the new Droplet
 - Follow the instructions to put the correct SSH key onto CCI
 - ssh into the Droplet as the and run `~/.dropbox-dist/dropboxd` to start the DropBox daemon for DB backups
 - Make sure to update the `DROPLET_IP` env var on CCI too

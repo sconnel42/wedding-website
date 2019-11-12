@@ -21,7 +21,7 @@ ssh root@${DROPLET_IP} 'sh /droplet_setup.sh'
 
 echo "Copy up files"
 scp .env \
-    token.json \
+    backup.sql \
     deploy/docker-compose.yaml \
     scripts/deploy.sh \
     scripts/create_backup.sh \
