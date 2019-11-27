@@ -43,12 +43,15 @@ npm run lint
 - Then push code and it'll go all the way to the Droplet if it passes the tests
 
 ### TODO:
+- Populate DB with valid data
+- Default for isComing is NULL
+- Serve app over HTTPS
 - Fix UTs
-- Put Droplet behind domain
 - Hotel & Wedding Party?
 - Fill in Registry section with link to Zola Registry
 
 ### Nice to Have
+- Sequelize defaults for id, dates is the same as in the DB
 - Add maps for church/venue
 - Pop pictures out on click
 - Thin floral bar just below nav bar

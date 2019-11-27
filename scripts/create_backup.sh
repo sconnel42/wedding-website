@@ -9,4 +9,4 @@ source /home/deployuser/.env
 pg_dump ${DB_CONNECTION_STRING} -t '"RSVPs"' --data-only --inserts > /home/deployuser/backups/${latest_backup_name}
 
 # Push to DropBox
-cp /home/deployuser/backups/${latest_backup_name} /home/deployuser/backups/wedding_website/backups/${latest_backup_name}
+cp /home/deployuser/backups/${latest_backup_name} /home/deployuser/Dropbox/wedding_website/backups/${latest_backup_name}
