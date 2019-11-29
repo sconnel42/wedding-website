@@ -34,18 +34,24 @@
             <div class="col-sm-12 form-inline d-flex justify-content-center">
               <div class="input-group mb-2">
                 <div class="input-group-prepend">
-                  <div class="input-group-text">
-                    <input type="checkbox" v-model="rsvp.isComing" aria-label="Person is coming">
+                  <div>
+                    <select id="isComing" v-model="rsvp.isComing" class="form-control round-left">
+                      <option selected disabled hidden>Attending?</option>
+                      <option value="true">Yes</option>
+                      <option value="false">No</option>
+                    </select>
                   </div>
                 </div>
                 <input type="text" class="form-control" id="rsvpName" v-model="rsvp.name" placeholder="Name" aria-label="Name" disabled>
                 <div class="input-group-append">
-                  <select id="rsvpMeal" v-model="rsvp.meal" class="form-control round-right">
-                    <option selected disabled hidden>Choose meal...</option>
-                    <option v-for="meal in mealOptions" v-bind:key="meal">
-                      {{ meal }}
-                    </option>
-                  </select>
+                  <div>
+                    <select id="rsvpMeal" v-model="rsvp.meal" class="form-control round-right">
+                      <option selected disabled hidden>Choose meal...</option>
+                      <option v-for="meal in mealOptions" v-bind:key="meal">
+                        {{ meal }}
+                      </option>
+                    </select>
+                  </div>
                 </div>
               </div>
             </div>
@@ -99,6 +105,16 @@ export default {
       }, 5000)
     },
     handleRSVPSubmit (submitType) {
+      // Unset default value from dropdown
+      this.searchData.rsvps.forEach((item, idx) => {
+        if (item.isComing === 'Attending?') {
+          this.searchData.rsvps[idx].isComing = null
+        }
+        if (item.meal === 'Choose meal...') {
+          this.searchData.rsvps[idx].meal = null
+        }
+      })
+
       // Submit request to create RSVP to backend
       fetch('/api/rsvp', {
         method: 'post',
@@ -135,7 +151,15 @@ export default {
         (response) => {
           response.json().then(data => {
             console.log(data.rsvps)
+
+            // Set value of isComing to question so the
+            // dropdown is populated correctly
             this.searchData.rsvps = data.rsvps
+            this.searchData.rsvps.forEach((item, idx) => {
+              if (item.isComing === null) {
+                this.searchData.rsvps[idx].isComing = 'Attending?'
+              }
+            })
           })
         }
       ).catch(
@@ -152,12 +176,17 @@ export default {
 }
 </script>
 <style scoped>
+.round-left {
+  border-top-left-radius: 0.25rem;
+  border-bottom-left-radius: 0.25rem;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
 .round-right {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
   border-top-right-radius: 0.25rem;
   border-bottom-right-radius: 0.25rem;
-
 }
 .padded-top {
   padding-top: 10px;

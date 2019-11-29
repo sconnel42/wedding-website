@@ -68,10 +68,10 @@ app.get('/api/rsvp', (req, res, next) => {
     return next(err)
   }
 
-  // Create a new rsvp
+  // Find the rsvps
   RSVP.findAll({
     where: {
-      name: {
+      searchKey: {
         [Op.like]: `%${searchKey}%`
       }
     }

@@ -44,7 +44,6 @@ npm run lint
 
 ### TODO:
 - Populate DB with valid data
-- Default for isComing is NULL
 - Serve app over HTTPS
 - Fix UTs
 - Hotel & Wedding Party?
@@ -78,5 +77,5 @@ npm run lint
 - RSVP updates
     - Make search better (fuzzy string search?)
     - Only show people in that group
-    - Differentiate between not-rsvped and said-no
     - Text updates
+    - Song request

@@ -13,7 +13,8 @@ const RSVP = session.define('RSVP', {
   name: Sequelize.DataTypes.STRING,
   email: Sequelize.DataTypes.STRING,
   meal: Sequelize.DataTypes.STRING,
-  isComing: Sequelize.DataTypes.BOOLEAN
+  isComing: Sequelize.DataTypes.BOOLEAN,
+  searchKey: Sequelize.DataTypes.STRING,
 }, {});
 
 module.exports = RSVP;
