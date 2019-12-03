@@ -5,17 +5,20 @@
         <h3 class="padded">RSVP</h3>
       </div>
       <div class="text-center">
-        <h5 id="form-header" class="padded-bottom-xs">
+        <h5 id="form-header" class="padded-bottom-xs" v-if="rsvpEnabled">
           Let us know if you will be coming to our wedding!
         </h5>
-        <p class="padded-bottom-sm" v-if="searchData.rsvps.length === 0">
+        <h4 id="form-header" class="padded-bottom-xs" v-if="!rsvpEnabled">
+          This will be active once we finalize more details about the wedding. <br> Check back later in order to do that!
+        </h4>
+        <p class="padded-bottom-sm" v-if="searchData.rsvps.length === 0 && rsvpEnabled">
           Please enter your last name to search for your RSVP.
         </p>
-        <p class="padded-bottom-sm" v-if="searchData.rsvps.length > 0">
+        <p class="padded-bottom-sm" v-if="searchData.rsvps.length > 0 && rsvpEnabled">
           Please select guests that are coming.
         </p>
 
-        <form @submit.prevent="handleRSVPSearch" v-if="searchData.rsvps.length === 0">
+        <form @submit.prevent="handleRSVPSearch" v-if="searchData.rsvps.length === 0 && rsvpEnabled">
           <div class="form-row align-items-center">
             <div class="col-sm-4"></div>
             <div class="col-sm-3">
@@ -29,7 +32,7 @@
           </div>
         </form>
 
-        <form v-if="searchData.rsvps.length > 0" @submit.prevent="handleRSVPSubmit">
+        <form @submit.prevent="handleRSVPSubmit" v-if="searchData.rsvps.length > 0 && rsvpEnabled" >
           <div class="form-row align-items-center" v-for="rsvp in searchData.rsvps" v-bind:key="rsvp.id">
             <div class="col-sm-12 form-inline d-flex justify-content-center">
               <div class="input-group mb-2">
@@ -84,6 +87,7 @@ export default {
         name: '',
         rsvps: []
       },
+      rsvpEnabled: false,
       showSuccessAlert: false,
       showFailureAlert: false
     }
