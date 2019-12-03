@@ -8,4 +8,5 @@ if [ -z "${DOCKER_NET}" ]; then
 fi
 
 docker network create ${DOCKER_NET} || true
+docker pull sconnel42/web-server:latest
 docker-compose -f docker-compose.yaml up -d

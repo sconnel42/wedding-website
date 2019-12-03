@@ -50,7 +50,6 @@ npm run lint
 - Fill in Registry section with link to Zola Registry
 
 ### Nice to Have
-- Sequelize defaults for id, dates is the same as in the DB
 - Add maps for church/venue
 - Pop pictures out on click
 - Thin floral bar just below nav bar

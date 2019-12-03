@@ -9,34 +9,37 @@ module.exports = {
         allowNull: false,
         primaryKey: true,
         type: Sequelize.UUID,
-        defaultValue: () => uuid()
+        defaultValue: Sequelize.fn('uuid_generate_v4')
       },
       name: {
         type: Sequelize.STRING,
         allowNull: false
       },
       email: {
-        type: Sequelize.STRING,
-        allowNull: false
+        type: Sequelize.STRING
       },
       meal: {
         type: Sequelize.STRING
       },
       isComing: {
-        type: Sequelize.BOOLEAN,
-        defaultValue: false
+        type: Sequelize.BOOLEAN
+      },
+      searchKey: {
+        type: Sequelize.STRING
       },
       createdAt: {
         allowNull: false,
-        type: Sequelize.DATE
+        type: Sequelize.DATE,
+        defaultValue: Sequelize.fn('now')
       },
       updatedAt: {
         allowNull: false,
-        type: Sequelize.DATE
+        type: Sequelize.DATE,
+        defaultValue: Sequelize.fn('now')
       }
-    });
+    })
   },
   down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('RSVPs');
+    return queryInterface.dropTable('RSVPs')
   }
-};
+}

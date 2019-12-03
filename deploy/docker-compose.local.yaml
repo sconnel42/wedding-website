@@ -20,8 +20,8 @@ services:
       DB_NAME: ${DB_NAME}
       DB_USERNAME: ${DB_USERNAME}
       DB_PASSWORD: ${DB_PASSWORD}
-      DB_HOST: ${DB_HOST}
-      DB_PORT: ${DB_PORT}
+      DB_HOST: wedding-db
+      DB_PORT: 5432
       DB_STRING: ${DB_STRING}
       DB_CONNECTION_STRING: ${DB_CONNECTION_STRING}
       GOOGLE_API_KEY: ${GOOGLE_API_KEY}
