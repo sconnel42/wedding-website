@@ -6,7 +6,7 @@
         Want to get us a gift? Check out our registry here:
       </h5>
       <h4 v-if="!registryEnabled">
-        This will be active once we finalize more details about the wedding. <br>Check back later in order to do that!
+        This will be active once we finalize more details about the wedding. <br> Come back when you receive your invitation!
       </h4>
     </div>
     <div class="col-sm-12 text-center" v-for="registry in registries" v-bind:key="registry.src">

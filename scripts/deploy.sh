@@ -9,4 +9,4 @@ fi
 
 docker network create ${DOCKER_NET} || true
 docker pull sconnel42/web-server:latest
-docker-compose -f docker-compose.yaml up -d
+docker-compose -f docker-compose.yaml up --force-recreate -d

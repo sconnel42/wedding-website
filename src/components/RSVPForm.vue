@@ -9,7 +9,7 @@
           Let us know if you will be coming to our wedding!
         </h5>
         <h4 id="form-header" class="padded-bottom-xs" v-if="!rsvpEnabled">
-          This will be active once we finalize more details about the wedding. <br> Check back later in order to do that!
+          This will be active once we finalize more details about the wedding. <br> Come back when you receive your invitation!
         </h4>
         <p class="padded-bottom-sm" v-if="searchData.rsvps.length === 0 && rsvpEnabled">
           Please enter your last name to search for your RSVP.
