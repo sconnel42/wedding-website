@@ -18,7 +18,12 @@
         </div>
       </div>
       <div class="text-center">
-        <h5 class="padded">Here's some pictures showing our adventures!</h5>
+        <h5 class="padded-top">Here's some pictures showing our adventures!</h5>
+        <h6 class="padded-bottom">
+          Credit goes to Caitlin & Luke for our wonderful engagement photos!
+           See <a class="gallery-link" href="https://caitlinandluke.com/2019/07/sean-rebecca-fransen-nature-area-engagement-photos/">this link</a>
+           for all of our engagement photos.
+        </h6>
       </div>
     </div>
   </div>
@@ -50,5 +55,16 @@ export default {
 
 #pic-button {
   padding: 3.5vmin;
+}
+
+.padded-top {
+  padding-top: 10px;
+}
+
+.padded-bottom {
+  padding-bottom: 20px;
+}
+.gallery-link {
+  color: #9e9e9e;
 }
 </style>
