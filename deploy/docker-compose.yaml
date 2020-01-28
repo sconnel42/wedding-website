@@ -45,8 +45,23 @@ services:
       TWILIO_PHONE_NUMBER: ${TWILIO_PHONE_NUMBER}
       ADMIN_PHONE_NUMBER: ${ADMIN_PHONE_NUMBER}
     ports:
-      - "80:3000"
+      - "3000"
+  wedding-proxy:
+    image: sconnel42/wedding-proxy:latest
+    container_name: wedding-proxy
+    ports:
+      - "8080:80"
       - "443:443"
+    volumes:
+      - ./certbot-data/certbot/conf:/etc/letsencrypt
+      - ./certbot-data/certbot/www:/var/www/certbot
+  certbot:
+    image: certbot/certbot
+    restart: unless-stopped
+    volumes:
+      - ./certbot-data/certbot/conf:/etc/letsencrypt
+      - ./certbot-data/certbot/www:/var/www/certbot
+    entrypoint: "/bin/sh -c 'trap exit TERM; while :; do certbot renew; sleep 12h & wait $${!}; done;'"
 
 volumes:
   wedding-data:

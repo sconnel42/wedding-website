@@ -10,6 +10,7 @@ echo "$DOCKER_PASS" | docker login --username $DOCKER_USER --password-stdin
 
 # Build images
 source sample.env
+docker build -f ${PROJECT_ROOT}/Dockerfile.proxy -t sconnel42/wedding-proxy .
 docker build -f ${PROJECT_ROOT}/Dockerfile.base -t sconnel42/app-base .
 docker build -f ${PROJECT_ROOT}/Dockerfile -t sconnel42/web-server .
 

@@ -10,3 +10,6 @@ pg_dump ${DB_CONNECTION_STRING} -t '"RSVPs"' --data-only --inserts > /home/deplo
 
 # Push to DropBox
 cp /home/deployuser/backups/${latest_backup_name} /home/deployuser/Dropbox/wedding_website/backups/${latest_backup_name}
+
+# Clear Dropbox's cache so it doesn't eat up disk space
+rm -rf /home/deployuser/Dropbox/.dropbox.cache

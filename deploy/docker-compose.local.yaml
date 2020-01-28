@@ -29,8 +29,6 @@ services:
       GOOGLE_REDIRECT_URI: ${GOOGLE_REDIRECT_URI}
       GOOGLE_SHEET_ID: ${GOOGLE_SHEET_ID}
     command: ["/bin/bash","scripts/setup.sh"]
-    volumes:
-      - ~/tokens:/app/tokens
 
 volumes:
   wedding-data:
