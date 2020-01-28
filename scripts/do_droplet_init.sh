@@ -25,6 +25,7 @@ scp .env \
     deploy/docker-compose.yaml \
     scripts/deploy.sh \
     scripts/create_backup.sh \
+    scripts/init-letsencrypt.sh \
     ${DROPLET_USER}@${DROPLET_IP}:/home/${DROPLET_USER}
 
 echo "Start web server and load initial data"
@@ -43,3 +44,4 @@ echo "Copy SSH key back to local machine"
 scp ${DROPLET_USER}@${DROPLET_IP}:/home/${DROPLET_USER}/.ssh/deploy_id_rsa ~/.ssh/
 
 echo "Now run 'cat ~/.ssh/deploy_id_rsa' and copy that key into CCI"
+echo "Then ssh back to the server and run ./init-letsencrypt.sh to get the certificates set up for HTTPS"

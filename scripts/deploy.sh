@@ -9,4 +9,5 @@ fi
 
 docker network create ${DOCKER_NET} || true
 docker pull sconnel42/web-server:latest
+docker pull sconnel42/wedding-proxy:latest
 docker-compose -f docker-compose.yaml up --force-recreate -d

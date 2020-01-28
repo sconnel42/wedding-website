@@ -44,7 +44,6 @@ npm run lint
 
 ### TODO:
 - Populate DB with valid data
-- Serve app over HTTPS
 - Fix UTs
 - Hotel & Wedding Party?
 - Fill in Registry section with link to Zola Registry
