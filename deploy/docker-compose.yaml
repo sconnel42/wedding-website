@@ -50,7 +50,7 @@ services:
     image: sconnel42/wedding-proxy:latest
     container_name: wedding-proxy
     ports:
-      - "8080:80"
+      - "80:80"
       - "443:443"
     volumes:
       - ./certbot-data/certbot/conf:/etc/letsencrypt
