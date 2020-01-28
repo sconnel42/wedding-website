@@ -2,6 +2,7 @@
 
 BASE_IMAGE="sconnel42/app-base"
 SERVER_IMAGE="sconnel42/web-server"
+PROXY_IMAGE="sconnel42/wedding-proxy"
 BUILD_NUMBER=${CIRCLE_BUILD_NUM:-"0"}
 VERSION="0.1.${BUILD_NUMBER}"
 
@@ -25,6 +26,12 @@ echo "Pushing image ${SERVER_IMAGE}:${VERSION}"
 docker tag ${SERVER_IMAGE}:latest ${SERVER_IMAGE}:${VERSION}
 docker push ${SERVER_IMAGE}:${VERSION}
 docker push ${SERVER_IMAGE}:latest
+
+# Publish wedding-proxy image
+echo "Pushing image ${PROXY_IMAGE}:${VERSION}"
+docker tag ${PROXY_IMAGE}:latest ${PROXY_IMAGE}:${VERSION}
+docker push ${PROXY_IMAGE}:${VERSION}
+docker push ${PROXY_IMAGE}:latest
 
 # Logout to wipe docker creds
 docker logout
