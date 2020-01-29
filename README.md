@@ -43,18 +43,28 @@ npm run lint
 - Then push code and it'll go all the way to the Droplet if it passes the tests
 
 ### TODO:
-- Populate DB with valid data
-- Fix UTs
-- Hotel & Wedding Party?
 - Fill in Registry section with link to Zola Registry
+- Fix UTs
+- Hotel Info
+- Update people's names/keys in DB
 
 ### Nice to Have
-- Add maps for church/venue
+- Make Big Dipper look right on mobile (make a rotated rectangle)
 - Pop pictures out on click
+- Add maps for church/venue
+- Optimize for slow connections
+- Serve build FE from nginx container
+- Serve images from folder on server and remove from Docker images
+- Make DB tables be underscored
+- RSVP updates
+    - Make search better (fuzzy string search?)
+    - Only show people in that group
+    - Text updates
+    - Song request
+- Replace favicon with image of page curtain
+- Wedding Party?
 - Thin floral bar just below nav bar
 - Floral design on sides of main picture
-- Make Big Dipper look right on mobile (make a rotated rectangle)
-- Replace favicon with image of page curtain
 - Stats page on wedding stuff?
     - xx/xxx People have RSVPed
     - Pie chart of people who RSVPed
@@ -62,18 +72,7 @@ npm run lint
     - Days until wedding
 - Metrics for site up, page views, etc
 - Send message if site is down for too long
-- Optimize for slow connections
+- Alt text for images with info
 - Express JS to ES6
 - Convert CSS to SASS
 - Convert to Vue-Bootstrap
-- Actually have FE and BE in separate Docker containers
-- Make tables be underscored
-- Alt text for images with info
-- Automate getting refresh token for Google Drive
-- Dynamic loading of people from Google Sheets
-- Organize images into columns by height
-- RSVP updates
-    - Make search better (fuzzy string search?)
-    - Only show people in that group
-    - Text updates
-    - Song request

@@ -11,8 +11,10 @@ services:
       POSTGRES_PASSWORD: ${DB_PASSWORD}
     volumes:
         - wedding-data:/var/lib/postgresql/data
-  wedding-db-setup:
+  db-setup:
     image: sconnel42/app-base:latest
+    container_name: db-setup
+    depends_on: wedding-db
     environment:
       NODE_ENV: "production"
       USE_PROD: ${USE_PROD}
@@ -20,9 +22,8 @@ services:
       DB_NAME: ${DB_NAME}
       DB_USERNAME: ${DB_USERNAME}
       DB_PASSWORD: ${DB_PASSWORD}
-      DB_HOST: ${DB_HOST}
-      DB_PORT: ${DB_PORT}
-      DB_STRING: ${DB_STRING}
+      DB_HOST: "wedding-db"
+      DB_PORT: "5432"
       DB_CONNECTION_STRING: ${DB_CONNECTION_STRING}
       GOOGLE_API_KEY: ${GOOGLE_API_KEY}
       GOOGLE_API_SECRET: ${GOOGLE_API_SECRET}

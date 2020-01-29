@@ -13,7 +13,7 @@ docker-build:
 # Running on host
 host-setup:
 	npm install
-	docker network create wedding-net
+	docker network create wedding-net || true
 	docker-compose -p wedding -f deploy/docker-compose.local.yaml up -d
 
 host-clean:

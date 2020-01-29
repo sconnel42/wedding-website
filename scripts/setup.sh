@@ -1,6 +1,7 @@
 #!/bin/bash
 
 # Only do setup steps if DB doesn't already exist
+DB_STRING="postgres://"${DB_USERNAME}":"${DB_PASSWORD}"@"${DB_HOST}":"${DB_PORT}
 if psql ${DB_STRING} -lqt | cut -d \| -f 1 | grep -wq wedding_db; then
     echo "Database exists, skipping DB creation."
 else

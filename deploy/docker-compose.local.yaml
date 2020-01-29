@@ -11,8 +11,9 @@ services:
       POSTGRES_PASSWORD: ${DB_PASSWORD}
     volumes:
         - wedding-data:/var/lib/postgresql/data
-  wedding-db-setup:
+  db-setup:
     image: sconnel42/app-base:latest
+    container_name: db-setup
     environment:
       NODE_ENV: "production"
       USE_PROD: ${USE_PROD}
