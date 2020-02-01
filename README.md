@@ -43,9 +43,8 @@ npm run lint
 - Then push code and it'll go all the way to the Droplet if it passes the tests
 
 ### TODO:
-- Fill in Registry section with link to Zola Registry
-- Fix UTs
 - Hotel Info
+- Fix UTs
 - Update people's names/keys in DB
 
 ### Nice to Have

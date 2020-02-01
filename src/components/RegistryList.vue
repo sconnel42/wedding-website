@@ -10,10 +10,12 @@
       </h4>
     </div>
     <div class="col-sm-12 text-center" v-for="registry in registries" v-bind:key="registry.src">
-      <a v-bind:href="registry.link"><img
-        v-bind:src="registry.src"
-        class="img-fluid padded"
-        ></a>
+      <a v-bind:href="registry.link">
+        <img
+          v-bind:src="registry.src"
+          class="img-fluid padded"
+        >
+      </a>
     </div>
   </div>
 </template>
@@ -23,13 +25,24 @@ export default {
   name: 'RegistryList',
   data () {
     return {
-      registryEnabled: false,
-      registries: [
+      registryEnabled: true,
+      defaultLink: 'https://www.zola.com/',
+      baseRegistries: [
         {
           src: `${process.env.BASE_URL}imgs/zola.png`,
-          link: 'https://www.zola.com/'
+          link: 'https://www.zola.com/registry/rebeccaandseanoctober10'
         }
       ]
+    }
+  },
+  computed: {
+    registries: function () {
+      if (!this.registryEnabled) {
+        this.baseRegistries.forEach((item) => {
+          item.link = this.defaultLink
+        })
+      }
+      return this.baseRegistries
     }
   }
 }
