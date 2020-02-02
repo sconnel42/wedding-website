@@ -47,12 +47,12 @@ npm run lint
 - Update people's names/keys in DB
 
 ### Nice to Have
+- Serve images via Dropbox and remove from Docker image
+- Make DB tables be underscored
 - Make Big Dipper look right on mobile (make a rotated rectangle)
 - Add maps for church/venue
 - Optimize for slow connections
 - Serve build FE from nginx container
-- Serve images from folder on server and remove from Docker images
-- Make DB tables be underscored
 - RSVP updates
     - Make search better (fuzzy string search?)
     - Only show people in that group

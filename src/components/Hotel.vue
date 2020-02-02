@@ -5,9 +5,9 @@
         <h3 class="padded">Hotel</h3>
       </div>
       <div class="text-center pb-3">
-        <h4>
+        <h5>
           To reserve rooms in our block, please go <a class="text-link" v-bind:href='reservationLink'>here</a>.
-        </h4>
+        </h5>
       </div>
     </div>
     <div id="hotel-image" class="col-sm-6 text-center">
