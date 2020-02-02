@@ -110,6 +110,10 @@ p {
     border-bottom: 2px solid rgb(105,130,129, 0.2);
 }
 
+.text-link {
+  color: #9e9e9e;
+}
+
 .img-fluid {
     max-width: 80%;
 }

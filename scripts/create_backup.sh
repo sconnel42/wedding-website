@@ -13,3 +13,6 @@ cp /home/deployuser/backups/${latest_backup_name} /home/deployuser/Dropbox/weddi
 
 # Clear Dropbox's cache so it doesn't eat up disk space
 rm -rf /home/deployuser/Dropbox/.dropbox.cache
+
+# Clean up old images and volumes
+docker system prune --volumes -f

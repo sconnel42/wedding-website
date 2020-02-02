@@ -43,13 +43,11 @@ npm run lint
 - Then push code and it'll go all the way to the Droplet if it passes the tests
 
 ### TODO:
-- Hotel Info
 - Fix UTs
 - Update people's names/keys in DB
 
 ### Nice to Have
 - Make Big Dipper look right on mobile (make a rotated rectangle)
-- Pop pictures out on click
 - Add maps for church/venue
 - Optimize for slow connections
 - Serve build FE from nginx container
@@ -61,6 +59,7 @@ npm run lint
     - Text updates
     - Song request
 - Replace favicon with image of page curtain
+- Pop pictures out on click
 - Wedding Party?
 - Thin floral bar just below nav bar
 - Floral design on sides of main picture

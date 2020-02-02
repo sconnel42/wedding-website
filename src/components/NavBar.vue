@@ -10,6 +10,7 @@
           <p class="nav-link" data-toggle="collapse" data-target="#navLinkList" v-on:click="goTo('about')">About Us</p>
           <p class="nav-link" data-toggle="collapse" data-target="#navLinkList" v-on:click="goTo('gallery')">Picture Gallery</p>
           <p class="nav-link" data-toggle="collapse" data-target="#navLinkList" v-on:click="goTo('venue')">Church/Venue</p>
+          <p class="nav-link" data-toggle="collapse" data-target="#navLinkList" v-on:click="goTo('hotel')">Hotel</p>
           <p class="nav-link" data-toggle="collapse" data-target="#navLinkList" v-on:click="goTo('rsvp')">RSVP</p>
           <p class="nav-link" data-toggle="collapse" data-target="#navLinkList" v-on:click="goTo('registry')">Registry</p>
           <p class="nav-link" data-toggle="collapse" data-target="#navLinkList" v-on:click="goTo('contact')">Contact</p>
