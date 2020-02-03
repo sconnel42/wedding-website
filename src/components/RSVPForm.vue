@@ -173,7 +173,7 @@ export default {
   props: {
     rsvpEnabled: {
       type: Boolean,
-      default: true
+      default: false
     }
   },
   data () {
