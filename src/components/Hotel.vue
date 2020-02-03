@@ -47,7 +47,7 @@ export default {
     return {
       reservationLink: 'https://www.marriott.com/events/start.mi?id=1578698232316&key=GRP',
       hotelImg: {
-        src: `${process.env.BASE_URL}imgs/hotel.jpg`,
+        src: 'https://www.dropbox.com/s/ktr81ftuj76h61v/hotel.jpg?raw=1',
         alt: 'Aloft Bolingbrook'
       }
     }

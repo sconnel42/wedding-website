@@ -38,7 +38,7 @@ export default {
       defaultLink: 'https://www.zola.com/',
       baseRegistries: [
         {
-          src: `${process.env.BASE_URL}imgs/zola.png`,
+          src: 'https://www.dropbox.com/s/174b2mpoboi4j77/zola.png?raw=1',
           link: 'https://www.zola.com/registry/rebeccaandseanoctober10'
         }
       ]

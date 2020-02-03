@@ -62,11 +62,11 @@ export default {
   data: function () {
     return {
       churchImg: {
-        src: `${process.env.BASE_URL}imgs/church.jpg`,
+        src: 'https://www.dropbox.com/s/rq9536fddquhsbj/church.jpg?raw=1',
         alt: 'St Elizabeth Seton'
       },
       venueImg: {
-        src: `${process.env.BASE_URL}imgs/venue.jpg`,
+        src: 'https://www.dropbox.com/s/sp0kgsywutawfuq/venue.jpg?raw=1',
         alt: 'Monte Bello Estate'
       }
     }

@@ -6,7 +6,7 @@
     <div class="text-center">
       <img
         class="img-fluid padded top-padded"
-        src="imgs/IMG_20180810143123.jpg"
+        src="https://www.dropbox.com/s/uisx7l5yhq7oc64/IMG_20180810143123.jpg?raw=1"
       >
     </div>
     <div class="col-sm-12 text-center my-auto">
