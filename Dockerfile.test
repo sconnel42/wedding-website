@@ -1,4 +1,4 @@
-FROM circleci/node:10.16.1
+FROM circleci/node:12.14.1
 
 USER circleci
 

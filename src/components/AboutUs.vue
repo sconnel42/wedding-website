@@ -1,8 +1,13 @@
 <template>
-  <div id="about" class="row">
+  <div
+    id="about"
+    class="row"
+  >
     <div class="col-sm bottom-line">
       <div class="text-center">
-        <h3 class="padded">About Us</h3>
+        <h3 class="padded">
+          About Us
+        </h3>
       </div>
       <p>
         We met back in the summer of 2010, in between our sophomore and junior years of high school. Our first time meeting
@@ -22,7 +27,6 @@
         Toronto, and Las Vegas. We've been to other countries together, including Mexico, Dominican Rupublic, Ireland,
         Germany, and Austria. We've also done a great deal of outdoor activities together, including skiing, kayaking,
         ziplining, backpacking, spelunking, white-water rafting, and hiking.
-
       </p>
       <p>
         This life has been great, but eventually all of this being apart became unfulfilling and the desire for the end of

@@ -1,24 +1,38 @@
 <template>
-  <div id="hotel" class="row bottom-line">
+  <div
+    id="hotel"
+    class="row bottom-line"
+  >
     <div class="col-sm-12">
       <div class="text-center">
-        <h3 class="padded">Hotel</h3>
+        <h3 class="padded">
+          Hotel
+        </h3>
       </div>
       <div class="text-center pb-3">
         <h5>
-          To reserve rooms in our block, please go <a class="text-link" v-bind:href='reservationLink'>here</a>.
+          To reserve rooms in our block, please go <a
+            class="text-link"
+            :href="reservationLink"
+          >here</a>.
         </h5>
       </div>
     </div>
-    <div id="hotel-image" class="col-sm-6 text-center">
+    <div
+      id="hotel-image"
+      class="col-sm-6 text-center"
+    >
       <img
-        v-bind:src="hotelImg.src"
-        v-bind:alt="hotelImg.alt"
-        v-bind:title="hotelImg.alt"
+        :src="hotelImg.src"
+        :alt="hotelImg.alt"
+        :title="hotelImg.alt"
         class="img-fluid padded rounded"
       >
     </div>
-    <div id="hotel-info" class="col-sm-6 flex-center">
+    <div
+      id="hotel-info"
+      class="col-sm-6 flex-center"
+    >
       <h3>Aloft Bolingbrook</h3>
       <p>500 North Janes Ave</p>
       <p>Bolingbrook, IL 60440</p>

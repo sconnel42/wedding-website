@@ -42,11 +42,7 @@ npm run lint
 - Make sure to update the `DROPLET_IP` env var on CCI too
 - Then push code and it'll go all the way to the Droplet if it passes the tests
 
-### TODO:
-- Fix UTs
-- Update people's names/keys in DB
-
-### Nice to Have
+### TODO
 - Serve images via Dropbox and remove from Docker image
 - Make DB tables be underscored
 - Make Big Dipper look right on mobile (make a rotated rectangle)
@@ -54,6 +50,7 @@ npm run lint
 - Optimize for slow connections
 - Serve build FE from nginx container
 - RSVP updates
+    - Update people's names/keys in DB
     - Make search better (fuzzy string search?)
     - Only show people in that group
     - Text updates
@@ -71,6 +68,6 @@ npm run lint
 - Metrics for site up, page views, etc
 - Send message if site is down for too long
 - Alt text for images with info
-- Express JS to ES6
+- Express JS to ES6 and async-await everywhere
 - Convert CSS to SASS
 - Convert to Vue-Bootstrap

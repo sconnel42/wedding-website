@@ -104,28 +104,37 @@ app.get('/api/rsvp', (req, res, next) => {
 // Update a list of RSVPs in the DB
 app.post('/api/rsvp', (req, res, next) => {
   const rsvps = req.body.rsvps
-  rsvps.forEach(rsvp => {
-    RSVP.update({
-      name: rsvp.name,
-      email: rsvp.email,
-      meal: rsvp.meal,
-      isComing: rsvp.isComing
-    }, {
-      where: {
-        id: rsvp.id
-      }
-    }).then(updatedRow => {
-      console.log(`Updated row with id ${rsvp.id}`)
-    }).catch(err => {
-      console.log(err.message)
 
-      let error = new Error('RSVP failed to be updated!')
-      error.statusCode = 500
-      return next(error)
-    })
+  // Queue up the updates to make to the DB
+  let promiseList = []
+  rsvps.forEach(rsvp => {
+    promiseList.push(
+      RSVP.update({
+        name: rsvp.name,
+        email: rsvp.email,
+        meal: rsvp.meal,
+        isComing: rsvp.isComing
+      }, {
+        where: {
+          id: rsvp.id
+        }
+      }).then(updatedRow => {
+        console.log(`Updated row with id ${rsvp.id}`)
+      }).catch(err => {
+        console.error(err.message)
+        throw new Error(err.message)
+      })
+    )
   })
 
-  return res.json({ 'message': 'RSVPs updated' })
+  // Actually do all of the updates
+  Promise.all(promiseList).then((results) => {
+    return res.status(200).send({ 'message': 'RSVPs updated' })
+  }).catch((results) => {
+    let error = new Error('A RSVP failed to be updated!')
+    error.statusCode = 500
+    return next(error)
+  })
 })
 
 // Send a contact message

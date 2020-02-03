@@ -8,16 +8,16 @@ const rsvp = {
   isComing: true
 }
 
-// Mocking out RSVP.create
+// Mocking out RSVP.update
 module.exports = {
-  create: (args) => {
+  update: (args) => {
     return new Promise(
       (resolve, reject) => {
         process.nextTick(() => {
           if (args.meal != 'bugs') {
             resolve(rsvp)
           } else {
-            reject({'message': 'RSVP failed to be created!'})
+            reject({'message': 'RSVP failed to be updated!'})
           }
         })
       }

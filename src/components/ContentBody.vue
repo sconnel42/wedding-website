@@ -1,13 +1,13 @@
 <template>
   <div id="content-body">
-    <AboutUs/>
-    <GalleryHeader/>
-    <GalleryContent/>
-    <ChurchVenue/>
-    <Hotel/>
-    <RSVPForm/>
-    <RegistryList/>
-    <ContactForm/>
+    <AboutUs />
+    <GalleryHeader />
+    <GalleryContent />
+    <ChurchVenue />
+    <Hotel />
+    <RSVPForm />
+    <RegistryList />
+    <ContactForm />
   </div>
 </template>
 

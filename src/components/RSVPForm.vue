@@ -1,56 +1,136 @@
 <template>
-  <div id="rsvp" class="row">
+  <div
+    id="rsvp"
+    class="row"
+  >
     <div class="col-sm padded-bottom bottom-line">
       <div class="text-center">
-        <h3 class="padded">RSVP</h3>
+        <h3 class="padded">
+          RSVP
+        </h3>
       </div>
       <div class="text-center">
-        <h5 id="form-header" class="padded-bottom-xs" v-if="rsvpEnabled">
+        <h5
+          v-if="rsvpEnabled"
+          id="form-header-enabled"
+          class="padded-bottom-xs"
+        >
           Let us know if you will be coming to our wedding!
         </h5>
-        <h4 id="form-header" class="padded-bottom-xs" v-if="!rsvpEnabled">
+        <h4
+          v-if="!rsvpEnabled"
+          id="form-header-disabled"
+          class="padded-bottom-xs"
+        >
           This will be active once we finalize more details about the wedding. <br> Come back when you receive your invitation!
         </h4>
-        <p class="padded-bottom-sm" v-if="searchData.rsvps.length === 0 && rsvpEnabled">
+        <p
+          v-if="searchData.rsvps.length === 0 && rsvpEnabled"
+          class="padded-bottom-sm"
+        >
           Please enter your last name to search for your RSVP.
         </p>
-        <p class="padded-bottom-sm" v-if="searchData.rsvps.length > 0 && rsvpEnabled">
+        <p
+          v-if="searchData.rsvps.length > 0 && rsvpEnabled"
+          class="padded-bottom-sm"
+        >
           Please select guests that are coming.
         </p>
 
-        <form @submit.prevent="handleRSVPSearch" v-if="searchData.rsvps.length === 0 && rsvpEnabled">
+        <form
+          v-if="searchData.rsvps.length === 0 && rsvpEnabled"
+          @submit.prevent="handleRSVPSearch"
+        >
           <div class="form-row align-items-center">
-            <div class="col-sm-4"></div>
+            <div class="col-sm-4" />
             <div class="col-sm-3">
-              <label class="sr-only" for="searchName">Search</label>
-              <input type="text" class="form-control mb-2" id="searchName" v-model="searchData.name" placeholder="Search" aria-label="Search">
+              <label
+                class="sr-only"
+                for="searchName"
+              >Search</label>
+              <input
+                id="searchName"
+                v-model="searchData.name"
+                type="text"
+                class="form-control mb-2"
+                placeholder="Search"
+                aria-label="Search"
+              >
             </div>
             <div class="col-sm-1">
-              <button type="submit" class="btn btn-primary mb-2">Submit</button>
+              <button
+                id="search-submit"
+                type="submit"
+                class="btn btn-primary mb-2"
+              >
+                Submit
+              </button>
             </div>
-            <div class="col-sm-2"></div>
+            <div class="col-sm-2" />
           </div>
         </form>
 
-        <form @submit.prevent="handleRSVPSubmit" v-if="searchData.rsvps.length > 0 && rsvpEnabled" >
-          <div class="form-row align-items-center" v-for="rsvp in searchData.rsvps" v-bind:key="rsvp.id">
+        <form
+          v-if="searchData.rsvps.length > 0 && rsvpEnabled"
+          @submit.prevent="handleRSVPSubmit"
+        >
+          <div
+            v-for="rsvp in searchData.rsvps"
+            :key="rsvp.id"
+            class="form-row align-items-center"
+          >
             <div class="col-sm-12 form-inline d-flex justify-content-center">
               <div class="input-group mb-2">
                 <div class="input-group-prepend">
                   <div>
-                    <select id="isComing" v-model="rsvp.isComing" class="form-control round-left">
-                      <option selected disabled hidden>Attending?</option>
-                      <option value="true">Yes</option>
-                      <option value="false">No</option>
+                    <select
+                      :id="`rsvpIsComing-${rsvp.id}`"
+                      v-model="rsvp.isComing"
+                      class="form-control round-left"
+                    >
+                      <option
+                        selected
+                        disabled
+                        hidden
+                      >
+                        Attending?
+                      </option>
+                      <option value="true">
+                        Yes
+                      </option>
+                      <option value="false">
+                        No
+                      </option>
                     </select>
                   </div>
                 </div>
-                <input type="text" class="form-control" id="rsvpName" v-model="rsvp.name" placeholder="Name" aria-label="Name" disabled>
+                <input
+                  :id="`rsvpName-${rsvp.id}`"
+                  v-model="rsvp.name"
+                  type="text"
+                  class="form-control"
+                  placeholder="Name"
+                  aria-label="Name"
+                  disabled
+                >
                 <div class="input-group-append">
                   <div>
-                    <select id="rsvpMeal" v-model="rsvp.meal" class="form-control round-right">
-                      <option selected disabled hidden>Choose meal...</option>
-                      <option v-for="meal in mealOptions" v-bind:key="meal">
+                    <select
+                      :id="`rsvpMeal-${rsvp.id}`"
+                      v-model="rsvp.meal"
+                      class="form-control round-right"
+                    >
+                      <option
+                        selected
+                        disabled
+                        hidden
+                      >
+                        Choose meal...
+                      </option>
+                      <option
+                        v-for="meal in mealOptions"
+                        :key="meal"
+                      >
                         {{ meal }}
                       </option>
                     </select>
@@ -60,11 +140,21 @@
             </div>
           </div>
           <span class="padded mt-4">
-            <button @click="handleRSVPSubmit('accept')" id="accept-button" class="btn btn-primary" v-bind:disabled="showSuccessAlert || showFailureAlert">Submit</button>
+            <button
+              id="accept-button"
+              class="btn btn-primary"
+              :disabled="showSuccessAlert || showFailureAlert"
+            >Submit</button>
           </span>
           <div class="padded-top">
-            <Alert v-bind:isActive="showSuccessAlert" alertType="success"/>
-            <Alert v-bind:isActive="showFailureAlert" alertType="error"/>
+            <Alert
+              :is-active="showSuccessAlert"
+              alert-type="success"
+            />
+            <Alert
+              :is-active="showFailureAlert"
+              alert-type="error"
+            />
           </div>
         </form>
       </div>
@@ -80,6 +170,12 @@ export default {
   components: {
     Alert
   },
+  props: {
+    rsvpEnabled: {
+      type: Boolean,
+      default: true
+    }
+  },
   data () {
     return {
       mealOptions: ['Chicken', 'Pork'],
@@ -87,7 +183,6 @@ export default {
         name: '',
         rsvps: []
       },
-      rsvpEnabled: false,
       showSuccessAlert: false,
       showFailureAlert: false
     }
@@ -108,7 +203,7 @@ export default {
         this.showFailureAlert = false
       }, 5000)
     },
-    handleRSVPSubmit (submitType) {
+    handleRSVPSubmit () {
       // Unset default value from dropdown
       this.searchData.rsvps.forEach((item, idx) => {
         if (item.isComing === 'Attending?') {
@@ -154,16 +249,16 @@ export default {
         // eslint-disable-next-line
         (response) => {
           response.json().then(data => {
-            console.log(data.rsvps)
-
             // Set value of isComing to question so the
             // dropdown is populated correctly
-            this.searchData.rsvps = data.rsvps
-            this.searchData.rsvps.forEach((item, idx) => {
-              if (item.isComing === null) {
-                this.searchData.rsvps[idx].isComing = 'Attending?'
-              }
-            })
+            if (data.rsvps !== null && data.rsvps !== undefined) {
+              this.searchData.rsvps = data.rsvps
+              this.searchData.rsvps.forEach((item, idx) => {
+                if (item.isComing === null) {
+                  this.searchData.rsvps[idx].isComing = 'Attending?'
+                }
+              })
+            }
           })
         }
       ).catch(
@@ -173,8 +268,6 @@ export default {
         }
       )
       this.searchData.name = ''
-
-      // TODO: Make search section disappear and select-people section appear
     }
   }
 }

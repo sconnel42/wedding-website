@@ -1,28 +1,41 @@
 <template>
-  <div id="gallery" v-bind:class="{'row': true, 'bottom-line': !galleryOpen}">
+  <div
+    id="gallery"
+    :class="{'row': true, 'bottom-line': !galleryOpen}"
+  >
     <div class="col-sm-12">
       <div class="row">
-        <div id="pic-button" class="col-3 col-sm-4 col-lg-5 d-flex justify-content-center padded">
+        <div
+          id="pic-button"
+          class="col-3 col-sm-4 col-lg-5 d-flex justify-content-center padded"
+        >
           <button
             type="button"
             class="btn btn-info"
             data-toggle="collapse"
             data-target="#gallery-pictures"
-            v-on:click="galleryOpen = !galleryOpen"
+            @click="galleryOpen = !galleryOpen"
           >
-            {{toggleText()}}
+            {{ toggleText() }}
           </button>
         </div>
         <div class="col-9 col-sm-8 col-lg-7 padded">
-          <h3 id="pic-header">Picture Gallery</h3>
+          <h3 id="pic-header">
+            Picture Gallery
+          </h3>
         </div>
       </div>
       <div class="text-center">
-        <h5 class="padded-top">Here's some pictures showing our adventures!</h5>
+        <h5 class="padded-top">
+          Here's some pictures showing our adventures!
+        </h5>
         <h6 class="padded-bottom">
           Credit goes to Caitlin & Luke for our wonderful engagement photos!
-           See <a class="text-link" href="https://caitlinandluke.com/2019/07/sean-rebecca-fransen-nature-area-engagement-photos/">this link</a>
-           for all of our engagement photos.
+          See <a
+            class="text-link"
+            href="https://caitlinandluke.com/2019/07/sean-rebecca-fransen-nature-area-engagement-photos/"
+          >this link</a>
+          for all of our engagement photos.
         </h6>
       </div>
     </div>

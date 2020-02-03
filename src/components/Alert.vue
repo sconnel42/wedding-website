@@ -1,5 +1,5 @@
 <template>
-  <div v-bind:class="alertClass">
+  <div :class="alertClass">
     {{ alertText }}
   </div>
 </template>
@@ -30,6 +30,21 @@ export default {
       alertClass: classes
     }
   },
+  computed: {
+    alertText: function () {
+      if (this.alertType === 'success') {
+        return 'Submit successful!'
+      }
+      return 'An error occurred while submitting. Please try again.'
+    }
+  },
+  watch: {
+    isActive: function (newVal, oldVal) {
+      if (newVal !== oldVal) {
+        this.alertClass = this.getAlertClasses(oldVal)
+      }
+    }
+  },
   methods: {
     getAlertClasses (wasVisible) {
       if (this.alertType === 'success') {
@@ -47,21 +62,6 @@ export default {
         }
         return 'myalert alert-danger not-visible'
       }
-    }
-  },
-  watch: {
-    isActive: function (newVal, oldVal) {
-      if (newVal !== oldVal) {
-        this.alertClass = this.getAlertClasses(oldVal)
-      }
-    }
-  },
-  computed: {
-    alertText: function () {
-      if (this.alertType === 'success') {
-        return 'Submit successful!'
-      }
-      return 'An error occurred while submitting. Please try again.'
     }
   }
 }

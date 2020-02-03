@@ -20,46 +20,41 @@ describe('Test expected paths', () => {
 })
 
 // Tests around creating RSVPs
-describe('Test create RSVP', () => {
+describe('Test update RSVPs', () => {
   test('Good request returns valid user', () => {
     return request(app)
       .post('/api/rsvp')
       .send({
-        name: 'Guest1',
-        email: 'guest1@abc.com',
-        meal: 'Chicken',
-        isComing: true
+        rsvps: [{
+          id: 'foobar',
+          name: 'Guest1',
+          email: 'guest1@abc.com',
+          meal: 'Chicken',
+          isComing: true
+        }]
       })
       .set('Accept', 'application/json')
       .then(response => {
-        expect(response.body.message).not.toBeNull()
-        expect(response.body.message).toEqual(expect.stringContaining('RSVP created'))
         expect(response.statusCode).toBe(200)
+        expect(response.body.message).not.toBeNull()
+        expect(response.body.message).toEqual('RSVPs updated')
       })
   })
 
-  test('Failed create returns a 500', () => {
+  test('Failed update returns a 500', () => {
     return request(app)
       .post('/api/rsvp')
       .send({
-        name: 'BadGuest',
-        email: 'badguest@abc.com',
-        meal: 'bugs',
-        isComing: false
+        rsvps: [{
+          name: 'BadGuest',
+          email: 'badguest@abc.com',
+          meal: 'bugs',
+          isComing: false
+        }]
       })
       .set('Accept', 'application/json')
       .then(response => {
         expect(response.statusCode).toBe(500)
-      })
-  })
-
-  test('Missing param returns 400', () => {
-    return request(app)
-      .post('/api/rsvp')
-      .send({ name: 'john' })
-      .set('Accept', 'application/json')
-      .then(response => {
-        expect(response.statusCode).toBe(400)
       })
   })
 })

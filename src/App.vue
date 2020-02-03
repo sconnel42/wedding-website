@@ -1,14 +1,27 @@
 <template>
-  <div id="app" class="fadeIn">
-    <NavBar/>
-    <ContentHeader/>
-    <ContentBody/>
+  <div
+    id="app"
+    class="fadeIn"
+  >
+    <NavBar />
+    <ContentHeader />
+    <ContentBody />
     <div class="credits">
       Icons made by
-      <a href="https://www.flaticon.com/<?=_('authors').'/'?>roundicons" title="Roundicons">Roundicons</a> from
-      <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
+      <a
+        href="https://www.flaticon.com/<?=_('authors').'/'?>roundicons"
+        title="Roundicons"
+      >Roundicons</a> from
+      <a
+        href="https://www.flaticon.com/"
+        title="Flaticon"
+      >www.flaticon.com</a>
       is licensed by
-      <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank"> CC 3.0 BY</a>
+      <a
+        href="http://creativecommons.org/licenses/by/3.0/"
+        title="Creative Commons BY 3.0"
+        target="_blank"
+      > CC 3.0 BY</a>
     </div>
   </div>
 </template>
@@ -19,7 +32,7 @@ import ContentHeader from './components/ContentHeader.vue'
 import ContentBody from './components/ContentBody.vue'
 
 export default {
-  name: 'app',
+  name: 'App',
   components: {
     NavBar,
     ContentHeader,
