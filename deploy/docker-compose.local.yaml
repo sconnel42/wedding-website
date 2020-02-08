@@ -27,10 +27,6 @@ services:
       DB_PORT: 5432
       DB_STRING: ${DB_STRING}
       DB_CONNECTION_STRING: ${DB_CONNECTION_STRING}
-      GOOGLE_API_KEY: ${GOOGLE_API_KEY}
-      GOOGLE_API_SECRET: ${GOOGLE_API_SECRET}
-      GOOGLE_REDIRECT_URI: ${GOOGLE_REDIRECT_URI}
-      GOOGLE_SHEET_ID: ${GOOGLE_SHEET_ID}
     command: ["/bin/bash","scripts/setup.sh"]
 
 volumes:

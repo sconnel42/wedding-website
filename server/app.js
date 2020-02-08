@@ -1,4 +1,3 @@
-const fs = require('fs')
 const path = require('path')
 const express = require('express')
 const RSVP = require('./models/rsvp')
@@ -43,19 +42,6 @@ app.use(function(err, req, res, next) {
 
 app.get('/', (req, res) => {
   res.sendFile('index.html', { root: path.join(__dirname, '../dist') })
-})
-
-app.get('/api/adventure-images', (req, res) => {
-  const folderPath = 'public/adventure_images'
-  var imageList = []
-  fs.readdir(folderPath, (err, files) => {
-    if (!err) {
-      files.forEach(file => {
-        imageList.push({ 'src': `adventure_images/${file}` })
-      })
-    }
-    res.json({ 'images': imageList })
-  })
 })
 
 // Search for a list of RSVPs based on a given key
