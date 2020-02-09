@@ -43,7 +43,6 @@ npm run lint
 - Then push code and it'll go all the way to the Droplet if it passes the tests
 
 ### TODO
-- Serve images via Dropbox and remove from Docker image
 - Make DB tables be underscored
 - Make Big Dipper look right on mobile (make a rotated rectangle)
 - Add maps for church/venue
