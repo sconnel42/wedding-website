@@ -15,7 +15,7 @@ npm run lint
 ### Developing on host
 - Run `cp sample.env .env` and fill in DB password
 - Make sure `DB_HOST="localhost"` and `DB_PORT="25432"`
-- Run make `docker-build && make host-setup` to bring up the DB
+- Run `make docker-build && make host-setup` to bring up the DB
 - Run `npm run serve` to run the FE code
 - Run `npm run serve-be` in a separate terminal to run the BE code
 - Go to localhost:8080 to see the app!
@@ -43,16 +43,14 @@ npm run lint
 - Then push code and it'll go all the way to the Droplet if it passes the tests
 
 ### TODO
-- Make DB tables be underscored
 - Make Big Dipper look right on mobile (make a rotated rectangle)
-- Add maps for church/venue
+- Add maps/dates for church/venue (https://vuejs.org/v2/cookbook/practical-use-of-scoped-slots.html)
 - Optimize for slow connections
 - Serve build FE from nginx container
 - RSVP updates
     - Update people's names/keys in DB
     - Make search better (fuzzy string search?)
     - Only show people in that group
-    - Text updates
     - Song request
 - Replace favicon with image of page curtain
 - Pop pictures out on click
@@ -70,3 +68,4 @@ npm run lint
 - Express JS to ES6 and async-await everywhere
 - Convert CSS to SASS
 - Convert to Vue-Bootstrap
+- Make DB tables be underscored (https://stackoverflow.com/a/57057691)

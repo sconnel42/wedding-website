@@ -9,7 +9,10 @@
           Hotel
         </h3>
       </div>
-      <div class="text-center pb-3">
+      <div
+        v-if="hotelEnabled"
+        class="text-center pb-3"
+      >
         <h5>
           To reserve rooms in our block, please go <a
             class="text-link"
@@ -17,8 +20,18 @@
           >here</a>.
         </h5>
       </div>
+      <div
+        v-if="!hotelEnabled"
+        class="text-center pb-3"
+      >
+        <h5>
+          This will be active once we finalize more details about our
+          wedding reception. <br> Please check back in March 2021!
+        </h5>
+      </div>
     </div>
     <div
+      v-if="hotelEnabled"
       id="hotel-image"
       class="col-sm-6 text-center"
     >
@@ -30,6 +43,7 @@
       >
     </div>
     <div
+      v-if="hotelEnabled"
       id="hotel-info"
       class="col-sm-6 flex-center"
     >
@@ -43,9 +57,15 @@
 <script>
 export default {
   name: 'Hotel',
+  props: {
+    hotelEnabled: {
+      type: Boolean,
+      default: false
+    }
+  },
   data: function () {
     return {
-      reservationLink: 'https://www.marriott.com/events/start.mi?id=1578698232316&key=GRP',
+      reservationLink: 'https://www.marriott.com/events/start.mi?id=1594226389303&key=GRP',
       hotelImg: {
         src: 'https://www.dropbox.com/s/ktr81ftuj76h61v/hotel.jpg?raw=1',
         alt: 'Aloft Bolingbrook'
