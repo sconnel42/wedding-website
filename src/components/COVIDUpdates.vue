@@ -10,16 +10,12 @@
         </h3>
       </div>
       <p>
-        As a result of the ongoing health crisis, we have made the difficult decision to postpone
-        part of our wedding until next year. We will be hosting a small wedding ceremony on our original day,
-        October 10th, 2020, though it'll be smaller than we would have liked due to current restrictions in
-        the size of gatherings in the state of Illinois. However, we plan on recording the mass in some fashion,
-        and will make that available for people who want to watch it. In addition, we will be postponing our
-        reception until next year, which will now take place on Saturday, October 30th, 2021. We want to make sure
-        that we do our best to keep everyone safe and healthy, which we don't think would be possible if we had the
-        reception this year. These are difficult and confusing times, so if you have any questions about how this
-        is all working, please feel free to reach out to either of us, and we will be more than happy to answer your
-        questions as best as we can.
+        As a result of the COVID-19 Pandemic, we made the decision to postpone our wedding reception from our
+        original date (October 10th, 2020) to 2021 instead. We did still have a small ceremony on the original
+        day (pictures below!), though we still haven't done the traditional "reception" part of the wedding. As a
+        result, there will just be a reception on the October 30th, 2021, starting with the cocktail hour at 6pm.
+        Look for an RSVP coming in the mail, if you haven't recieved it yet. We are looking forward to celebrating
+        with you all!
       </p>
     </div>
   </div>

@@ -11,7 +11,7 @@
     </div>
     <div class="col-sm-12 text-center my-auto">
       <h1 class="padded fancy-font">
-        October 10th, 2020
+        October 30th, 2021
       </h1>
     </div>
   </div>
