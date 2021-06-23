@@ -5,7 +5,6 @@ import ContactForm from '../../components/ContactForm.vue'
 import ContentBody from '../../components/ContentBody.vue'
 import GalleryHeader from '../../components/GalleryHeader.vue'
 import GalleryContent from '../../components/GalleryContent.vue'
-import RegistryList from '../../components/RegistryList.vue'
 import RSVPForm from '../../components/RSVPForm.vue'
 
 describe('ContentBody', () => {
@@ -19,7 +18,6 @@ describe('ContentBody', () => {
     expect(wrapper.find(GalleryContent).exists()).toBe(true)
     expect(wrapper.find(ChurchVenue).exists()).toBe(true)
     expect(wrapper.find(RSVPForm).exists()).toBe(true)
-    expect(wrapper.find(RegistryList).exists()).toBe(true)
     expect(wrapper.find(ContactForm).exists()).toBe(true)
   })
 })

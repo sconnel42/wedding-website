@@ -8,6 +8,6 @@ describe('NavBar', () => {
 
     // Check that there are the expected number of nav-links
     let numNavLinks = wrapper.findAll('p.nav-link').length
-    expect(numNavLinks).toEqual(7)
+    expect(numNavLinks).toEqual(6)
   })
 })
