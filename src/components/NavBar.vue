@@ -69,14 +69,6 @@
             class="nav-link"
             data-toggle="collapse"
             data-target="#navLinkList"
-            @click="goTo('registry')"
-          >
-            Registry
-          </p>
-          <p
-            class="nav-link"
-            data-toggle="collapse"
-            data-target="#navLinkList"
             @click="goTo('contact')"
           >
             Contact
