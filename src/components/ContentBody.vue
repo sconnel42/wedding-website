@@ -6,7 +6,6 @@
     <GalleryContent />
     <ChurchVenue />
     <Hotel />
-    <RSVPForm />
     <ContactForm />
   </div>
 </template>
@@ -18,7 +17,6 @@ import GalleryHeader from './GalleryHeader.vue'
 import GalleryContent from './GalleryContent.vue'
 import ChurchVenue from './ChurchVenue.vue'
 import Hotel from './Hotel.vue'
-import RSVPForm from './RSVPForm.vue'
 import ContactForm from './ContactForm.vue'
 
 export default {
@@ -30,7 +28,6 @@ export default {
     GalleryContent,
     ChurchVenue,
     Hotel,
-    RSVPForm,
     ContactForm
   }
 }

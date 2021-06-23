@@ -17,7 +17,7 @@ describe('ContentBody', () => {
     expect(wrapper.find(GalleryHeader).exists()).toBe(true)
     expect(wrapper.find(GalleryContent).exists()).toBe(true)
     expect(wrapper.find(ChurchVenue).exists()).toBe(true)
-    expect(wrapper.find(RSVPForm).exists()).toBe(true)
+    expect(wrapper.find(RSVPForm).exists()).toBe(false)
     expect(wrapper.find(ContactForm).exists()).toBe(true)
   })
 })

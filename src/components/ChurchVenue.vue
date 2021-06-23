@@ -6,33 +6,14 @@
     <div class="col-sm-12">
       <div class="text-center">
         <h3 class="padded">
-          Church/Venue
+          Venue
         </h3>
       </div>
       <div class="text-center">
         <h5 class="padded">
-          Here's the location of the church and venue:
+          Here's the location of the venue:
         </h5>
       </div>
-    </div>
-    <div
-      id="church-image"
-      class="col-sm-6 text-center"
-    >
-      <img
-        :src="churchImg.src"
-        :alt="churchImg.alt"
-        :title="churchImg.alt"
-        class="img-fluid padded rounded"
-      >
-    </div>
-    <div
-      id="church-info"
-      class="col-sm-6 flex-center"
-    >
-      <h3>St. Elizabeth Ann Seton <br class="rwd-break">Catholic Church</h3>
-      <p>9300 West 167th Street</p>
-      <p>Orland Hills, IL 60487</p>
     </div>
     <div
       id="venue-image"
@@ -61,10 +42,6 @@ export default {
   name: 'ChurchVenue',
   data: function () {
     return {
-      churchImg: {
-        src: 'https://www.dropbox.com/s/rq9536fddquhsbj/church.jpg?raw=1',
-        alt: 'St Elizabeth Seton'
-      },
       venueImg: {
         src: 'https://www.dropbox.com/s/sp0kgsywutawfuq/venue.jpg?raw=1',
         alt: 'Monte Bello Estate'

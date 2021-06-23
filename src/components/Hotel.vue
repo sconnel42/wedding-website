@@ -26,7 +26,7 @@
       >
         <h5>
           This will be active once we finalize more details about our
-          wedding reception. <br> Please check back in March 2021!
+          wedding reception. <br> Please check back soon!
         </h5>
       </div>
     </div>

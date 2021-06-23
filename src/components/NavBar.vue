@@ -47,7 +47,7 @@
             data-target="#navLinkList"
             @click="goTo('venue')"
           >
-            Church/Venue
+            Venue
           </p>
           <p
             class="nav-link"

@@ -6,9 +6,6 @@ describe('ChurchVenue', () => {
     const wrapper = shallowMount(ChurchVenue, {})
     expect(wrapper.exists()).toBe(true)
 
-    let churchInfo = wrapper.find('[id="church-info"]')
-    expect(churchInfo.text()).toEqual(expect.stringContaining('Catholic Church'))
-
     let venueInfo = wrapper.find('[id="venue-info"]')
     expect(venueInfo.text()).toEqual(expect.stringContaining('Monte Bello'))
   })
