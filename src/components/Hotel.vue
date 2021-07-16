@@ -60,12 +60,12 @@ export default {
   props: {
     hotelEnabled: {
       type: Boolean,
-      default: false
+      default: true
     }
   },
   data: function () {
     return {
-      reservationLink: 'https://www.marriott.com/events/start.mi?id=1594226389303&key=GRP',
+      reservationLink: 'https://www.marriott.com/events/start.mi?id=1626473480776&key=GRP',
       hotelImg: {
         src: 'https://www.dropbox.com/s/ktr81ftuj76h61v/hotel.jpg?raw=1',
         alt: 'Aloft Bolingbrook'
