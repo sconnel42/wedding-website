@@ -17,7 +17,8 @@
           To reserve rooms in our block, please go <a
             class="text-link"
             :href="reservationLink"
-          >here</a>.
+          >here</a>. The block will be active until September 9th, 2021, so
+          reserve your rooms early!
         </h5>
       </div>
       <div
